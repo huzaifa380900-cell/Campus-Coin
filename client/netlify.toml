@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  VITE_API_URL = "https://campus-coin-omega.vercel.app/api"
+
+# Client-side routes such as /login must resolve to the SPA entry point,
+# otherwise Netlify answers a hard refresh with 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

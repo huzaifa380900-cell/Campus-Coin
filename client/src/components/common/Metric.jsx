@@ -1,0 +1,1 @@
+export function Metric({ label, value, detail, icon, balance=false, trend }) { return <div className={`card metric ${balance?'balance':''}`}><div className="metric-icon">{icon}</div><div className="metric-label">{label}</div><div className="metric-value">{value}</div><small className={trend}>{detail}</small></div> }
