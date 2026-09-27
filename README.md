@@ -13,18 +13,30 @@ The client runs at `http://localhost:5173` in development and the API at port `5
 
 ## Deployment
 
-Both projects live on Vercel and are connected to the same Git repository, so a single `git push` rebuilds and redeploys each one from its own root directory.
+This folder is the development workspace. Each side is published to its own GitHub repository with `git subtree split`, so a remote receives its subtree as the repository root — which is what both Vercel projects expect with Root Directory `/`.
 
-- **API** — `campus-coin-omega.vercel.app`, project Root Directory `server`
-- **Client** — `campus-coin-client.vercel.app`, project Root Directory `client`
+| Local path | Repository | Vercel project | URL |
+| --- | --- | --- | --- |
+| `server/` | `faisalmehood15261-wq/CampusCoin` | API | `campus-coin-omega.vercel.app` |
+| `client/` | `faisalmehood15261-wq/CampusCoin-client` | Client | `campus-coin-client.vercel.app` |
 
-**API.** `server/vercel.json` rewrites every path to `server/api/index.js`, which exports the Express app and connects to MongoDB on the first request of a cold start. Secrets belong in the project's Vercel environment variables (see `server/.env.example`); `CLIENT_URL` and `NODE_ENV` are already provided in `vercel.json` and are not secret.
+Publish both, or one of them:
+
+```bash
+npm run deploy            # both
+npm run deploy:server     # API only
+npm run deploy:client     # client only
+```
+
+The first publish against a repository that already has unrelated history needs `-Force` once: `.\scripts\publish.ps1 -Target all -Force`.
+
+**API.** `server/vercel.json` rewrites every path to `server/api/index.js`, which exports the Express app and connects to MongoDB on the first request of a cold start. Secrets (MongoDB URI, JWT secrets, SMTP, Google client secret, AI keys) belong in the Vercel project's environment variables; `CLIENT_URL` and `NODE_ENV` are already supplied in `vercel.json` and are not secret.
 
 **Client.** `client/vercel.json` sets the Vite build, the output directory, the `VITE_*` values, and a catch-all rewrite to `/index.html` so client-side routes such as `/login` return the app shell instead of a hard 404. `client/netlify.toml` and `client/public/_redirects` provide the same behaviour if the client is also published to Netlify.
 
-**Why the cookie is cross-site safe.** The client and the API are on different subdomains, so the session cookie is issued `Secure; SameSite=None` and sent with `withCredentials`. `server/src/utils/auth.js` derives those flags from `x-forwarded-proto`/`req.secure` rather than `NODE_ENV`, so an HTTPS deployment always gets a usable cross-site cookie while plain-HTTP localhost development keeps `SameSite=Lax`. The API also maintains a CORS allow-list, because `SameSite=None` means any allowed origin can send authenticated requests — `*.vercel.app` is deliberately never wildcarded.
+No `.env` file is committed. The client build reads `VITE_API_URL` and `VITE_GOOGLE_CLIENT_ID` from `client/vercel.json`, which is why an earlier deployment silently shipped a `localhost` API address and a disabled Google button.
 
-Never set `VITE_API_URL` to a `localhost` address in a production build: it is compiled into the bundle and every visitor would then request their own machine.
+**Why the cookie is cross-site safe.** The client and the API sit on different subdomains, so the session cookie is issued `Secure; SameSite=None` and sent with `withCredentials`. `server/src/utils/auth.js` derives those flags from `x-forwarded-proto`/`req.secure` rather than `NODE_ENV`, so an HTTPS deployment always gets a usable cross-site cookie while plain-HTTP localhost development keeps `SameSite=Lax`. The API also maintains a CORS allow-list, because `SameSite=None` means any allowed origin can send authenticated requests — `*.vercel.app` is deliberately never wildcarded. Outbound links such as password resets use `publicAppUrl()` instead, since `CLIENT_URL` is a list and only its first entry is a usable origin.
 
 ## Administrator provisioning
 

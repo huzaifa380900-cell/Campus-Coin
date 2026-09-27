@@ -47,7 +47,7 @@ const NAV_LINKS = [
 ];
 
 const FOCUS_RING =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070510]';
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e081c]';
 
 const CARD =
   'relative rounded-2xl border border-white/[0.08] bg-[#120C1F] shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset,0_24px_60px_-40px_rgba(0,0,0,0.9)]';
@@ -78,7 +78,7 @@ function useInView(threshold = 0.12) {
           }
         });
       },
-      { threshold, rootMargin: '0px 0px -60px 0px' }
+      { threshold, rootMargin: '0px 0px 0px 0px' }
     );
     io.observe(el);
     return () => io.disconnect();
@@ -106,12 +106,12 @@ function CtaLink({ to, variant = 'primary', children, className = '' }) {
   const base = `group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-all duration-300 ${FOCUS_RING} cursor-pointer`;
   const variants = {
     primary:
-      'bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 text-white shadow-[0_0_30px_-5px_rgba(147,51,234,0.6)] hover:shadow-[0_0_40px_2px_rgba(147,51,234,0.8)] hover:brightness-110 px-7 py-3.5',
+      'bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 text-white shadow-[0_0_30px_-5px_rgba(147,51,234,0.6)] hover:shadow-[0_0_40px_2px_rgba(147,51,234,0.8)] hover:brightness-110 ',
     secondary:
-      'border border-white/15 bg-white/5 text-slate-100 hover:border-purple-400/50 hover:bg-white/10 px-6 py-3.5 backdrop-blur-md',
+      'border border-white/15 bg-white/5 text-slate-100 hover:border-purple-400/50 hover:bg-white/10 backdrop-blur-md',
     ghost:
-      'border border-purple-500/30 bg-purple-500/10 text-purple-200 hover:border-purple-400/60 hover:bg-purple-500/20 px-5 py-3',
-    text: 'text-slate-300 hover:text-white px-2 py-3',
+      'border border-purple-500/30 bg-purple-500/10 text-purple-200 hover:border-purple-400/60 hover:bg-purple-500/20 ',
+    text: 'text-slate-300 hover:text-white ',
   };
   return (
     <Link to={to} className={`${base} ${variants[variant]} ${className}`}>
@@ -134,10 +134,10 @@ function NavItem({ onClick, children }) {
     <button
       type="button"
       onClick={onClick}
-      className={`group relative cursor-pointer border-0 bg-transparent px-1 py-1 text-[13.5px] font-medium text-slate-300 transition-colors duration-200 hover:text-white ${FOCUS_RING}`}
+      className={`group relative flex w-full items-center rounded-xl px-4 py-3 text-[14.5px] font-medium text-slate-300 transition-all duration-200 hover:bg-white/5 hover:text-white ${FOCUS_RING}`}
     >
       {children}
-      <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-gradient-to-r from-violet-500 to-purple-400 transition-transform duration-300 group-hover:scale-x-100" />
+      <span className="absolute left-0 h-6 w-0.5 origin-left scale-y-0 rounded-full bg-gradient-to-b from-violet-500 to-purple-400 transition-transform duration-300 group-hover:scale-y-100" />
     </button>
   );
 }
@@ -181,7 +181,7 @@ function WelcomeModal() {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-all duration-500">
-      <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-purple-500/30 bg-[#120C1F] p-6 sm:p-8 shadow-[0_0_80px_rgba(168,85,247,0.35)]">
+      <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-purple-500/30 bg-[#120C1F] p-6 sm:p-8 shadow-[0_0_80px_rgba(168,85,247,0.35)] max-h-[90vh] overflow-y-auto">
         <div className="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-purple-500/20 blur-3xl" />
         
         <button
@@ -459,9 +459,9 @@ function CoinScene({ reduce }) {
   if (failed) {
     return (
       <div className="flex h-full w-full items-center justify-center">
-        <div className="relative flex h-64 w-64 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 via-indigo-600 to-slate-900 p-1 shadow-[0_0_80px_rgba(168,85,247,0.5)]">
+        <div className="relative flex h-48 w-48 sm:h-64 sm:w-64 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 via-indigo-600 to-slate-900 p-1 shadow-[0_0_80px_rgba(168,85,247,0.5)]">
           <div className="flex h-full w-full items-center justify-center rounded-full bg-[#080214]">
-            <span className="text-6xl font-black text-purple-200 tracking-tighter">CC</span>
+            <span className="text-4xl sm:text-6xl font-black text-purple-200 tracking-tighter">CC</span>
           </div>
         </div>
       </div>
@@ -471,16 +471,8 @@ function CoinScene({ reduce }) {
   return <div ref={mountRef} className="h-full w-full cursor-grab active:cursor-grabbing" />;
 }
 
-function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+function Sidebar() {
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   const go = id => {
     setOpen(false);
@@ -489,23 +481,33 @@ function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-4 sm:px-6">
+    <>
+      <div className="fixed inset-x-0 top-0 z-50 flex items-center justify-between border-b border-white/10 bg-[#0e081c] px-4 py-4 lg:hidden">
+        <Link to="/" className="flex items-center">
+          <Logo height={32} className="text-white" />
+        </Link>
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition-colors hover:border-purple-400/45 hover:text-white"
+        >
+          {open ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
       <div
-        className={`mx-auto max-w-[1150px] rounded-full border transition-all duration-500 ${
-          scrolled
-            ? 'border-white/15 bg-[#0e081c]/80 backdrop-blur-xl shadow-[0_20px_50px_-20px_rgba(147,51,234,0.3)]'
-            : 'border-white/10 bg-[#0e081c]/60 backdrop-blur-md'
+        className={`fixed inset-y-0 left-0 z-50 w-72 transform border-r border-white/10 bg-[#0e081c] transition-transform duration-300 ease-in-out lg:translate-x-0 ${
+          open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="flex items-center justify-between gap-4 px-5 py-2.5">
-          <Link
-            to="/"
-            className={`flex shrink-0 items-center no-underline ${FOCUS_RING} rounded-lg`}
-          >
-            <Logo height={32} className="text-white" />
-          </Link>
+        <div className="flex h-full flex-col px-6 py-8">
+          <div className="mb-10 hidden lg:block">
+            <Link to="/" className="flex items-center">
+              <Logo height={36} className="text-white" />
+            </Link>
+          </div>
 
-          <nav className="hidden items-center gap-7 lg:flex">
+          <nav className="flex flex-1 flex-col gap-2">
             {NAV_LINKS.map(link => (
               <NavItem key={link.id} onClick={() => go(link.id)}>
                 {link.label}
@@ -513,61 +515,28 @@ function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden items-center gap-2.5 lg:flex">
-            <CtaLink to="/admin/login" variant="ghost" className="!px-3.5 !py-1.5 text-[12.5px] rounded-full border-purple-500/40 bg-purple-500/10 hover:bg-purple-500/20">
-              <ShieldAlert size={14} className="text-purple-400" />
-              Admin Login
+          <div className="mt-auto flex flex-col gap-3 border-t border-white/10 pt-6">
+            <CtaLink to="/admin/login" variant="ghost" className="w-full justify-start !px-4 !py-3 border-purple-500/30">
+              <ShieldAlert size={16} className="text-purple-400" />
+              Admin Portal
             </CtaLink>
-            <CtaLink to="/login" variant="text" className="!px-3 !py-1.5 text-[13.5px]">
-              Login
+            <CtaLink to="/login" variant="secondary" className="w-full justify-start !px-4 !py-3">
+              User Login
             </CtaLink>
-            <CtaLink to="/register" variant="primary" className="!px-5 !py-2 text-[13px] rounded-full">
-              Get Started
+            <CtaLink to="/register" variant="primary" className="w-full justify-start !px-4 !py-3">
+              Get Started <Arrow size={16} />
             </CtaLink>
           </div>
-
-          <button
-            type="button"
-            onClick={() => setOpen(value => !value)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={open}
-            className={`inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition-colors hover:border-purple-400/45 hover:text-white lg:hidden ${FOCUS_RING}`}
-          >
-            {open ? <X size={18} /> : <Menu size={18} />}
-          </button>
         </div>
-
-        {open ? (
-          <div className="cc-menu-in border-t border-white/[0.08] px-5 pb-5 pt-3 lg:hidden rounded-b-3xl">
-            <div className="flex flex-col">
-              {NAV_LINKS.map(link => (
-                <button
-                  key={link.id}
-                  type="button"
-                  onClick={() => go(link.id)}
-                  className={`cursor-pointer rounded-lg border-0 bg-transparent px-1 py-3 text-left text-[15px] font-medium text-slate-300 transition-colors hover:text-white ${FOCUS_RING}`}
-                >
-                  {link.label}
-                </button>
-              ))}
-            </div>
-            <div className="mt-4 flex flex-col gap-2.5">
-              <CtaLink to="/register" variant="primary" className="w-full">
-                Get Started
-                <Arrow size={16} />
-              </CtaLink>
-              <CtaLink to="/login" variant="secondary" className="w-full">
-                User Login
-              </CtaLink>
-              <CtaLink to="/admin/login" variant="ghost" className="w-full flex items-center justify-center gap-2">
-                <ShieldAlert size={15} className="text-purple-400" />
-                Admin Portal Login
-              </CtaLink>
-            </div>
-          </div>
-        ) : null}
       </div>
-    </header>
+
+      {open && (
+        <div
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
+    </>
   );
 }
 
@@ -577,87 +546,100 @@ function Hero() {
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-    <section id="home" className="relative min-h-screen pt-32 pb-20 lg:pt-36 lg:pb-28 overflow-hidden flex items-center justify-center">
-      <div className="pointer-events-none absolute inset-0 bg-[#070510]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_circle_at_50%_20%,rgba(139,92,246,0.25),transparent_70%),radial-gradient(900px_circle_at_85%_75%,rgba(99,102,241,0.18),transparent_65%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-25 [background-image:linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:36px_36px]" />
+    <section id="home" className="relative min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-28 overflow-hidden flex flex-col items-center justify-center">
+      <div className="pointer-events-none absolute inset-0 bg-[#0e081c]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_circle_at_50%_10%,rgba(139,92,246,0.35),transparent_70%),radial-gradient(900px_circle_at_80%_80%,rgba(99,102,241,0.25),transparent_65%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_circle_at_50%_50%,rgba(168,85,247,0.15),transparent_60%)]" />
+      
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(139,92,246,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(139,92,246,0.08)_1px,transparent_1px)] [background-size:60px_60px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_60%,transparent_100%)]" />
+      
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute top-[15%] left-[20%] h-2 w-2 rounded-full bg-purple-400 blur-[1px] animate-pulse" />
+        <div className="absolute top-[25%] right-[25%] h-1.5 w-1.5 rounded-full bg-indigo-400 blur-[1px] animate-pulse delay-700" />
+        <div className="absolute bottom-[30%] left-[30%] h-2.5 w-2.5 rounded-full bg-violet-400 blur-[1px] animate-pulse delay-1000" />
+        <div className="absolute top-[50%] right-[15%] h-1 w-1 rounded-full bg-white blur-[1px] animate-pulse delay-300" />
+        <div className="absolute bottom-[20%] right-[40%] h-1.5 w-1.5 rounded-full bg-purple-300 blur-[1px] animate-pulse delay-500" />
+        <div className="absolute top-[10%] left-[60%] h-1 w-1 rounded-full bg-indigo-300 blur-[1px] animate-pulse delay-200" />
+        <div className="absolute bottom-[40%] left-[10%] h-1.5 w-1.5 rounded-full bg-purple-500 blur-[1px] animate-pulse delay-800" />
+        <div className="absolute top-[35%] right-[10%] h-2 w-2 rounded-full bg-indigo-500 blur-[1px] animate-pulse delay-400" />
+      </div>
 
-      <div className="relative mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8 w-full z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="relative mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col items-center">
+        
+        <Reveal delay={100} className="w-full flex justify-center relative">
+          <div className="relative w-full max-w-[600px] sm:max-w-[700px] lg:max-w-[800px] h-[350px] sm:h-[500px] lg:h-[600px] flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-[280px] h-[280px] sm:w-[450px] sm:h-[450px] rounded-full border border-purple-500/20 animate-[spin_20s_linear_infinite]" />
+              <div className="absolute w-[220px] h-[220px] sm:w-[350px] sm:h-[350px] rounded-full border border-indigo-500/30 animate-[spin_15s_linear_infinite_reverse]" />
+              <div className="absolute w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] rounded-full bg-purple-500/20 blur-[60px]" />
+            </div>
+            
+            <div className="absolute inset-0 z-10">
+              <CoinScene reduce={reduce} />
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="mt-8 sm:mt-12 w-full max-w-4xl flex flex-col items-center text-center relative">
+          <div className="absolute -inset-x-20 -top-10 bottom-0 bg-[radial-gradient(400px_circle_at_50%_50%,rgba(14,8,28,0.8),transparent_70%)] blur-xl pointer-events-none" />
           
-          <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <Reveal>
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 backdrop-blur-xl shadow-[0_0_20px_rgba(168,85,247,0.2)]">
-                <span className="flex h-2 w-2 rounded-full bg-purple-400 animate-pulse" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-purple-200">
-                  Next-Gen Student Finance
-                </span>
-                <span className="flex items-center gap-1 text-[11px] font-bold bg-purple-500/30 px-2 py-0.5 rounded-full text-purple-300">
-                  <Zap size={10} /> 2.0
-                </span>
+          <Reveal>
+            <div className="relative inline-flex items-center gap-2.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-purple-500/30 bg-purple-500/10 backdrop-blur-xl shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+              <span className="flex h-2 w-2 rounded-full bg-purple-400 animate-pulse" />
+              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-purple-200">
+                Next-Gen Student Finance
+              </span>
+              <span className="flex items-center gap-1 text-[10px] sm:text-[11px] font-bold bg-purple-500/30 px-2 py-0.5 rounded-full text-purple-300">
+                <Zap size={10} /> 2.0
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={100} className="w-full relative">
+            <h1 className="mt-5 text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] sm:leading-[1.08] w-full drop-shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+              Master Your Money. <br />
+              <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+                Elevate Student Life.
+              </span>
+            </h1>
+          </Reveal>
+
+          <Reveal delay={180} className="w-full relative">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-lg text-slate-300 max-w-2xl leading-relaxed mx-auto">
+              The modern, automated financial command center designed exclusively for students. Track allowances, set intelligent budgets, and hit your savings goals effortlessly.
+            </p>
+          </Reveal>
+
+          <Reveal delay={260} className="w-full flex justify-center relative">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
+              <CtaLink to="/register" variant="primary" className="w-full sm:w-auto !px-8 !py-3.5 sm:!py-4 text-sm sm:text-base shadow-[0_0_40px_rgba(147,51,234,0.5)] hover:scale-105 transition-all">
+                Start Free Today
+                <Arrow size={18} />
+              </CtaLink>
+              <CtaLink to="/#features" variant="secondary" className="w-full sm:w-auto !px-7 !py-3.5 sm:!py-4 text-sm sm:text-base hover:scale-105 transition-all">
+                Explore Features
+              </CtaLink>
+            </div>
+          </Reveal>
+
+          <Reveal delay={340} className="w-full max-w-lg relative">
+            <div className="mt-8 sm:mt-12 grid grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8 border-t border-white/10 w-full">
+              <div className="text-center">
+                <h4 className="text-lg sm:text-3xl font-bold text-white">100%</h4>
+                <p className="text-[9px] sm:text-xs text-slate-400 mt-0.5 sm:mt-1">Free for Students</p>
               </div>
-            </Reveal>
-
-            <Reveal delay={100}>
-              <h1 className="mt-6 text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08]">
-                Master Your Money. <br />
-                <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(168,85,247,0.3)]">
-                  Elevate Student Life.
-                </span>
-              </h1>
-            </Reveal>
-
-            <Reveal delay={180}>
-              <p className="mt-6 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-                The modern, automated financial command center designed exclusively for students. Track allowances, set intelligent budgets, and hit your savings goals effortlessly.
-              </p>
-            </Reveal>
-
-            <Reveal delay={260}>
-              <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <CtaLink to="/register" variant="primary" className="w-full sm:w-auto !px-8 !py-4 text-base shadow-[0_0_40px_rgba(147,51,234,0.5)] hover:scale-105 transition-all">
-                  Start Free Today
-                  <Arrow size={18} />
-                </CtaLink>
-                <CtaLink to="/#features" variant="secondary" className="w-full sm:w-auto !px-7 !py-4 text-base hover:scale-105 transition-all">
-                  Explore Features
-                </CtaLink>
-                <CtaLink to="/admin/login" variant="ghost" className="w-full sm:w-auto !px-6 !py-4 text-base border-purple-500/30 hover:scale-105 transition-all">
-                  <ShieldAlert size={18} className="text-purple-400" />
-                  Admin Login
-                </CtaLink>
+              <div className="text-center">
+                <h4 className="text-lg sm:text-3xl font-bold text-purple-300">Zero</h4>
+                <p className="text-[9px] sm:text-xs text-slate-400 mt-0.5 sm:mt-1">Bank Link Needed</p>
               </div>
-            </Reveal>
-
-            <Reveal delay={340}>
-              <div className="mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-white/10 w-full max-w-lg">
-                <div>
-                  <h4 className="text-2xl sm:text-3xl font-bold text-white">100%</h4>
-                  <p className="text-xs text-slate-400 mt-1">Free for Students</p>
-                </div>
-                <div>
-                  <h4 className="text-2xl sm:text-3xl font-bold text-purple-300">Zero</h4>
-                  <p className="text-xs text-slate-400 mt-1">Bank Link Needed</p>
-                </div>
-                <div>
-                  <h4 className="text-2xl sm:text-3xl font-bold text-white">256-bit</h4>
-                  <p className="text-xs text-slate-400 mt-1">Encrypted Privacy</p>
-                </div>
+              <div className="text-center">
+                <h4 className="text-lg sm:text-3xl font-bold text-white">256-bit</h4>
+                <p className="text-[9px] sm:text-xs text-slate-400 mt-0.5 sm:mt-1">Encrypted Privacy</p>
               </div>
-            </Reveal>
-          </div>
-
-          <div className="lg:col-span-5 relative flex items-center justify-center">
-            <Reveal delay={200} className="w-full">
-              <div className="relative mx-auto w-full max-w-[500px] h-[500px] sm:h-[550px]">
-                <div className="absolute inset-0 z-10">
-                  <CoinScene reduce={reduce} />
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
+            </div>
+          </Reveal>
         </div>
+
       </div>
     </section>
   );
@@ -674,14 +656,14 @@ function TrustStrip() {
   return (
     <section className="relative border-y border-white/[0.06] bg-[#0A0614]">
       <div className="mx-auto max-w-[1180px] px-5 py-6 sm:px-6 sm:py-7 lg:px-8">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4 sm:gap-x-0 sm:divide-x sm:divide-white/[0.08]">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-4 sm:gap-x-0 sm:divide-x sm:divide-white/[0.08]">
           {points.map(point => (
             <div
               key={point.label}
-              className="flex items-center gap-2.5 sm:justify-center sm:px-6"
+              className="flex items-center gap-2 sm:gap-2.5 justify-center sm:px-6"
             >
-              <span className="text-purple-400">{point.icon}</span>
-              <p className="text-[12.5px] font-medium text-slate-300">{point.label}</p>
+              <span className="text-purple-400 shrink-0">{point.icon}</span>
+              <p className="text-[11.5px] sm:text-[12.5px] font-medium text-slate-300 text-center">{point.label}</p>
             </div>
           ))}
         </div>
@@ -725,7 +707,7 @@ function ProblemSection() {
   ];
 
   return (
-    <section className="relative py-20 sm:py-28 lg:py-32">
+    <section className="relative py-16 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="The everyday problem"
@@ -736,7 +718,7 @@ function ProblemSection() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {problems.map((problem, index) => (
             <Reveal key={problem.title} delay={(index % 3) * 80}>
-              <div className={`${CARD} ${CARD_HOVER} flex h-full flex-col p-6`}>
+              <div className={`${CARD} ${CARD_HOVER} flex h-full flex-col p-5 sm:p-6`}>
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-500/20 bg-purple-500/10 text-purple-300">
                   {problem.icon}
                 </span>
@@ -818,7 +800,7 @@ function FeaturesSection() {
   return (
     <section
       id="features"
-      className="relative scroll-mt-28 border-y border-white/[0.06] bg-[#0A0614] py-20 sm:py-28 lg:py-32"
+      className="relative scroll-mt-28 border-y border-white/[0.06] bg-[#0A0614] py-16 sm:py-28 lg:py-32"
     >
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <SectionHeading
@@ -830,7 +812,7 @@ function FeaturesSection() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <Reveal key={feature.title} delay={(index % 3) * 70}>
-              <div className={`${CARD} ${CARD_HOVER} flex h-full flex-col p-6`}>
+              <div className={`${CARD} ${CARD_HOVER} flex h-full flex-col p-5 sm:p-6`}>
                 <div className="flex items-center justify-between">
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-500/25 bg-purple-500/10 text-purple-300">
                     {feature.icon}
@@ -858,7 +840,7 @@ function DashboardShowcase() {
   const bars = [42, 68, 55, 80, 35, 62, 48];
 
   return (
-    <section className="relative py-20 sm:py-28 lg:py-32">
+    <section className="relative py-16 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Product preview"
@@ -870,37 +852,37 @@ function DashboardShowcase() {
           <div className="relative">
             <div className="pointer-events-none absolute -inset-x-8 -top-10 bottom-0 rounded-[40px] bg-[radial-gradient(640px_circle_at_50%_0%,rgba(168,85,247,0.22),transparent_70%)] blur-2xl" />
 
-            <div className="relative overflow-hidden rounded-[26px] border border-white/15 bg-[#120C1F] shadow-[0_40px_100px_-30px_rgba(147,51,234,0.3)]">
-              <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] bg-[#0A0614] px-5 py-3.5 sm:px-6">
+            <div className="relative overflow-hidden rounded-[20px] sm:rounded-[26px] border border-white/15 bg-[#120C1F] shadow-[0_40px_100px_-30px_rgba(147,51,234,0.3)]">
+              <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] bg-[#0A0614] px-4 py-3 sm:px-6 sm:py-3.5">
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-1.5">
                     <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
                     <span className="h-2.5 w-2.5 rounded-full bg-amber-500/80" />
                     <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                   </div>
-                  <p className="text-[13px] font-semibold text-slate-100">
+                  <p className="text-[12px] sm:text-[13px] font-semibold text-slate-100">
                     Campus Coin — Overview
                   </p>
                 </div>
                 <p className="hidden text-[11.5px] text-slate-500 sm:block">September 2026</p>
               </div>
 
-              <div className="grid gap-5 p-4 sm:p-5 lg:grid-cols-[1fr_300px] lg:p-6">
-                <div className="space-y-5">
-                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <div className="grid gap-4 sm:gap-5 p-4 sm:p-5 lg:grid-cols-[1fr_300px] lg:p-6">
+                <div className="space-y-4 sm:space-y-5">
+                  <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
                     {metrics.map(metric => (
                       <div
                         key={metric.label}
-                        className={`rounded-lg border p-3 ${
+                        className={`rounded-lg border p-2.5 sm:p-3 ${
                           metric.highlight
                             ? 'border-purple-400/30 bg-purple-500/10'
                             : 'border-white/[0.07] bg-[#1a122c]'
                         }`}
                       >
-                        <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                        <p className="text-[8.5px] sm:text-[9px] font-semibold uppercase tracking-[0.16em] text-slate-500">
                           {metric.label}
                         </p>
-                        <p className="mt-1.5 text-[13.5px] font-semibold tracking-tight text-white sm:text-[15px]">
+                        <p className="mt-1 text-[12.5px] font-semibold tracking-tight text-white sm:text-[15px]">
                           {metric.value}
                         </p>
                       </div>
@@ -926,7 +908,7 @@ function DashboardShowcase() {
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div className={`${INNER_PANEL} p-4`}>
                     <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                       Budget pulse
@@ -981,7 +963,7 @@ function HowItWorks() {
   ];
 
   return (
-    <section id="how" className="relative scroll-mt-28 py-20 sm:py-28 lg:py-32">
+    <section id="how" className="relative scroll-mt-28 py-16 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="How it works"
@@ -989,10 +971,10 @@ function HowItWorks() {
           sub="No setup complexity. No bank connection. Just a clear picture of your finances."
         />
 
-        <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+        <div className="grid gap-8 md:grid-cols-3 md:gap-8">
           {steps.map((step, index) => (
             <Reveal key={step.n} delay={index * 130} className="relative">
-              <div className="flex items-start gap-5 md:flex-col md:items-center md:gap-0 md:text-center">
+              <div className="flex items-start gap-4 md:flex-col md:items-center md:gap-0 md:text-center">
                 <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-purple-400/40 bg-[#120C1F] text-purple-300 shadow-[0_0_20px_rgba(168,85,247,0.3)] md:h-[56px] md:w-[56px]">
                   {step.icon}
                 </div>
@@ -1000,8 +982,8 @@ function HowItWorks() {
                   <p className="text-[11px] font-semibold tracking-[0.3em] text-purple-400">
                     {step.n}
                   </p>
-                  <h3 className="mt-2 text-[17px] font-semibold text-white">{step.title}</h3>
-                  <p className="mt-2 max-w-sm text-[13.5px] leading-[1.7] text-slate-400 md:mx-auto">
+                  <h3 className="mt-1 sm:mt-2 text-[17px] font-semibold text-white">{step.title}</h3>
+                  <p className="mt-1 sm:mt-2 max-w-sm text-[13.5px] leading-[1.7] text-slate-400 md:mx-auto">
                     {step.desc}
                   </p>
                 </div>
@@ -1025,7 +1007,7 @@ function InsightsSection() {
   return (
     <section
       id="insights"
-      className="relative scroll-mt-28 border-y border-white/[0.06] bg-[#0A0614] py-20 sm:py-28 lg:py-32"
+      className="relative scroll-mt-28 border-y border-white/[0.06] bg-[#0A0614] py-16 sm:py-28 lg:py-32"
     >
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <SectionHeading
@@ -1034,14 +1016,14 @@ function InsightsSection() {
           sub="Plain-language summaries surface what changed since last month."
         />
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
           {insights.map((insight, index) => (
             <Reveal key={insight.text} delay={index * 90}>
-              <div className={`${CARD} flex items-start gap-4 p-5 transition-all duration-300 hover:border-purple-400/30 sm:p-6`}>
+              <div className={`${CARD} flex items-start gap-3.5 sm:gap-4 p-4 sm:p-6 transition-all duration-300 hover:border-purple-400/30`}>
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-purple-400/25 bg-purple-400/10 text-purple-300">
                   {insight.icon}
                 </span>
-                <p className="text-[13.5px] leading-[1.65] text-slate-200">{insight.text}</p>
+                <p className="text-[13px] sm:text-[13.5px] leading-[1.65] text-slate-200">{insight.text}</p>
               </div>
             </Reveal>
           ))}
@@ -1057,9 +1039,9 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
       <button
         type="button"
         onClick={onToggle}
-        className={`flex w-full cursor-pointer items-center justify-between gap-4 border-0 bg-transparent px-5 py-4.5 text-left sm:px-6 sm:py-5 ${FOCUS_RING}`}
+        className={`flex w-full cursor-pointer items-center justify-between gap-4 border-0 bg-transparent px-4 py-3.5 sm:px-6 sm:py-5 text-left ${FOCUS_RING}`}
       >
-        <span className="text-[14px] font-medium text-slate-100 sm:text-[14.5px]">
+        <span className="text-[13.5px] font-medium text-slate-100 sm:text-[14.5px]">
           {question}
         </span>
         <ChevronDown
@@ -1074,7 +1056,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
         style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
       >
         <div className="overflow-hidden">
-          <p className="px-5 pb-5 text-[13px] leading-[1.7] text-slate-400 sm:px-6">{answer}</p>
+          <p className="px-4 pb-4 sm:px-6 sm:pb-5 text-[12.5px] sm:text-[13px] leading-[1.7] text-slate-400">{answer}</p>
         </div>
       </div>
     </div>
@@ -1104,7 +1086,7 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="relative scroll-mt-28 py-20 sm:py-28 lg:py-32">
+    <section id="faq" className="relative scroll-mt-28 py-16 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-[820px] px-5 sm:px-6 lg:px-8">
         <SectionHeading eyebrow="FAQ" title="Frequently asked questions" />
 
@@ -1127,27 +1109,27 @@ function FAQSection() {
 
 function FinalCTA() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32">
+    <section className="relative overflow-hidden py-16 sm:py-28 lg:py-32">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(720px_circle_at_50%_35%,rgba(168,85,247,0.22),transparent_66%)] blur-2xl" />
 
       <div className="relative mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <Reveal>
-          <div className={`${CARD} border-purple-500/30 relative overflow-hidden p-8 text-center sm:p-12 lg:p-16`}>
+          <div className={`${CARD} border-purple-500/30 relative overflow-hidden p-6 sm:p-12 lg:p-16 text-center`}>
             <span className="pointer-events-none absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent" />
-            <h2 className="mx-auto max-w-2xl text-[1.9rem] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[2.4rem] lg:text-[2.6rem]">
+            <h2 className="mx-auto max-w-2xl text-[1.5rem] font-bold leading-[1.2] tracking-[-0.03em] text-white sm:text-[2.4rem] lg:text-[2.6rem]">
               Take control of your money today.
             </h2>
-            <p className="mx-auto mt-5 max-w-xl text-[15px] leading-[1.7] text-slate-400">
+            <p className="mx-auto mt-3 sm:mt-5 max-w-xl text-sm sm:text-[15px] leading-[1.7] text-slate-400">
               The complete automated system designed to capture savings and grow your budget.
             </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-3 sm:gap-5">
-              <CtaLink to="/register" variant="primary" className="px-8 py-4 text-[15px]">
+            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-5">
+              <CtaLink to="/register" variant="primary" className="w-full sm:w-auto px-8 py-3.5 sm:py-4 text-sm sm:text-[15px]">
                 Get Started
               </CtaLink>
-              <CtaLink to="/login" variant="secondary" className="px-7 py-4 text-[15px]">
+              <CtaLink to="/login" variant="secondary" className="w-full sm:w-auto px-7 py-3.5 sm:py-4 text-sm sm:text-[15px]">
                 User Login
               </CtaLink>
-              <CtaLink to="/admin/login" variant="ghost" className="px-7 py-4 text-[15px] border-purple-500/30">
+              <CtaLink to="/admin/login" variant="ghost" className="w-full sm:w-auto px-7 py-3.5 sm:py-4 text-sm sm:text-[15px] border-purple-500/30">
                 <ShieldAlert size={16} className="text-purple-400" />
                 Admin Login
               </CtaLink>
@@ -1183,13 +1165,13 @@ function Footer() {
     <footer className="relative border-t border-white/[0.08] bg-[#07040E] text-slate-300">
       <div className="pointer-events-none absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
 
-      <div className="mx-auto max-w-[1180px] px-5 pb-12 pt-16 sm:px-6 lg:px-8 lg:pt-20">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+      <div className="mx-auto max-w-[1180px] px-5 pb-12 pt-12 sm:pt-16 lg:px-8 lg:pt-20">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Link to="/" className="inline-block">
               <Logo height={36} className="text-white" />
             </Link>
-            <p className="mt-4 max-w-sm text-[13.5px] leading-[1.7] text-slate-400">
+            <p className="mt-4 max-w-sm text-[13px] sm:text-[13.5px] leading-[1.7] text-slate-400">
               Campus Coin is an intuitive personal finance solution crafted specifically for students to manage budgets, track daily spending, and achieve long-term savings goals.
             </p>
 
@@ -1289,12 +1271,12 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-8 sm:flex-row">
+        <div className="mt-10 sm:mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-8 sm:flex-row">
           <p className="text-[12px] text-slate-500">
             © 2026 Campus Coin. All rights reserved.
           </p>
 
-          <div className="flex items-center gap-6 text-[12px] text-slate-400">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[12px] text-slate-400">
             <Link to="/privacy" className="transition-colors hover:text-white">
               Privacy Policy
             </Link>
@@ -1314,7 +1296,7 @@ function Footer() {
 
 export default function Landing() {
   return (
-    <div className="relative min-h-dvh overflow-x-clip bg-[#070510] font-sans text-slate-100 antialiased selection:bg-purple-500/30 selection:text-white">
+    <div className="relative min-h-dvh overflow-x-clip bg-[#0e081c] font-sans text-slate-100 antialiased selection:bg-purple-500/30 selection:text-white">
       <WelcomeModal />
 
       <style>{`
@@ -1329,13 +1311,14 @@ export default function Landing() {
       `}</style>
 
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[#070510]" />
+        <div className="absolute inset-0 bg-[#0e081c]" />
         <div className="absolute inset-0 bg-[radial-gradient(1000px_circle_at_50%_15%,rgba(139,92,246,0.22),transparent_60%),radial-gradient(800px_circle_at_80%_80%,rgba(99,102,241,0.12),transparent_65%)]" />
         <div className="absolute inset-0 opacity-[0.25] [background-image:radial-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] [background-size:24px_24px]" />
       </div>
 
-      <div className="relative z-10">
-        <Navbar />
+      <Sidebar />
+
+      <div className="relative z-10 lg:pl-72">
         <main>
           <Hero />
           <TrustStrip />

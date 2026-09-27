@@ -1,10 +1,11 @@
 node_modules/
-.env
-.env.*
-!.env
-!.env.example
-/server/.env
-uploads/
 dist/
 coverage/
+uploads/
 *.log
+
+# Never commit real environment files. The client build reads its VITE_* values from
+# client/vercel.json and the server reads secrets from the host's environment.
+.env
+.env.*
+!.env.example
