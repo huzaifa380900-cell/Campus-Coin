@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "build": {
+    "env": {
+      "VITE_API_URL": "https://campus-coin-omega.vercel.app/api",
+      "VITE_GOOGLE_CLIENT_ID": "164776382017-dhcegv5rfrdvi0p5j3euj2ecqlokdn49.apps.googleusercontent.com"
+    }
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}

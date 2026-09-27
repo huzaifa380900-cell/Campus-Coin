@@ -13,11 +13,16 @@ The client runs at `http://localhost:5173` in development and the API at port `5
 
 ## Deployment
 
-The API and the client deploy independently, so the client always calls a cross-origin API and the session cookie runs with `Secure` + `SameSite=None`.
+Both projects live on Vercel and are connected to the same Git repository, so a single `git push` rebuilds and redeploys each one from its own root directory.
 
-**API (Vercel)** — set the project Root Directory to `server`. `server/vercel.json` rewrites every path to `server/api/index.js`, which exports the Express app and connects to MongoDB on the first request of a cold start. Add the variables from `server/.env.example` as Vercel environment variables, and make sure `CLIENT_URL` contains `https://studentscampuscoin.netlify.app` — the CORS allow-list rejects any other origin.
+- **API** — `campus-coin-omega.vercel.app`, project Root Directory `server`
+- **Client** — `campus-coin-client.vercel.app`, project Root Directory `client`
 
-**Client (Netlify)** — set the Base directory to `client` and the publish directory to `dist`; `client/netlify.toml` supplies the build command, `VITE_API_URL`, and the SPA redirect. `client/public/_redirects` ships inside `dist` as a fallback, so client-side routes such as `/login` return the app shell instead of a hard 404 when a page is reloaded or opened directly.
+**API.** `server/vercel.json` rewrites every path to `server/api/index.js`, which exports the Express app and connects to MongoDB on the first request of a cold start. Secrets belong in the project's Vercel environment variables (see `server/.env.example`); `CLIENT_URL` and `NODE_ENV` are already provided in `vercel.json` and are not secret.
+
+**Client.** `client/vercel.json` sets the Vite build, the output directory, the `VITE_*` values, and a catch-all rewrite to `/index.html` so client-side routes such as `/login` return the app shell instead of a hard 404. `client/netlify.toml` and `client/public/_redirects` provide the same behaviour if the client is also published to Netlify.
+
+**Why the cookie is cross-site safe.** The client and the API are on different subdomains, so the session cookie is issued `Secure; SameSite=None` and sent with `withCredentials`. `server/src/utils/auth.js` derives those flags from `x-forwarded-proto`/`req.secure` rather than `NODE_ENV`, so an HTTPS deployment always gets a usable cross-site cookie while plain-HTTP localhost development keeps `SameSite=Lax`. The API also maintains a CORS allow-list, because `SameSite=None` means any allowed origin can send authenticated requests — `*.vercel.app` is deliberately never wildcarded.
 
 Never set `VITE_API_URL` to a `localhost` address in a production build: it is compiled into the bundle and every visitor would then request their own machine.
 
