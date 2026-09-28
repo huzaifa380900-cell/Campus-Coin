@@ -32,11 +32,11 @@ The first publish against a repository that already has unrelated history needs 
 
 **API.** `server/vercel.json` rewrites every path to `server/api/index.js`, which exports the Express app and connects to MongoDB on the first request of a cold start. Secrets (MongoDB URI, JWT secrets, SMTP, Google client secret, AI keys) belong in the Vercel project's environment variables; `CLIENT_URL` and `NODE_ENV` are already supplied in `vercel.json` and are not secret.
 
-**Client.** `client/vercel.json` sets the Vite build, the output directory, the `VITE_*` values, and a catch-all rewrite to `/index.html` so client-side routes such as `/login` return the app shell instead of a hard 404. `client/netlify.toml` and `client/public/_redirects` provide the same behaviour if the client is also published to Netlify.
+**Client.** `client/vercel.json` sets the Vite build, the output directory, the public Google client ID, and rewrites `/api/*` through the client origin before the catch-all SPA rewrite. `client/netlify.toml` does the same for Netlify. Production API calls use the same-origin `/api` path so browsers treat the HttpOnly session cookie as first-party; local development can still set `VITE_API_URL` to override the localhost API.
 
 No `.env` file is committed. The client build reads `VITE_API_URL` and `VITE_GOOGLE_CLIENT_ID` from `client/vercel.json`, which is why an earlier deployment silently shipped a `localhost` API address and a disabled Google button.
 
-**Why the cookie is cross-site safe.** The client and the API sit on different subdomains, so the session cookie is issued `Secure; SameSite=None` and sent with `withCredentials`. `server/src/utils/auth.js` derives those flags from `x-forwarded-proto`/`req.secure` rather than `NODE_ENV`, so an HTTPS deployment always gets a usable cross-site cookie while plain-HTTP localhost development keeps `SameSite=Lax`. The API also maintains a CORS allow-list, because `SameSite=None` means any allowed origin can send authenticated requests — `*.vercel.app` is deliberately never wildcarded. Outbound links such as password resets use `publicAppUrl()` instead, since `CLIENT_URL` is a list and only its first entry is a usable origin.
+**Session cookies.** The API still issues `Secure; SameSite=None` cookies for HTTPS and `SameSite=Lax` for local HTTP. Production browser requests go through the client-origin API proxy so third-party cookie restrictions cannot silently discard the session. The API keeps an exact CORS allow-list; `*.vercel.app` is deliberately never wildcarded. Outbound links such as password resets use `publicAppUrl()` instead, since `CLIENT_URL` is a list and only its first entry is a usable origin.
 
 ## Administrator provisioning
 

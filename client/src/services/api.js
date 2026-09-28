@@ -5,7 +5,7 @@ const LIVE_API = 'https://campus-coin-omega.vercel.app/api';
 
 // Production builds must never fall back to localhost: a Netlify build that misses
 // VITE_API_URL would otherwise point every visitor at their own machine (ERR_CONNECTION_REFUSED).
-const baseURL = (import.meta.env.VITE_API_URL || (import.meta.env.DEV ? LOCAL_API : LIVE_API)).replace(/\/+$/, '');
+const baseURL = (import.meta.env.DEV ? import.meta.env.VITE_API_URL || LOCAL_API : '/api').replace(/\/+$/, '');
 
 const api = axios.create({ baseURL, withCredentials: true, headers: { 'Content-Type': 'application/json' } });
 

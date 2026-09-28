@@ -4,10 +4,16 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  VITE_API_URL = "https://campus-coin-omega.vercel.app/api"
   # Public Google web client ID. Without it the build silently ships a disabled
   # Google sign-in button that cannot be clicked.
   VITE_GOOGLE_CLIENT_ID = "164776382017-dhcegv5rfrdvi0p5j3euj2ecqlokdn49.apps.googleusercontent.com"
+
+# Keep session cookies first-party by proxying API requests through the client origin.
+[[redirects]]
+  from = "/api/*"
+  to = "https://campus-coin-omega.vercel.app/api/:splat"
+  status = 200
+  force = true
 
 # Client-side routes such as /login must resolve to the SPA entry point,
 # otherwise Netlify answers a hard refresh with 404.
