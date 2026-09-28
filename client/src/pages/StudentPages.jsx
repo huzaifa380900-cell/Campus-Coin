@@ -899,7 +899,7 @@ export function Dashboard() {
           {cashFlowChart.length ? (
             <div className="h-[260px] w-full">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={cashFlowChart} barCategoryGap="32%">
+                <BarChart data={cashFlowChart} barCategoryGap="12%" barGap={4}>
                   <XAxis dataKey="day" hide />
                   <YAxis hide />
                   <Tooltip
@@ -2430,6 +2430,25 @@ export function Insights() {
     }
   };
 
+  const clearHistory = async () => {
+    if (!items.length) return;
+    const confirmed = await confirmDialog({
+      title: 'Clear saved insights?',
+      text: 'This permanently deletes your insight history and its bookmarks. Transactions are not affected.',
+      confirmButtonText: 'Clear insights',
+      cancelButtonText: 'Keep insights',
+    });
+    if (!confirmed) return;
+    try {
+      await api.delete('/insights');
+      setItems([]);
+      notifySuccess('Insights cleared');
+    } catch (x) {
+      setError(x.message);
+      notifyError('Could not clear insights', x.message);
+    }
+  };
+
   return (
     <main className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
       <PageTitle
@@ -2444,6 +2463,14 @@ export function Insights() {
           icon={busy ? <LoaderCircle size={15} className="animate-spin" /> : <BrainCircuit size={15} />}
         >
           {busy ? 'Generating…' : 'Generate insight'}
+        </Btn>
+        <Btn
+          variant="danger"
+          onClick={clearHistory}
+          disabled={!items.length || busy}
+          icon={<Trash2 size={15} />}
+        >
+          Clear insights
         </Btn>
       </PageTitle>
 
