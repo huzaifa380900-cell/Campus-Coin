@@ -856,8 +856,8 @@ function GoogleButton({ onCredential, disabled = false }) {
           overlay on top of a lookalike is what left the visible label unclickable. */}
       <div
         ref={gsiRef}
-        className={`flex min-h-[44px] justify-center overflow-hidden rounded-xl transition-opacity duration-200 ${
-          ready ? (disabled ? 'pointer-events-none opacity-60' : 'opacity-100') : 'pointer-events-none opacity-0'
+        className={`flex min-h-[44px] justify-center overflow-hidden rounded-xl ${
+          ready && !disabled ? '' : 'pointer-events-none'
         }`}
       />
       {ready ? null : (
