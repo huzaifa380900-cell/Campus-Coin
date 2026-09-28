@@ -105,3 +105,23 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .cc-spin, .cc-float, .cc-ping, .cc-skeleton { animation: none !important; }
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a1628;
+  --surface: #111f36;
+  --surface-2: #152540;
+  --text: #eef3ff;
+  --muted: #8899b5;
+  --border: rgba(160, 190, 230, 0.14);
+  --primary: #06b6d4;
+  --primary-light: #22d3ee;
+  --primary-soft: rgba(6, 182, 212, 0.14);
+  --accent: #22d3ee;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
