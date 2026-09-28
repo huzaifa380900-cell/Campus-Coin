@@ -10,6 +10,8 @@ const BG = '#050a12';
 const CARD_BG = 'rgba(15, 23, 42, 0.78)';
 const CARD_BORDER = 'rgba(56, 189, 248, 0.18)';
 const GRAD = 'linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)';
+let activeGoogleCallback = null;
+let googleInitialized = false;
 
 const stroke = {
   fill: 'none',
@@ -748,17 +750,25 @@ function GoogleButton({ onCredential, disabled = false }) {
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return undefined;
+    // Debounced on purpose: re-rendering the Google button on every resize tick tears down
+    // and rebuilds its cross-origin iframe, and a click during that window hits nothing.
+    let timer;
     const measure = () => {
-      const next = Math.max(200, Math.min(440, Math.floor(el.offsetWidth || 0)));
+      const next = Math.max(200, Math.min(400, Math.floor(el.offsetWidth || 0)));
       setWidth(prev => (Math.abs(prev - next) >= 10 ? next : prev));
     };
-    measure();
-    const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null;
+    const schedule = () => {
+      clearTimeout(timer);
+      timer = setTimeout(measure, 150);
+    };
+    schedule();
+    const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(schedule) : null;
     observer?.observe(el);
-    window.addEventListener('resize', measure);
+    window.addEventListener('resize', schedule);
     return () => {
+      clearTimeout(timer);
       observer?.disconnect();
-      window.removeEventListener('resize', measure);
+      window.removeEventListener('resize', schedule);
     };
   }, []);
 
@@ -771,18 +781,24 @@ function GoogleButton({ onCredential, disabled = false }) {
     }
 
     let cancelled = false;
+    const credentialCallback = credential => cbRef.current?.(credential);
+    activeGoogleCallback = credentialCallback;
     const render = () => {
       if (cancelled) return;
+      if (!width) return;
       if (!window.google?.accounts?.id || !gsiRef.current) {
         setStatus('unavailable');
         setHint('Google sign-in could not be loaded right now.');
         return;
       }
       gsiRef.current.innerHTML = '';
-      window.google.accounts.id.initialize({
-        client_id: clientId,
-        callback: ({ credential }) => cbRef.current?.(credential),
-      });
+      if (!googleInitialized) {
+        window.google.accounts.id.initialize({
+          client_id: clientId,
+          callback: ({ credential }) => activeGoogleCallback?.(credential),
+        });
+        googleInitialized = true;
+      }
       window.google.accounts.id.renderButton(gsiRef.current, {
         type: 'standard',
         theme: 'outline',
@@ -800,6 +816,7 @@ function GoogleButton({ onCredential, disabled = false }) {
       render();
       return () => {
         cancelled = true;
+        if (activeGoogleCallback === credentialCallback) activeGoogleCallback = null;
       };
     }
 
@@ -808,6 +825,7 @@ function GoogleButton({ onCredential, disabled = false }) {
       existing.addEventListener('load', render);
       return () => {
         cancelled = true;
+        if (activeGoogleCallback === credentialCallback) activeGoogleCallback = null;
         existing.removeEventListener('load', render);
       };
     }
@@ -826,29 +844,31 @@ function GoogleButton({ onCredential, disabled = false }) {
 
     return () => {
       cancelled = true;
+      if (activeGoogleCallback === credentialCallback) activeGoogleCallback = null;
     };
   }, [width]);
 
-  const ready = status === 'ready' && !disabled;
+  const ready = status === 'ready';
 
   return (
     <div ref={wrapRef} className="relative w-full">
-      <div
-        aria-hidden="true"
-        className={`flex w-full items-center justify-center gap-3 rounded-xl bg-white py-3.5 text-sm font-semibold text-slate-900 transition ${
-          ready ? 'hover:bg-slate-100' : 'opacity-60'
-        }`}
-      >
-        <GoogleMark />
-        Continue with Google
-      </div>
+      {/* Once Google loads, the real button is shown. Hiding it behind a transparent
+          overlay on top of a lookalike is what left the visible label unclickable. */}
       <div
         ref={gsiRef}
-        aria-hidden={!ready}
-        className={`absolute inset-0 overflow-hidden rounded-xl [&>div]:!h-full [&>div]:!w-full [&_iframe]:!h-full [&_iframe]:!w-full ${
-          ready ? 'opacity-0' : 'pointer-events-none opacity-0'
+        className={`flex min-h-[44px] justify-center overflow-hidden rounded-xl transition-opacity duration-200 ${
+          ready ? (disabled ? 'pointer-events-none opacity-60' : 'opacity-100') : 'pointer-events-none opacity-0'
         }`}
       />
+      {ready ? null : (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 flex cursor-wait items-center justify-center gap-3 rounded-xl bg-white text-sm font-semibold text-slate-900 opacity-60"
+        >
+          <GoogleMark />
+          Continue with Google
+        </div>
+      )}
       {hint && <p className="mt-2 text-center text-[11px] text-slate-500">{hint}</p>}
     </div>
   );
