@@ -828,6 +828,14 @@ export function Dashboard() {
 
   const { summary, budgetCards, notifications, forecast } = view;
   const chart = summary.categories || [];
+  const cashFlowChart = Object.values(
+    (view.dailyActivity || []).reduce((days, entry) => {
+      const day = entry._id.day;
+      days[day] ||= { day };
+      days[day][entry._id.type] = entry.total;
+      return days;
+    }, {})
+  );
 
   return (
     <main
@@ -883,6 +891,35 @@ export function Dashboard() {
           detail={forecast.method}
           icon={<BarChart3 size={17} />}
         />
+      </section>
+
+      <section>
+        <Card tone="violet" glow>
+          <CardHead title="Monthly cash flow" subtitle="Income and expenses by day" />
+          {cashFlowChart.length ? (
+            <div className="h-[260px] w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={cashFlowChart} barCategoryGap="32%">
+                  <XAxis dataKey="day" hide />
+                  <YAxis hide />
+                  <Tooltip
+                    content={<FinanceTooltip />}
+                    cursor={{ fill: 'rgba(148,163,184,0.1)', radius: 8 }}
+                  />
+                  <Bar dataKey="income" fill="#10b981" radius={[6, 6, 0, 0]} />
+                  <Bar dataKey="expense" fill="#f59e0b" radius={[6, 6, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          ) : (
+            <Empty
+              compact
+              icon={<BarChart3 size={18} className="text-white/60" />}
+              title="No activity this month"
+              description="Income and expenses will appear here once recorded."
+            />
+          )}
+        </Card>
       </section>
 
       <section className="grid grid-cols-1 gap-4 xl:grid-cols-12">
@@ -1280,10 +1317,14 @@ export function Transactions() {
       <ErrorBox error={error} />
       {csvResult ? (
         <SuccessBox>
-          Imported {csvResult.imported} rows.
-          {csvResult.errors?.length
-            ? ` ${csvResult.errors.length} rows need correction.`
-            : ''}
+          <p>Imported {csvResult.imported} rows. {csvResult.errors?.length || 0} rows need correction.</p>
+          {csvResult.errors?.length ? (
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-rose-100">
+              {csvResult.errors.map(error => (
+                <li key={`${error.row}-${error.message}`}>Row {error.row}: {error.message}</li>
+              ))}
+            </ul>
+          ) : null}
         </SuccessBox>
       ) : null}
 
@@ -2957,6 +2998,7 @@ export function OCRScanner() {
     try {
       const x = await api.post('/transactions/ocr/process', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
+        timeout: 55_000,
       });
       setResult(x.item);
       setForm({
