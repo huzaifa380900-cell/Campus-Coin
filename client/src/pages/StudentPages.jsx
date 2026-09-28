@@ -52,9 +52,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { jsPDF } from 'jspdf';
-import autoTable from 'jspdf-autotable';
-import html2canvas from 'html2canvas';
 import api from '../services/api.js';
 import { useEntrance } from '../hooks/useEntrance.js';
 import { useAuth } from '../context/AuthContext.jsx';
@@ -1988,6 +1985,11 @@ export function Reports() {
   const exportPDF = async () => {
     if (!data) return;
 
+    const [{ jsPDF }, { default: autoTable }] = await Promise.all([
+      import('jspdf'),
+      import('jspdf-autotable'),
+    ]);
+
     const doc = new jsPDF('p', 'mm', 'a4');
 
     doc.setFont('helvetica', 'bold');
@@ -2080,6 +2082,7 @@ export function Reports() {
   };
 
   const exportImage = async () => {
+    const { default: html2canvas } = await import('html2canvas');
     const canvas = await html2canvas(reportRef.current, {
       backgroundColor: getComputedStyle(document.documentElement).getPropertyValue('--bg'),
       scale: 2,
