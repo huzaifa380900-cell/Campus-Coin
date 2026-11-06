@@ -216,7 +216,7 @@ export function AppShell() {
       .toUpperCase() || 'CC';
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-[#0B1120] dark:text-white">
+    <div className="min-h-screen bg-[#0B1120] text-white">
       {open && (
         <button
           type="button"
@@ -229,23 +229,21 @@ export function AppShell() {
       <aside
         className={`
           fixed inset-y-0 left-0 z-50 flex flex-col overflow-hidden
-          border-r border-slate-200 bg-white
+          border-r border-slate-800 bg-[#0F172A]
           transition-[width,transform] duration-300 ease-out
-          dark:border-slate-800 dark:bg-[#0F172A]
           ${collapsed ? 'w-[84px]' : 'w-[272px]'}
           ${open ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
         `}
       >
-        <div className="relative flex h-[76px] shrink-0 items-center justify-center border-b border-slate-200 px-4 dark:border-slate-800">
+        <div className="relative flex h-[76px] shrink-0 items-center justify-center border-b border-slate-800 px-4">
           <Logo collapsed={collapsed} height={collapsed ? 32 : 44} />
         </div>
 
         <div
           className={`
             relative mx-3 mt-5 mb-2 flex items-center gap-3 rounded-2xl
-            border border-slate-200 bg-slate-50 p-3
+            border border-slate-800 bg-[#1E293B]/50 p-3
             transition-all duration-300
-            dark:border-slate-800 dark:bg-[#1E293B]/50
             ${collapsed ? 'justify-center p-2' : ''}
           `}
         >
@@ -260,7 +258,7 @@ export function AppShell() {
           </div>
           {!collapsed && (
             <div className="min-w-0 flex-1">
-              <p className="truncate text-[13px] font-bold text-slate-800 dark:text-white">
+              <p className="truncate text-[13px] font-bold text-white">
                 {user?.name || 'Campus Coin User'}
               </p>
               <div className="mt-0.5 flex items-center gap-1.5">
@@ -272,8 +270,8 @@ export function AppShell() {
                 <p
                   className={`text-[10px] font-bold uppercase tracking-wider ${
                     isAdmin
-                      ? 'text-fuchsia-600 dark:text-fuchsia-400'
-                      : 'text-cyan-600 dark:text-cyan-400'
+                      ? 'text-fuchsia-400'
+                      : 'text-cyan-400'
                   }`}
                 >
                   {isAdmin ? 'Administrator' : 'Student'}
@@ -283,11 +281,11 @@ export function AppShell() {
           )}
         </div>
 
-        <nav className="relative flex-1 overflow-y-auto px-3 py-3 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300/40 dark:[&::-webkit-scrollbar-thumb]:bg-slate-700/50">
+        <nav className="relative flex-1 overflow-y-auto px-3 py-3 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-700/50">
           {navGroups.map(group => (
             <div key={group.label} className="mb-5">
               {!collapsed && (
-                <p className="mb-2.5 px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-400 dark:text-slate-500">
+                <p className="mb-2.5 px-3 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-500">
                   {group.label}
                 </p>
               )}
@@ -308,7 +306,7 @@ export function AppShell() {
                         ${
                           isActive
                             ? `${t.active}`
-                            : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-white'
+                            : 'text-slate-400 hover:bg-slate-800/60 hover:text-white'
                         }
                       `}
                     >
@@ -345,16 +343,15 @@ export function AppShell() {
           ))}
         </nav>
 
-        <div className="relative shrink-0 border-t border-slate-200 p-3 dark:border-slate-800">
+        <div className="relative shrink-0 border-t border-slate-800 p-3">
           <button
             type="button"
             onClick={handleSignOut}
             title={collapsed ? 'Sign out' : undefined}
             className={`
               flex h-11 w-full items-center rounded-xl text-[13px] font-semibold
-              text-slate-500 transition-all duration-300
-              hover:bg-slate-100 hover:text-rose-600
-              dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-rose-400
+              text-slate-400 transition-all duration-300
+              hover:bg-slate-800 hover:text-rose-400
               ${collapsed ? 'justify-center' : 'gap-3 px-3'}
             `}
           >
@@ -370,14 +367,14 @@ export function AppShell() {
           ${collapsed ? 'md:pl-[84px]' : 'md:pl-[272px]'}
         `}
       >
-        <header className="sticky top-0 z-30 h-[76px] border-b border-slate-200 bg-white transition-colors duration-300 dark:border-slate-800 dark:bg-[#0F172A]">
+        <header className="sticky top-0 z-30 h-[76px] border-b border-slate-800 bg-[#0F172A]">
           <div className="relative flex h-full items-center justify-between px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={handleSidebarToggle}
                 aria-label="Toggle navigation"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition-all duration-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 text-slate-300 transition-all duration-300 hover:bg-slate-700"
               >
                 {open ? <X size={18} /> : <Menu size={18} />}
               </button>
@@ -393,13 +390,13 @@ export function AppShell() {
                     )}
 
                     {index === breadcrumbs.length - 1 ? (
-                      <span className="rounded-lg bg-slate-100 px-2.5 py-1 font-bold text-slate-800 dark:bg-slate-800 dark:text-white">
+                      <span className="rounded-lg bg-slate-800 px-2.5 py-1 font-bold text-white">
                         {item.label}
                       </span>
                     ) : (
                       <Link
                         to={item.path}
-                        className="rounded-lg px-2 py-1 font-medium transition-colors duration-200 hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-white"
+                        className="rounded-lg px-2 py-1 font-medium transition-colors duration-200 hover:bg-slate-800 hover:text-white"
                       >
                         {item.label}
                       </Link>
@@ -411,8 +408,8 @@ export function AppShell() {
 
             <div className="ml-auto flex items-center gap-2.5">
               <div className="hidden items-center gap-1.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 sm:flex dark:border-emerald-400/20">
-                <Sparkles size={12} className="text-emerald-600 dark:text-emerald-400" />
-                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+                <Sparkles size={12} className="text-emerald-400" />
+                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400">
                   Live
                 </span>
               </div>
@@ -421,7 +418,7 @@ export function AppShell() {
                 to="/notifications"
                 aria-label="Notifications"
                 title="Notifications"
-                className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition-all duration-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+                className="relative flex h-10 w-10 items-center justify-center rounded-xl border border-slate-700 bg-slate-800 text-slate-300 transition-all duration-300 hover:bg-slate-700"
               >
                 <Bell size={18} />
                 <span className="absolute right-2.5 top-2.5 h-2 w-2 rounded-full bg-rose-500">
@@ -448,7 +445,7 @@ export function AppShell() {
         </div>
       </main>
 
-      <nav className="fixed bottom-4 left-1/2 z-40 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 rounded-2xl border border-slate-200 bg-white/95 p-1.5 shadow-lg backdrop-blur-xl dark:border-slate-700 dark:bg-[#0F172A]/95 md:hidden">
+      <nav className="fixed bottom-4 left-1/2 z-40 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 rounded-2xl border border-slate-700 bg-[#0F172A]/95 p-1.5 shadow-lg backdrop-blur-xl md:hidden">
         <div className="flex items-center justify-around">
           {allNavItems.slice(0, 5).map(([to, label, Icon, tone = 'cyan']) => {
             const t = toneStyles[tone] || toneStyles.cyan;
@@ -463,7 +460,7 @@ export function AppShell() {
                   ${
                     isActive
                       ? `${t.active}`
-                      : 'text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800'
+                      : 'text-slate-400 hover:bg-slate-800'
                   }
                 `}
               >

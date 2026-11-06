@@ -22,7 +22,7 @@ const BTN = {
   primary:
     'group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 px-4 py-2.5 text-sm font-bold text-[#03111f] shadow-lg shadow-cyan-500/40 ring-1 ring-inset ring-white/20 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-400/60 hover:brightness-110 hover:-translate-y-0.5 active:scale-[.97] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0',
   secondary:
-    'group inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm font-bold text-slate-200 shadow-lg shadow-black/20 backdrop-blur transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/[0.08] hover:text-white hover:-translate-y-0.5 hover:shadow-cyan-500/20 active:scale-[.97] disabled:cursor-not-allowed disabled:opacity-50',
+    'group inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-slate-800 px-4 py-2.5 text-sm font-bold text-slate-200 shadow-lg shadow-black/20 transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-700 hover:text-white hover:-translate-y-0.5 hover:shadow-cyan-500/20 active:scale-[.97] disabled:cursor-not-allowed disabled:opacity-50',
   ghost:
     'inline-flex items-center justify-center rounded-lg p-2 text-slate-400 transition-all duration-300 hover:scale-110 hover:bg-cyan-500/15 hover:text-cyan-300 disabled:opacity-40',
   enable:
@@ -42,10 +42,10 @@ const BTN = {
 };
 
 const FIELD =
-  'w-full rounded-xl border border-white/[0.1] bg-slate-950/70 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 shadow-inner shadow-black/30 outline-none transition-all duration-300 focus:border-cyan-400/70 focus:bg-slate-950/90 focus:ring-4 focus:ring-cyan-400/15';
+  'w-full rounded-xl border border-white/[0.1] bg-slate-950 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition-all duration-300 focus:border-cyan-400/70 focus:ring-4 focus:ring-cyan-400/15';
 
 const CARD =
-  'relative overflow-hidden rounded-2xl border border-white/[0.12] bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 shadow-2xl shadow-black/60 backdrop-blur-md transition-all duration-300';
+  'relative isolate z-10 overflow-hidden rounded-2xl border border-white/[0.12] bg-slate-900 shadow-2xl shadow-black/60 transition-all duration-300';
 
 const getUserId = user => user?._id ?? user?.id ?? user?.userId ?? null;
 
@@ -98,9 +98,58 @@ function Loader() {
 function ErrorBox({ error }) {
   if (!error) return null;
   return (
-    <div className="mb-4 flex items-start gap-2.5 rounded-2xl border border-rose-500/40 bg-gradient-to-br from-rose-500/20 via-rose-500/10 to-rose-500/[0.02] px-4 py-3.5 text-sm text-rose-100 shadow-lg shadow-rose-950/50 backdrop-blur">
+    <div className="mb-4 flex items-start gap-2.5 rounded-2xl border border-rose-500/40 bg-rose-950/80 px-4 py-3.5 text-sm text-rose-100 shadow-lg shadow-rose-950/50">
       <AlertCircle size={16} className="mt-0.5 shrink-0 text-rose-400" />
       <span className="font-medium">{error}</span>
+    </div>
+  );
+}
+
+function AdminBanner({ user, onRefresh }) {
+  return (
+    <div className="relative isolate z-10 mb-6 overflow-hidden rounded-2xl border border-cyan-500/25 bg-[#081a2e] shadow-2xl shadow-cyan-950/50">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-gradient-to-br from-violet-500/25 to-fuchsia-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,rgba(148,163,184,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.06)_1px,transparent_1px)] [background-size:44px_44px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_78%)]" />
+
+      <div className="relative flex flex-col gap-4 p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex min-w-0 items-center gap-4">
+          <div className="group relative flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 text-white shadow-xl shadow-cyan-500/50 ring-1 ring-inset ring-white/20 transition-transform duration-500 hover:scale-110 hover:-rotate-3">
+            <ShieldCheck size={24} />
+            <span className="absolute -right-0.5 -top-0.5 h-3.5 w-3.5 rounded-full border-2 border-[#081a2e] bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
+          </div>
+          <div className="min-w-0">
+            <div className="inline-flex items-center gap-2 text-[10.5px] font-bold uppercase tracking-[0.24em] text-cyan-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_currentColor]" />
+              Admin Control Panel
+            </div>
+            <h1 className="mt-1.5 bg-gradient-to-r from-white via-cyan-100 to-slate-300 bg-clip-text text-[1.4rem] font-bold leading-tight tracking-tight text-transparent sm:text-[1.75rem]">
+              Hello, {user?.name || 'Administrator'}
+            </h1>
+            <p className="mt-1 text-[12.5px] font-medium leading-relaxed text-white/70">
+              Manage users, categories, announcements and saving tips from one place.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2.5">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/40 bg-emerald-500/15 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-emerald-200">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_8px_currentColor]" />
+            Live
+          </span>
+          <button
+            onClick={onRefresh}
+            className="group inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.06] px-3.5 py-2 text-xs font-bold text-white shadow-lg shadow-black/30 transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/[0.1] hover:-translate-y-0.5 active:scale-[.97]"
+            title="Refresh all data"
+          >
+            <RefreshCw
+              size={14}
+              className="transition-transform duration-500 group-hover:rotate-180"
+            />
+            Refresh
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -112,7 +161,7 @@ function StatCard({ label, value, detail, icon, accent = 'cyan', trend }) {
       iconBg: 'from-cyan-400 to-blue-500 shadow-cyan-500/50',
       accent: 'text-cyan-300',
       border: 'hover:border-cyan-400/50',
-      grad: 'from-cyan-500/[0.10] via-slate-950/95 to-blue-500/[0.04]',
+      bg: 'bg-[#081828]',
       shadow: 'hover:shadow-cyan-500/30',
     },
     emerald: {
@@ -120,7 +169,7 @@ function StatCard({ label, value, detail, icon, accent = 'cyan', trend }) {
       iconBg: 'from-emerald-400 to-teal-500 shadow-emerald-500/50',
       accent: 'text-emerald-300',
       border: 'hover:border-emerald-400/50',
-      grad: 'from-emerald-500/[0.10] via-slate-950/95 to-teal-500/[0.04]',
+      bg: 'bg-[#041a18]',
       shadow: 'hover:shadow-emerald-500/30',
     },
     rose: {
@@ -128,7 +177,7 @@ function StatCard({ label, value, detail, icon, accent = 'cyan', trend }) {
       iconBg: 'from-rose-500 to-pink-600 shadow-rose-500/50',
       accent: 'text-rose-300',
       border: 'hover:border-rose-400/50',
-      grad: 'from-rose-500/[0.10] via-slate-950/95 to-pink-500/[0.04]',
+      bg: 'bg-[#1a0812]',
       shadow: 'hover:shadow-rose-500/30',
     },
     amber: {
@@ -136,7 +185,7 @@ function StatCard({ label, value, detail, icon, accent = 'cyan', trend }) {
       iconBg: 'from-amber-400 to-orange-500 shadow-amber-500/50',
       accent: 'text-amber-300',
       border: 'hover:border-amber-400/50',
-      grad: 'from-amber-500/[0.10] via-slate-950/95 to-orange-500/[0.04]',
+      bg: 'bg-[#1a1206]',
       shadow: 'hover:shadow-amber-500/30',
     },
     violet: {
@@ -144,14 +193,14 @@ function StatCard({ label, value, detail, icon, accent = 'cyan', trend }) {
       iconBg: 'from-violet-500 to-fuchsia-600 shadow-violet-500/50',
       accent: 'text-violet-300',
       border: 'hover:border-violet-400/50',
-      grad: 'from-violet-500/[0.10] via-slate-950/95 to-fuchsia-500/[0.04]',
+      bg: 'bg-[#160a24]',
       shadow: 'hover:shadow-violet-500/30',
     },
   };
   const a = accents[accent] || accents.cyan;
   return (
     <div
-      className={`${CARD} ${a.border} ${a.shadow} group bg-gradient-to-br ${a.grad} p-5 hover:-translate-y-1.5 hover:shadow-2xl`}
+      className={`${CARD} ${a.bg} ${a.border} ${a.shadow} group p-5 hover:-translate-y-1.5 hover:shadow-2xl`}
     >
       <div
         className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gradient-to-br ${a.glow} opacity-60 blur-3xl transition-opacity duration-500 group-hover:opacity-100`}
@@ -159,7 +208,7 @@ function StatCard({ label, value, detail, icon, accent = 'cyan', trend }) {
       <div
         className={`pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r ${a.iconBg} opacity-70`}
       />
-      <div className="relative flex items-start justify-between gap-4">
+      <div className="relative z-10 flex items-start justify-between gap-4">
         <div className="min-w-0 flex-1">
           <div
             className={`inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] ${a.accent}`}
@@ -181,7 +230,7 @@ function StatCard({ label, value, detail, icon, accent = 'cyan', trend }) {
         </div>
       </div>
       {trend && (
-        <div className="relative mt-3 flex items-center gap-1 text-[11px] font-semibold text-emerald-300">
+        <div className="relative z-10 mt-3 flex items-center gap-1 text-[11px] font-semibold text-emerald-300">
           <TrendingUp size={11} />
           <span>{trend}</span>
         </div>
@@ -206,9 +255,9 @@ function Modal({ title, onClose, children }) {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-white/[0.1] bg-gradient-to-br from-[#0b1729] via-slate-950 to-[#0b1729] text-slate-100 shadow-[0_35px_80px_-20px_rgba(34,211,238,0.25)]">
+      <div className="relative w-full max-w-lg overflow-hidden rounded-2xl border border-white/[0.1] bg-[#0b1729] text-slate-100 shadow-[0_35px_80px_-20px_rgba(34,211,238,0.25)]">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent" />
-        <div className="flex items-center justify-between border-b border-white/[0.08] bg-gradient-to-r from-cyan-500/[0.08] to-transparent px-5 py-4">
+        <div className="flex items-center justify-between border-b border-white/[0.08] bg-cyan-500/[0.06] px-5 py-4">
           <div className="flex items-center gap-2.5">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 text-white shadow-lg shadow-cyan-500/40">
               <Sparkles size={14} />
@@ -227,7 +276,7 @@ function Modal({ title, onClose, children }) {
 
 function SectionHeader({ title, subtitle, icon, action }) {
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-white/[0.08] bg-gradient-to-r from-white/[0.03] to-transparent px-5 py-4">
+    <div className="flex items-start justify-between gap-4 border-b border-white/[0.08] bg-white/[0.02] px-5 py-4">
       <div className="flex items-start gap-3">
         {icon && (
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/25 to-blue-500/10 text-cyan-300 shadow-lg shadow-cyan-500/20 ring-1 ring-inset ring-cyan-500/30">
@@ -244,18 +293,54 @@ function SectionHeader({ title, subtitle, icon, action }) {
   );
 }
 
-function OverviewTab({ stats, onNavigateTab }) {
+function OverviewTab({ stats, categories, onNavigateTab }) {
   if (!stats) return <Loader />;
-  const inactive = stats.disabledUsers ?? (stats.totalUsers - stats.activeUsers);
-  const activityData =
-    stats.categories?.slice(0, 6).map(c => ({ name: c.name, uses: c.uses })) || [];
 
-  const pieData =
-    stats.categories?.slice(0, 8).map((c, i) => ({
+  const usageMap = new Map();
+  (stats.categories || []).forEach(c => {
+    const key = String(c._id || c.name || '').toLowerCase();
+    usageMap.set(key, Number(c.uses ?? c.count ?? 0));
+  });
+
+  const merged = (categories || []).map(c => {
+    const key = String(c._id || c.name || '').toLowerCase();
+    return {
+      _id: c._id,
       name: c.name,
-      value: c.uses,
-      fill: PALETTE[i % PALETTE.length],
-    })) || [];
+      type: c.type || 'expense',
+      icon: c.icon,
+      uses: usageMap.get(key) ?? 0,
+    };
+  });
+
+  (stats.categories || []).forEach(sc => {
+    const key = String(sc._id || sc.name || '').toLowerCase();
+    const exists = merged.some(
+      m => String(m._id || m.name || '').toLowerCase() === key
+    );
+    if (!exists) {
+      merged.push({
+        _id: sc._id,
+        name: sc.name,
+        type: sc.type || 'expense',
+        icon: sc.icon,
+        uses: Number(sc.uses ?? sc.count ?? 0),
+      });
+    }
+  });
+
+  const inactive = stats.disabledUsers ?? (stats.totalUsers - stats.activeUsers);
+
+  const activityData = merged.slice(0, 6).map(c => ({
+    name: c.name,
+    uses: c.uses ?? 0,
+  }));
+
+  const pieData = merged.slice(0, 8).map((c, i) => ({
+    name: c.name,
+    value: c.uses ?? 0,
+    fill: PALETTE[i % PALETTE.length],
+  }));
 
   const totalUses = pieData.reduce((sum, d) => sum + d.value, 0);
 
@@ -487,7 +572,7 @@ function OverviewTab({ stats, onNavigateTab }) {
             <button
               key={a.id}
               onClick={() => onNavigateTab(a.id)}
-              className={`group relative flex items-center gap-3 overflow-hidden rounded-xl border border-white/[0.08] bg-gradient-to-br from-white/[0.04] to-white/[0.01] px-4 py-3.5 text-left backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${a.hover}`}
+              className={`group relative flex items-center gap-3 overflow-hidden rounded-xl border border-white/[0.08] bg-slate-800 px-4 py-3.5 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${a.hover}`}
             >
               <div
                 className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${a.grad} opacity-0 transition-opacity duration-500 group-hover:opacity-[0.08]`}
@@ -596,7 +681,7 @@ function UserDetailModal({ user, onClose, onRefresh }) {
 
   return (
     <Modal title="User account" onClose={onClose}>
-      <div className="divide-y divide-white/[0.06] overflow-hidden rounded-xl border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-transparent">
+      <div className="divide-y divide-white/[0.06] overflow-hidden rounded-xl border border-white/[0.08] bg-slate-900">
         {rows.map((r, i) => (
           <div key={i} className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
             <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
@@ -833,7 +918,7 @@ function UsersTab({ users, onRefresh }) {
         <div className="relative overflow-x-auto">
           <table className="min-w-[760px] w-full text-sm">
             <thead>
-              <tr className="border-b border-white/[0.08] bg-gradient-to-r from-cyan-500/[0.08] via-blue-500/[0.04] to-transparent">
+              <tr className="border-b border-white/[0.08] bg-cyan-500/[0.05]">
                 <th
                   className="cursor-pointer px-5 py-4 text-left text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300 transition-colors hover:text-cyan-100"
                   onClick={() => sort('name')}
@@ -879,7 +964,7 @@ function UsersTab({ users, onRefresh }) {
                 return (
                   <tr
                     key={userId || u.email || u.name}
-                    className="group transition-all duration-300 hover:bg-gradient-to-r hover:from-cyan-500/[0.05] hover:to-transparent"
+                    className="group transition-all duration-300 hover:bg-cyan-500/[0.04]"
                   >
                     <td className="whitespace-nowrap px-5 py-4">
                       <div className="flex items-center gap-3">
@@ -966,7 +1051,7 @@ function UsersTab({ users, onRefresh }) {
         </div>
 
         {totalPages > 1 && (
-          <div className="flex items-center justify-between gap-3 border-t border-white/[0.06] bg-gradient-to-r from-white/[0.02] to-transparent px-5 py-3.5">
+          <div className="flex items-center justify-between gap-3 border-t border-white/[0.06] bg-white/[0.02] px-5 py-3.5">
             <span className="text-xs font-medium text-slate-400">
               Page <span className="font-bold text-cyan-300">{page}</span> of{' '}
               <span className="font-bold text-cyan-300">{totalPages}</span>
@@ -998,7 +1083,7 @@ function UsersTab({ users, onRefresh }) {
   );
 }
 
-function CategoriesTab({ endpoint = '/admin/categories' }) {
+function CategoriesTab({ endpoint = '/admin/categories', onDataChange }) {
   const [categoryType, setCategoryType] = useState('expense');
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -1028,6 +1113,7 @@ function CategoriesTab({ endpoint = '/admin/categories' }) {
       await api.delete(`${endpoint}/${item._id}`);
       notifySuccess('Category deleted');
       load();
+      onDataChange?.();
     } catch (x) {
       notifyError('Could not delete category', x.message);
     }
@@ -1045,6 +1131,7 @@ function CategoriesTab({ endpoint = '/admin/categories' }) {
       }
       setEditing(null);
       load();
+      onDataChange?.();
     } catch (x) {
       notifyError('Could not save category', x.message);
       throw x;
@@ -1056,7 +1143,7 @@ function CategoriesTab({ endpoint = '/admin/categories' }) {
       <ErrorBox error={error} />
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="inline-flex rounded-2xl border border-white/[0.1] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-1.5 shadow-lg shadow-black/30 backdrop-blur">
+        <div className="inline-flex rounded-2xl border border-white/[0.1] bg-slate-900 p-1.5 shadow-lg shadow-black/30">
           {['expense', 'income'].map(t => {
             const isActive = categoryType === t;
             const grad =
@@ -1092,7 +1179,7 @@ function CategoriesTab({ endpoint = '/admin/categories' }) {
           <div className="relative overflow-x-auto">
             <table className="min-w-[560px] w-full text-sm">
               <thead>
-                <tr className="border-b border-white/[0.08] bg-gradient-to-r from-cyan-500/[0.08] via-blue-500/[0.04] to-transparent">
+                <tr className="border-b border-white/[0.08] bg-cyan-500/[0.05]">
                   <th className="px-5 py-4 text-left text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300">
                     Name
                   </th>
@@ -1118,7 +1205,7 @@ function CategoriesTab({ endpoint = '/admin/categories' }) {
                   return (
                     <tr
                       key={c._id}
-                      className="group transition-all duration-300 hover:bg-gradient-to-r hover:from-cyan-500/[0.05] hover:to-transparent"
+                      className="group transition-all duration-300 hover:bg-cyan-500/[0.04]"
                     >
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-3">
@@ -1280,7 +1367,7 @@ function CategoryForm({ initial, defaultType, onSave, onClose }) {
   );
 }
 
-function CrudTab({ endpoint, columns, FormComponent, entityLabel }) {
+function CrudTab({ endpoint, columns, FormComponent, entityLabel, onDataChange }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -1307,6 +1394,7 @@ function CrudTab({ endpoint, columns, FormComponent, entityLabel }) {
       await api.delete(`${endpoint}/${item._id}`);
       notifySuccess(`${entityLabel} deleted`);
       load();
+      onDataChange?.();
     } catch (x) {
       notifyError(`Could not delete ${entityLabel}`, x.message);
     }
@@ -1323,6 +1411,7 @@ function CrudTab({ endpoint, columns, FormComponent, entityLabel }) {
       }
       setEditing(null);
       load();
+      onDataChange?.();
     } catch (x) {
       notifyError(`Could not save ${entityLabel}`, x.message);
       throw x;
@@ -1351,7 +1440,7 @@ function CrudTab({ endpoint, columns, FormComponent, entityLabel }) {
           <div className="relative overflow-x-auto">
             <table className="min-w-[620px] w-full text-sm">
               <thead>
-                <tr className="border-b border-white/[0.08] bg-gradient-to-r from-cyan-500/[0.08] via-blue-500/[0.04] to-transparent">
+                <tr className="border-b border-white/[0.08] bg-cyan-500/[0.05]">
                   {columns.map(c => (
                     <th
                       key={c.key}
@@ -1367,7 +1456,7 @@ function CrudTab({ endpoint, columns, FormComponent, entityLabel }) {
                 {items.map(item => (
                   <tr
                     key={item._id}
-                    className="group transition-all duration-300 hover:bg-gradient-to-r hover:from-cyan-500/[0.05] hover:to-transparent"
+                    className="group transition-all duration-300 hover:bg-cyan-500/[0.04]"
                   >
                     {columns.map(c => (
                       <td key={c.key} className="px-5 py-4 text-slate-200">
@@ -1619,7 +1708,7 @@ function TipForm({ initial, onSave, onClose }) {
         </div>
 
         <div className="flex items-end">
-          <label className="flex w-full cursor-pointer items-center gap-2.5 rounded-xl border border-white/[0.1] bg-slate-950/70 px-3.5 py-3 text-sm font-medium text-slate-200 shadow-inner shadow-black/30 transition-all duration-300 hover:border-cyan-400/50 hover:bg-cyan-500/[0.08]">
+          <label className="flex w-full cursor-pointer items-center gap-2.5 rounded-xl border border-white/[0.1] bg-slate-950 px-3.5 py-3 text-sm font-medium text-slate-200 transition-all duration-300 hover:border-cyan-400/50 hover:bg-cyan-500/[0.08]">
             <input
               type="checkbox"
               className="h-4 w-4 rounded border-slate-600 bg-slate-800 text-cyan-500 focus:ring-2 focus:ring-cyan-400/40"
@@ -1688,92 +1777,86 @@ export function Admin() {
 
   const [stats, setStats] = useState(null);
   const [users, setUsers] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [error, setError] = useState('');
   const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
     setError('');
-    Promise.all([api.get('/admin/stats'), api.get('/admin/users')])
-      .then(([s, u]) => {
+    Promise.all([
+      api.get('/admin/stats'),
+      api.get('/admin/users'),
+      api.get('/admin/categories'),
+    ])
+      .then(([s, u, c]) => {
         setStats(s.data ?? s);
         const userData = u.items ?? u.users ?? u.data?.users ?? u.data ?? u;
         setUsers(Array.isArray(userData) ? userData : []);
+        const catData = c.items ?? c.categories ?? c.data?.categories ?? c.data ?? c;
+        setCategories(Array.isArray(catData) ? catData : []);
       })
       .catch(x => setError(x.message));
   }, [refreshKey]);
 
   const refresh = () => setRefreshKey(k => k + 1);
-  const setTab = t => setSearchParams({ tab: t });
+  const setTab = t => {
+    setSearchParams({ tab: t });
+    if (t === 'overview') refresh();
+  };
 
   return (
     <div className="relative w-full">
-      <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-transparent blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gradient-to-br from-violet-500/20 via-fuchsia-500/10 to-transparent blur-3xl" />
+      <AdminBanner user={user} onRefresh={refresh} />
 
-      <div className="relative mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="min-w-0">
-          <div className="flex items-center gap-3">
-            <div className="group relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-600 text-white shadow-xl shadow-cyan-500/50 ring-1 ring-inset ring-white/20 transition-transform duration-500 hover:scale-110 hover:-rotate-3">
-              <ShieldCheck size={24} />
-              <span className="absolute -right-0.5 -top-0.5 h-3.5 w-3.5 rounded-full border-2 border-[#0b1729] bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-            </div>
-            <div>
-              <h1 className="bg-gradient-to-r from-white via-cyan-100 to-slate-300 bg-clip-text text-xl font-bold tracking-tight text-transparent sm:text-2xl">
-                Hello, {user?.name || 'Administrator'}
-              </h1>
-              <p className="text-xs font-medium text-slate-400">
-                Admin Control Panel · Manage users, categories, announcements and saving tips
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <button className={BTN.secondary} onClick={refresh} title="Refresh all data">
-          <RefreshCw size={14} className="transition-transform duration-500 group-hover:rotate-180" />{' '}
-          Refresh
-        </button>
-      </div>
-
-      <div className="relative mb-6 overflow-x-auto pb-1 [&::-webkit-scrollbar]:hidden">
-        <div className="inline-flex min-w-full gap-2 rounded-2xl border border-white/[0.1] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-2 shadow-xl shadow-black/40 backdrop-blur-xl sm:min-w-0">
-          {TABS.map(t => {
-            const active = activeTab === t.id;
-            const Icon = t.icon;
-            return (
-              <button
-                key={t.id}
-                onClick={() => setTab(t.id)}
-                className={`group relative inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 py-2.5 text-sm font-bold transition-all duration-300 sm:flex-none ${
-                  active
-                    ? `bg-gradient-to-r ${t.grad} text-white shadow-lg ${t.shadow} ring-1 ring-inset ring-white/20 scale-[1.03]`
-                    : 'text-slate-400 hover:bg-white/[0.06] hover:text-white hover:scale-[1.02]'
-                }`}
-              >
-                <Icon
-                  size={15}
-                  strokeWidth={active ? 2.5 : 2}
-                  className={`transition-transform duration-300 ${
-                    active ? 'drop-shadow-sm' : 'group-hover:scale-110'
+      <div className="relative isolate z-10 mb-6 overflow-hidden rounded-2xl border border-white/[0.12] bg-slate-900 shadow-xl shadow-black/40">
+        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gradient-to-br from-cyan-500/25 to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-gradient-to-br from-violet-500/25 to-transparent blur-3xl" />
+        <div className="relative overflow-x-auto p-2 [&::-webkit-scrollbar]:hidden">
+          <div className="inline-flex min-w-full gap-2 sm:min-w-0">
+            {TABS.map(t => {
+              const active = activeTab === t.id;
+              const Icon = t.icon;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => setTab(t.id)}
+                  className={`group relative inline-flex flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 py-2.5 text-sm font-bold transition-all duration-300 sm:flex-none ${
+                    active
+                      ? `bg-gradient-to-r ${t.grad} text-white shadow-lg ${t.shadow} ring-1 ring-inset ring-white/20 scale-[1.03]`
+                      : 'text-slate-400 hover:bg-white/[0.06] hover:text-white hover:scale-[1.02]'
                   }`}
-                />
-                <span>{t.label}</span>
-              </button>
-            );
-          })}
+                >
+                  <Icon
+                    size={15}
+                    strokeWidth={active ? 2.5 : 2}
+                    className={`transition-transform duration-300 ${
+                      active ? 'drop-shadow-sm' : 'group-hover:scale-110'
+                    }`}
+                  />
+                  <span>{t.label}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
       <div className="relative">
         <ErrorBox error={error} />
 
-        {activeTab === 'overview' && <OverviewTab stats={stats} onNavigateTab={setTab} />}
+        {activeTab === 'overview' && (
+          <OverviewTab stats={stats} categories={categories} onNavigateTab={setTab} />
+        )}
         {activeTab === 'users' && <UsersTab users={users} onRefresh={refresh} />}
-        {activeTab === 'categories' && <CategoriesTab endpoint="/admin/categories" />}
+        {activeTab === 'categories' && (
+          <CategoriesTab endpoint="/admin/categories" onDataChange={refresh} />
+        )}
 
         {activeTab === 'announcements' && (
           <CrudTab
             endpoint="/admin/announcements"
             entityLabel="announcement"
+            onDataChange={refresh}
             FormComponent={AnnouncementForm}
             columns={[
               { key: 'title', label: 'Title' },
@@ -1810,6 +1893,7 @@ export function Admin() {
           <CrudTab
             endpoint="/admin/tip-templates"
             entityLabel="tip template"
+            onDataChange={refresh}
             FormComponent={TipForm}
             columns={[
               { key: 'title', label: 'Title' },

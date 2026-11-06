@@ -44,15 +44,15 @@ const NAV_LINKS = [
 ];
 
 const FOCUS_RING =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070510]';
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050D14]';
 
 const CARD =
-  'relative rounded-2xl border border-white/[0.08] bg-[#120C1F] shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset,0_24px_60px_-40px_rgba(0,0,0,0.9)]';
+  'relative rounded-2xl border border-white/[0.08] bg-[#0C1620] shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset,0_24px_60px_-40px_rgba(0,0,0,0.9)]';
 
 const CARD_HOVER =
-  'transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/40 hover:shadow-[0_10px_30px_-10px_rgba(168,85,247,0.25)]';
+  'transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:shadow-[0_10px_30px_-10px_rgba(6,182,212,0.25)]';
 
-const INNER_PANEL = 'rounded-xl border border-white/[0.06] bg-[#0B0714]';
+const INNER_PANEL = 'rounded-xl border border-white/[0.06] bg-[#07101A]';
 
 function useInView(threshold = 0.12) {
   const ref = useRef(null);
@@ -103,11 +103,11 @@ function CtaLink({ to, variant = 'primary', children, className = '' }) {
   const base = `group inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-all duration-300 ${FOCUS_RING} cursor-pointer`;
   const variants = {
     primary:
-      'bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 text-white shadow-[0_0_30px_-5px_rgba(147,51,234,0.6)] hover:shadow-[0_0_40px_2px_rgba(147,51,234,0.8)] hover:brightness-110 px-7 py-3.5',
+      'bg-gradient-to-r from-cyan-600 via-cyan-500 to-sky-600 text-white shadow-[0_0_30px_-5px_rgba(8,145,178,0.6)] hover:shadow-[0_0_40px_2px_rgba(8,145,178,0.8)] hover:brightness-110 px-7 py-3.5',
     secondary:
-      'border border-white/15 bg-white/5 text-slate-100 hover:border-purple-400/50 hover:bg-white/10 px-6 py-3.5 backdrop-blur-md',
+      'border border-white/15 bg-white/5 text-slate-100 hover:border-cyan-400/50 hover:bg-white/10 px-6 py-3.5 backdrop-blur-md',
     ghost:
-      'border border-purple-500/30 bg-purple-500/10 text-purple-200 hover:border-purple-400/60 hover:bg-purple-500/20 px-5 py-3',
+      'border border-cyan-500/30 bg-cyan-500/10 text-cyan-200 hover:border-cyan-400/60 hover:bg-cyan-500/20 px-5 py-3',
     text: 'text-slate-300 hover:text-white px-2 py-3',
   };
   return (
@@ -134,7 +134,7 @@ function NavItem({ onClick, children }) {
       className={`group relative cursor-pointer border-0 bg-transparent px-1 py-1 text-[13.5px] font-medium text-slate-300 transition-colors duration-200 hover:text-white ${FOCUS_RING}`}
     >
       {children}
-      <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-gradient-to-r from-violet-500 to-purple-400 transition-transform duration-300 group-hover:scale-x-100" />
+      <span className="absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-gradient-to-r from-cyan-500 to-cyan-400 transition-transform duration-300 group-hover:scale-x-100" />
     </button>
   );
 }
@@ -144,7 +144,7 @@ function SectionHeading({ eyebrow, title, sub, align = 'center' }) {
   return (
     <Reveal className={`mb-14 max-w-2xl sm:mb-16 ${alignment}`}>
       {eyebrow ? (
-        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-purple-400">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-400">
           {eyebrow}
         </p>
       ) : null}
@@ -178,8 +178,8 @@ function WelcomeModal() {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto p-4 bg-black/80 backdrop-blur-md transition-all duration-500">
-      <div className="relative my-auto w-full max-w-lg overflow-hidden rounded-3xl border border-purple-500/30 bg-[#120C1F] p-6 shadow-[0_0_80px_rgba(168,85,247,0.35)] max-h-[90vh] overflow-y-auto sm:p-8">
-        <div className="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-purple-500/20 blur-3xl" />
+      <div className="relative my-auto w-full max-w-lg overflow-hidden rounded-3xl border border-cyan-500/30 bg-[#0C1620] p-6 shadow-[0_0_80px_rgba(6,182,212,0.35)] max-h-[90vh] overflow-y-auto sm:p-8">
+        <div className="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-cyan-500/20 blur-3xl" />
 
         <button
           type="button"
@@ -190,11 +190,11 @@ function WelcomeModal() {
           <X size={18} />
         </button>
 
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-purple-400/30 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 text-purple-300 shadow-[0_0_20px_rgba(168,85,247,0.4)]">
+        <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/30 bg-gradient-to-br from-cyan-500/20 to-sky-500/20 text-cyan-300 shadow-[0_0_20px_rgba(6,182,212,0.4)]">
           <Sparkles size={28} />
         </div>
 
-        <span className="mt-5 inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-purple-400">
+        <span className="mt-5 inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-cyan-400">
           Welcome to Campus Coin
         </span>
 
@@ -206,17 +206,17 @@ function WelcomeModal() {
           Take total control of your money, keep track of daily allowances, plan monthly budgets, and reach savings goals effortlessly.
         </p>
 
-        <div className="mt-6 space-y-2.5 rounded-2xl border border-white/[0.06] bg-[#0B0714] p-4">
+        <div className="mt-6 space-y-2.5 rounded-2xl border border-white/[0.06] bg-[#07101A] p-4">
           <div className="flex items-center gap-3 text-xs text-slate-300">
-            <CheckCircle2 size={16} className="shrink-0 text-purple-400" />
+            <CheckCircle2 size={16} className="shrink-0 text-cyan-400" />
             <span>Track expenses and monthly income seamlessly</span>
           </div>
           <div className="flex items-center gap-3 text-xs text-slate-300">
-            <CheckCircle2 size={16} className="shrink-0 text-purple-400" />
+            <CheckCircle2 size={16} className="shrink-0 text-cyan-400" />
             <span>Automated budget alerts and spending insights</span>
           </div>
           <div className="flex items-center gap-3 text-xs text-slate-300">
-            <CheckCircle2 size={16} className="shrink-0 text-purple-400" />
+            <CheckCircle2 size={16} className="shrink-0 text-cyan-400" />
             <span>100% private, secure and bank-connection free</span>
           </div>
         </div>
@@ -225,7 +225,7 @@ function WelcomeModal() {
           <button
             type="button"
             onClick={handleClose}
-            className={`inline-flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(147,51,234,0.6)] transition-all hover:shadow-[0_0_40px_rgba(147,51,234,0.8)] ${FOCUS_RING}`}
+            className={`inline-flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-sky-600 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(8,145,178,0.6)] transition-all hover:shadow-[0_0_40px_rgba(8,145,178,0.8)] ${FOCUS_RING}`}
           >
             Get Started Now
             <Arrow size={16} />
@@ -275,19 +275,19 @@ function CoinScene({ reduce }) {
     renderer.toneMappingExposure = 1.3;
     mount.appendChild(renderer.domElement);
 
-    scene.add(new THREE.AmbientLight(0x2a1548, 3));
+    scene.add(new THREE.AmbientLight(0x083344, 3));
 
     const keyLight = new THREE.DirectionalLight(0xffffff, 3.5);
     keyLight.position.set(5, 7, 8);
     scene.add(keyLight);
 
-    const purpleLight = new THREE.PointLight(0xa855f7, 120, 40);
-    purpleLight.position.set(3, -2, 5);
-    scene.add(purpleLight);
+    const cyanLight = new THREE.PointLight(0x06b6d4, 120, 40);
+    cyanLight.position.set(3, -2, 5);
+    scene.add(cyanLight);
 
-    const indigoLight = new THREE.PointLight(0x6366f1, 90, 40);
-    indigoLight.position.set(-4, 3, 5);
-    scene.add(indigoLight);
+    const skyLight = new THREE.PointLight(0x0ea5e9, 90, 40);
+    skyLight.position.set(-4, 3, 5);
+    scene.add(skyLight);
 
     const root = new THREE.Group();
     scene.add(root);
@@ -307,25 +307,25 @@ function CoinScene({ reduce }) {
         size / 2,
         size / 2
       );
-      gradient.addColorStop(0, '#3b1568');
-      gradient.addColorStop(0.6, '#180833');
-      gradient.addColorStop(1, '#080214');
+      gradient.addColorStop(0, '#0e4a5c');
+      gradient.addColorStop(0.6, '#083344');
+      gradient.addColorStop(1, '#020810');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, size, size);
 
-      ctx.strokeStyle = 'rgba(192, 132, 252, 0.95)';
+      ctx.strokeStyle = 'rgba(34, 211, 238, 0.95)';
       ctx.lineWidth = 10;
       ctx.beginPath();
       ctx.arc(size / 2, size / 2, size / 2 - 24, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.strokeStyle = 'rgba(99, 102, 241, 0.6)';
+      ctx.strokeStyle = 'rgba(14, 165, 233, 0.6)';
       ctx.lineWidth = 4;
       ctx.beginPath();
       ctx.arc(size / 2, size / 2, size / 2 - 48, 0, Math.PI * 2);
       ctx.stroke();
 
-      ctx.shadowColor = 'rgba(168, 85, 247, 1)';
+      ctx.shadowColor = 'rgba(6, 182, 212, 1)';
       ctx.shadowBlur = 32;
       ctx.fillStyle = '#ffffff';
       ctx.font = 'bold 230px "Inter", sans-serif';
@@ -346,18 +346,18 @@ function CoinScene({ reduce }) {
       map: faceTexture,
       roughness: 0.25,
       metalness: 0.75,
-      emissive: 0xa855f7,
+      emissive: 0x06b6d4,
       emissiveIntensity: 0.25,
       emissiveMap: faceTexture,
     });
 
     const sideMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x3b1568,
+      color: 0x0e4a5c,
       metalness: 0.95,
       roughness: 0.15,
       clearcoat: 1,
       clearcoatRoughness: 0.05,
-      emissive: 0x6b21a8,
+      emissive: 0x0e7490,
       emissiveIntensity: 0.2,
     });
 
@@ -365,26 +365,6 @@ function CoinScene({ reduce }) {
     const coin = new THREE.Mesh(coinGeometry, [sideMaterial, faceMaterial, faceMaterial]);
     coin.rotation.x = Math.PI / 2;
     root.add(coin);
-
-    const ringGeo1 = new THREE.TorusGeometry(2.4, 0.02, 16, 100);
-    const ringMat1 = new THREE.MeshBasicMaterial({
-      color: 0xa855f7,
-      transparent: true,
-      opacity: 0.6,
-    });
-    const ring1 = new THREE.Mesh(ringGeo1, ringMat1);
-    ring1.rotation.x = Math.PI / 3;
-    root.add(ring1);
-
-    const ringGeo2 = new THREE.TorusGeometry(2.8, 0.015, 16, 100);
-    const ringMat2 = new THREE.MeshBasicMaterial({
-      color: 0x6366f1,
-      transparent: true,
-      opacity: 0.4,
-    });
-    const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
-    ring2.rotation.y = Math.PI / 4;
-    root.add(ring2);
 
     const dustCount = 50;
     const dustPositions = new Float32Array(dustCount * 3);
@@ -396,7 +376,7 @@ function CoinScene({ reduce }) {
     const dustGeometry = new THREE.BufferGeometry();
     dustGeometry.setAttribute('position', new THREE.BufferAttribute(dustPositions, 3));
     const dustMaterial = new THREE.PointsMaterial({
-      color: 0xc084fc,
+      color: 0x22d3ee,
       size: 0.045,
       transparent: true,
       opacity: 0.7,
@@ -420,8 +400,6 @@ function CoinScene({ reduce }) {
 
       if (!reduce) {
         root.rotation.y = t * 0.45;
-        ring1.rotation.z = t * 0.2;
-        ring2.rotation.x = t * 0.25;
         root.position.y = Math.sin(t * 1.2) * 0.15;
         dust.rotation.y = t * 0.03;
       }
@@ -465,9 +443,9 @@ function CoinScene({ reduce }) {
   if (failed) {
     return (
       <div className="flex h-full w-full items-center justify-center">
-        <div className="relative flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 via-indigo-600 to-slate-900 p-1 shadow-[0_0_80px_rgba(168,85,247,0.5)] sm:h-64 sm:w-64">
-          <div className="flex h-full w-full items-center justify-center rounded-full bg-[#080214]">
-            <span className="text-4xl font-black tracking-tighter text-purple-200 sm:text-6xl">
+        <div className="relative flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-cyan-600 via-sky-600 to-slate-900 p-1 shadow-[0_0_80px_rgba(6,182,212,0.5)] sm:h-64 sm:w-64">
+          <div className="flex h-full w-full items-center justify-center rounded-full bg-[#020810]">
+            <span className="text-4xl font-black tracking-tighter text-cyan-200 sm:text-6xl">
               CC
             </span>
           </div>
@@ -501,19 +479,21 @@ function Navbar() {
       <div
         className={`relative mx-auto max-w-[1150px] rounded-3xl border transition-all duration-500 sm:rounded-full ${
           scrolled
-            ? 'border-white/15 bg-[#0e081c]/90 shadow-[0_20px_50px_-20px_rgba(147,51,234,0.3)] backdrop-blur-xl'
-            : 'border-white/10 bg-[#0e081c]/80 backdrop-blur-md'
+            ? 'border-white/15 bg-[#08121C]/90 shadow-[0_20px_50px_-20px_rgba(8,145,178,0.3)] backdrop-blur-xl'
+            : 'border-white/10 bg-[#08121C]/80 backdrop-blur-md'
         }`}
       >
         <div className="flex items-center justify-between gap-4 px-4 py-2.5 sm:px-5 sm:py-3">
-          <Link
-            to="/"
-            className={`flex shrink-0 items-center no-underline ${FOCUS_RING} rounded-lg`}
-          >
-            <span className="text-xl font-bold tracking-tight text-white">
-              Campus <span className="text-purple-400">Coin</span>
-            </span>
-          </Link>
+        <Link
+  to="/"
+  className={`flex min-w-0 shrink items-center no-underline ${FOCUS_RING} rounded-lg`}
+>
+  <img
+    src="/logo.png"
+    alt="Campus Coin"
+    className="block h-auto w-auto max-h-11 max-w-[180px] object-contain sm:max-h-12 sm:max-w-[215px] md:max-h-14 md:max-w-[250px] lg:max-h-16 lg:max-w-[285px]"
+  />
+</Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
             {NAV_LINKS.map(link => (
@@ -527,9 +507,9 @@ function Navbar() {
             <CtaLink
               to="/admin/login"
               variant="ghost"
-              className="rounded-full border-purple-500/40 !bg-purple-500/10 !px-3.5 !py-1.5 hover:!bg-purple-500/20 text-[12.5px]"
+              className="rounded-full border-cyan-500/40 !bg-cyan-500/10 !px-3.5 !py-1.5 hover:!bg-cyan-500/20 text-[12.5px]"
             >
-              <ShieldAlert size={14} className="text-purple-400" />
+              <ShieldAlert size={14} className="text-cyan-400" />
               Admin Login
             </CtaLink>
             <CtaLink to="/login" variant="text" className="!px-3 !py-1.5 text-[13.5px]">
@@ -549,14 +529,14 @@ function Navbar() {
             onClick={() => setOpen(value => !value)}
             aria-label="Toggle navigation menu"
             aria-expanded={open}
-            className={`inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition-colors hover:border-purple-400/45 hover:text-white lg:hidden ${FOCUS_RING}`}
+            className={`inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition-colors hover:border-cyan-400/45 hover:text-white lg:hidden ${FOCUS_RING}`}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {open ? (
-          <div className="cc-menu-in absolute left-0 top-full mt-2 w-full rounded-2xl border border-white/15 bg-[#0e081c]/95 p-5 shadow-2xl backdrop-blur-xl lg:hidden">
+          <div className="cc-menu-in absolute left-0 top-full mt-2 w-full rounded-2xl border border-white/15 bg-[#08121C]/95 p-5 shadow-2xl backdrop-blur-xl lg:hidden">
             <div className="flex flex-col space-y-1">
               {NAV_LINKS.map(link => (
                 <button
@@ -578,7 +558,7 @@ function Navbar() {
                 User Login
               </CtaLink>
               <CtaLink to="/admin/login" variant="ghost" className="w-full justify-center">
-                <ShieldAlert size={15} className="text-purple-400" />
+                <ShieldAlert size={15} className="text-cyan-400" />
                 Admin Portal Login
               </CtaLink>
             </div>
@@ -599,20 +579,20 @@ function Hero() {
       id="home"
       className="relative flex items-center justify-center overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-28"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[#070510]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_circle_at_50%_20%,rgba(139,92,246,0.25),transparent_70%),radial-gradient(900px_circle_at_85%_75%,rgba(99,102,241,0.18),transparent_65%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[#050D14]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_circle_at_50%_20%,rgba(6,182,212,0.25),transparent_70%),radial-gradient(900px_circle_at_85%_75%,rgba(14,165,233,0.18),transparent_65%)]" />
       <div className="pointer-events-none absolute inset-0 opacity-25 [background-image:linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:36px_36px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-8 lg:grid-cols-12">
           <div className="flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
             <Reveal>
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 shadow-[0_0_20px_rgba(168,85,247,0.2)] backdrop-blur-xl">
-                <span className="flex h-2 w-2 animate-pulse rounded-full bg-purple-400" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-purple-200">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 shadow-[0_0_20px_rgba(6,182,212,0.2)] backdrop-blur-xl">
+                <span className="flex h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-cyan-200">
                   Next-Gen Student Finance
                 </span>
-                <span className="flex items-center gap-1 rounded-full bg-purple-500/30 px-2 py-0.5 text-[11px] font-bold text-purple-300">
+                <span className="flex items-center gap-1 rounded-full bg-cyan-500/30 px-2 py-0.5 text-[11px] font-bold text-cyan-300">
                   <Zap size={10} /> 2.0
                 </span>
               </div>
@@ -621,7 +601,7 @@ function Hero() {
             <Reveal delay={100}>
               <h1 className="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-7xl">
                 Master Your Money. <br />
-                <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(168,85,247,0.3)]">
+                <span className="bg-gradient-to-r from-cyan-300 via-cyan-400 to-sky-400 bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(6,182,212,0.3)]">
                   Elevate Student Life.
                 </span>
               </h1>
@@ -640,7 +620,7 @@ function Hero() {
                 <CtaLink
                   to="/register"
                   variant="primary"
-                  className="w-full text-base shadow-[0_0_40px_rgba(147,51,234,0.5)] sm:w-auto !px-8 !py-4"
+                  className="w-full text-base shadow-[0_0_40px_rgba(8,145,178,0.5)] sm:w-auto !px-8 !py-4"
                 >
                   Start Free Today
                   <Arrow size={18} />
@@ -657,7 +637,7 @@ function Hero() {
                   variant="ghost"
                   className="w-full text-base sm:w-auto !px-6 !py-4"
                 >
-                  <ShieldAlert size={18} className="text-purple-400" />
+                  <ShieldAlert size={18} className="text-cyan-400" />
                   Admin Login
                 </CtaLink>
               </div>
@@ -670,7 +650,7 @@ function Hero() {
                   <p className="mt-1 text-xs text-slate-400">Free for Students</p>
                 </div>
                 <div className="text-center sm:text-left">
-                  <h4 className="text-2xl font-bold text-purple-300 sm:text-3xl">Zero</h4>
+                  <h4 className="text-2xl font-bold text-cyan-300 sm:text-3xl">Zero</h4>
                   <p className="mt-1 text-xs text-slate-400">Bank Link Needed</p>
                 </div>
                 <div className="text-center sm:text-left">
@@ -705,7 +685,7 @@ function TrustStrip() {
   ];
 
   return (
-    <section className="relative border-y border-white/[0.06] bg-[#0A0614]">
+    <section className="relative border-y border-white/[0.06] bg-[#06101A]">
       <div className="mx-auto max-w-[1180px] px-5 py-6 sm:px-6 sm:py-7 lg:px-8">
         <div className="grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4 sm:divide-x sm:divide-white/[0.08] sm:gap-x-0">
           {points.map(point => (
@@ -713,7 +693,7 @@ function TrustStrip() {
               key={point.label}
               className="flex items-center gap-2.5 sm:justify-center sm:px-6"
             >
-              <span className="text-purple-400">{point.icon}</span>
+              <span className="text-cyan-400">{point.icon}</span>
               <p className="text-[12.5px] font-medium text-slate-300">{point.label}</p>
             </div>
           ))}
@@ -770,7 +750,7 @@ function ProblemSection() {
           {problems.map((problem, index) => (
             <Reveal key={problem.title} delay={(index % 3) * 80}>
               <div className={`${CARD} ${CARD_HOVER} flex h-full flex-col p-5 sm:p-6`}>
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-500/20 bg-purple-500/10 text-purple-300">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-300">
                   {problem.icon}
                 </span>
                 <h3 className="mt-4 text-[15px] font-semibold text-white">{problem.title}</h3>
@@ -851,7 +831,7 @@ function FeaturesSection() {
   return (
     <section
       id="features"
-      className="relative scroll-mt-28 border-y border-white/[0.06] bg-[#0A0614] py-16 sm:py-28 lg:py-32"
+      className="relative scroll-mt-28 border-y border-white/[0.06] bg-[#06101A] py-16 sm:py-28 lg:py-32"
     >
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <SectionHeading
@@ -865,10 +845,10 @@ function FeaturesSection() {
             <Reveal key={feature.title} delay={(index % 3) * 70}>
               <div className={`${CARD} ${CARD_HOVER} flex h-full flex-col p-5 sm:p-6`}>
                 <div className="flex items-center justify-between">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-500/25 bg-purple-500/10 text-purple-300">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-500/25 bg-cyan-500/10 text-cyan-300">
                     {feature.icon}
                   </span>
-                  <span className="h-1.5 w-1.5 rounded-full bg-purple-400/60" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-400/60" />
                 </div>
                 <h3 className="mt-4 text-[15px] font-semibold text-white">{feature.title}</h3>
                 <p className="mt-2 text-[13px] leading-[1.65] text-slate-400">{feature.desc}</p>
@@ -901,10 +881,10 @@ function DashboardShowcase() {
 
         <Reveal>
           <div className="relative">
-            <div className="pointer-events-none absolute -inset-x-4 -top-10 bottom-0 rounded-[40px] bg-[radial-gradient(640px_circle_at_50%_0%,rgba(168,85,247,0.22),transparent_70%)] blur-2xl sm:-inset-x-8" />
+            <div className="pointer-events-none absolute -inset-x-4 -top-10 bottom-0 rounded-[40px] bg-[radial-gradient(640px_circle_at_50%_0%,rgba(6,182,212,0.22),transparent_70%)] blur-2xl sm:-inset-x-8" />
 
-            <div className="relative overflow-hidden rounded-[20px] border border-white/15 bg-[#120C1F] shadow-[0_40px_100px_-30px_rgba(147,51,234,0.3)] sm:rounded-[26px]">
-              <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] bg-[#0A0614] px-4 py-3 sm:px-6">
+            <div className="relative overflow-hidden rounded-[20px] border border-white/15 bg-[#0C1620] shadow-[0_40px_100px_-30px_rgba(8,145,178,0.3)] sm:rounded-[26px]">
+              <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] bg-[#06101A] px-4 py-3 sm:px-6">
                 <div className="flex items-center gap-3">
                   <div className="flex items-center gap-1.5">
                     <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
@@ -926,8 +906,8 @@ function DashboardShowcase() {
                         key={metric.label}
                         className={`rounded-lg border p-2.5 sm:p-3 ${
                           metric.highlight
-                            ? 'border-purple-400/30 bg-purple-500/10'
-                            : 'border-white/[0.07] bg-[#1a122c]'
+                            ? 'border-cyan-400/30 bg-cyan-500/10'
+                            : 'border-white/[0.07] bg-[#0F2A33]'
                         }`}
                       >
                         <p className="text-[8px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-[9px]">
@@ -952,7 +932,7 @@ function DashboardShowcase() {
                         <div
                           key={index}
                           style={{ height: `${height}%` }}
-                          className="flex-1 rounded-t bg-gradient-to-t from-purple-800 to-purple-400"
+                          className="flex-1 rounded-t bg-gradient-to-t from-cyan-800 to-cyan-400"
                         />
                       ))}
                     </div>
@@ -967,15 +947,15 @@ function DashboardShowcase() {
                     <p className="mt-1.5 text-base font-semibold tracking-tight text-white sm:mt-2 sm:text-lg">
                       68%
                     </p>
-                    <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[#1a122c]">
-                      <div className="h-1.5 w-[68%] rounded-full bg-gradient-to-r from-purple-500 to-indigo-500" />
+                    <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[#0F2A33]">
+                      <div className="h-1.5 w-[68%] rounded-full bg-gradient-to-r from-cyan-500 to-sky-500" />
                     </div>
                   </div>
 
-                  <div className="rounded-lg border border-purple-400/25 bg-[#0A0614] p-3 sm:p-4">
+                  <div className="rounded-lg border border-cyan-400/25 bg-[#06101A] p-3 sm:p-4">
                     <div className="flex items-center gap-2">
-                      <Sparkles size={12} className="text-purple-300" />
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-purple-300 sm:text-[10px]">
+                      <Sparkles size={12} className="text-cyan-300" />
+                      <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-cyan-300 sm:text-[10px]">
                         Insight preview
                       </p>
                     </div>
@@ -1028,11 +1008,11 @@ function HowItWorks() {
           {steps.map((step, index) => (
             <Reveal key={step.n} delay={index * 130} className="relative">
               <div className="flex items-start gap-4 md:flex-col md:items-center md:gap-0 md:text-center">
-                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-purple-400/40 bg-[#120C1F] text-purple-300 shadow-[0_0_20px_rgba(168,85,247,0.3)] md:h-[56px] md:w-[56px]">
+                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-cyan-400/40 bg-[#0C1620] text-cyan-300 shadow-[0_0_20px_rgba(6,182,212,0.3)] md:h-[56px] md:w-[56px]">
                   {step.icon}
                 </div>
                 <div className="md:mt-6">
-                  <p className="text-[11px] font-semibold tracking-[0.3em] text-purple-400">
+                  <p className="text-[11px] font-semibold tracking-[0.3em] text-cyan-400">
                     {step.n}
                   </p>
                   <h3 className="mt-1.5 text-[17px] font-semibold text-white md:mt-2">
@@ -1062,7 +1042,7 @@ function InsightsSection() {
   return (
     <section
       id="insights"
-      className="relative scroll-mt-28 border-y border-white/[0.06] bg-[#0A0614] py-16 sm:py-28 lg:py-32"
+      className="relative scroll-mt-28 border-y border-white/[0.06] bg-[#06101A] py-16 sm:py-28 lg:py-32"
     >
       <div className="mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
         <SectionHeading
@@ -1075,9 +1055,9 @@ function InsightsSection() {
           {insights.map((insight, index) => (
             <Reveal key={insight.text} delay={index * 90}>
               <div
-                className={`${CARD} flex items-start gap-4 p-4 transition-all duration-300 hover:border-purple-400/30 sm:p-5 sm:p-6`}
+                className={`${CARD} flex items-start gap-4 p-4 transition-all duration-300 hover:border-cyan-400/30 sm:p-5 sm:p-6`}
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-purple-400/25 bg-purple-400/10 text-purple-300">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-cyan-400/25 bg-cyan-400/10 text-cyan-300">
                   {insight.icon}
                 </span>
                 <p className="mt-1 text-[13.5px] leading-[1.65] text-slate-200">{insight.text}</p>
@@ -1105,7 +1085,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
         <ChevronDown
           size={18}
           className={`shrink-0 text-slate-500 transition-transform duration-300 ${
-            isOpen ? 'rotate-180 text-purple-300' : ''
+            isOpen ? 'rotate-180 text-cyan-300' : ''
           }`}
         />
       </button>
@@ -1165,53 +1145,6 @@ function FAQSection() {
   );
 }
 
-function FinalCTA() {
-  return (
-    <section className="relative overflow-hidden py-16 sm:py-28 lg:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(720px_circle_at_50%_35%,rgba(168,85,247,0.22),transparent_66%)] blur-2xl" />
-
-      <div className="relative mx-auto max-w-[1180px] px-5 sm:px-6 lg:px-8">
-        <Reveal>
-          <div className={`${CARD} relative overflow-hidden border-purple-500/30 p-6 text-center sm:p-12 lg:p-16`}>
-            <span className="pointer-events-none absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/40 to-transparent" />
-            <h2 className="mx-auto max-w-2xl text-[1.75rem] font-bold leading-[1.15] tracking-[-0.03em] text-white sm:text-[2.4rem] lg:text-[2.6rem]">
-              Take control of your money today.
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-[14px] leading-[1.7] text-slate-400 sm:mt-5 sm:text-[15px]">
-              The complete automated system designed to capture savings and grow your
-              budget.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-5">
-              <CtaLink
-                to="/register"
-                variant="primary"
-                className="w-full px-8 py-4 text-[15px] sm:w-auto"
-              >
-                Get Started
-              </CtaLink>
-              <CtaLink
-                to="/login"
-                variant="secondary"
-                className="w-full px-7 py-4 text-[15px] sm:w-auto"
-              >
-                User Login
-              </CtaLink>
-              <CtaLink
-                to="/admin/login"
-                variant="ghost"
-                className="w-full px-7 py-4 text-[15px] sm:w-auto"
-              >
-                <ShieldAlert size={16} className="text-purple-400" />
-                Admin Login
-              </CtaLink>
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 function Footer() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
@@ -1231,15 +1164,15 @@ function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-white/[0.08] bg-[#07040E] text-slate-300">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+    <footer className="relative border-t border-white/[0.08] bg-[#040810] text-slate-300">
+      <div className="pointer-events-none absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
 
       <div className="mx-auto max-w-[1180px] px-5 pb-12 pt-16 sm:px-6 lg:px-8 lg:pt-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
             <Link to="/" className="inline-block">
               <span className="text-xl font-bold tracking-tight text-white">
-                Campus <span className="text-purple-400">Coin</span>
+                Campus <span className="text-cyan-400">Coin</span>
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-[13.5px] leading-[1.7] text-slate-400">
@@ -1261,7 +1194,7 @@ function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Social link"
-                  className={`flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition-all hover:border-purple-400/50 hover:bg-purple-500/10 hover:text-white ${FOCUS_RING}`}
+                  className={`flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-400 transition-all hover:border-cyan-400/50 hover:bg-cyan-500/10 hover:text-white ${FOCUS_RING}`}
                 >
                   {s.icon}
                 </a>
@@ -1279,7 +1212,7 @@ function Footer() {
                   <button
                     type="button"
                     onClick={() => scrollToSection(link.id)}
-                    className={`cursor-pointer text-slate-400 transition-colors hover:text-purple-300 ${FOCUS_RING}`}
+                    className={`cursor-pointer text-slate-400 transition-colors hover:text-cyan-300 ${FOCUS_RING}`}
                   >
                     {link.label}
                   </button>
@@ -1296,7 +1229,7 @@ function Footer() {
               <li>
                 <Link
                   to="/login"
-                  className={`text-slate-400 transition-colors hover:text-purple-300 ${FOCUS_RING}`}
+                  className={`text-slate-400 transition-colors hover:text-cyan-300 ${FOCUS_RING}`}
                 >
                   Student Login
                 </Link>
@@ -1304,7 +1237,7 @@ function Footer() {
               <li>
                 <Link
                   to="/register"
-                  className={`text-slate-400 transition-colors hover:text-purple-300 ${FOCUS_RING}`}
+                  className={`text-slate-400 transition-colors hover:text-cyan-300 ${FOCUS_RING}`}
                 >
                   Create Student Account
                 </Link>
@@ -1312,7 +1245,7 @@ function Footer() {
               <li>
                 <Link
                   to="/admin/login"
-                  className={`inline-flex items-center gap-1.5 font-medium text-purple-400 transition-colors hover:text-purple-300 ${FOCUS_RING}`}
+                  className={`inline-flex items-center gap-1.5 font-medium text-cyan-400 transition-colors hover:text-cyan-300 ${FOCUS_RING}`}
                 >
                   <ShieldAlert size={14} />
                   Admin Control Portal
@@ -1337,12 +1270,12 @@ function Footer() {
                   onChange={e => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  className="w-full rounded-xl border border-white/10 bg-[#120C1F] px-4 py-2.5 text-[13px] text-white placeholder-slate-500 focus:border-purple-400 focus:outline-none"
+                  className="w-full rounded-xl border border-white/10 bg-[#0C1620] px-4 py-2.5 text-[13px] text-white placeholder-slate-500 focus:border-cyan-400 focus:outline-none"
                 />
                 <button
                   type="submit"
                   aria-label="Subscribe"
-                  className={`absolute right-1.5 top-1.5 flex h-7 w-7 cursor-pointer items-center justify-center rounded-lg bg-purple-600 text-white transition-all hover:bg-purple-500 ${FOCUS_RING}`}
+                  className={`absolute right-1.5 top-1.5 flex h-7 w-7 cursor-pointer items-center justify-center rounded-lg bg-cyan-600 text-white transition-all hover:bg-cyan-500 ${FOCUS_RING}`}
                 >
                   <Send size={13} />
                 </button>
@@ -1385,7 +1318,7 @@ function Footer() {
 
 export default function Landing() {
   return (
-    <div className="relative min-h-dvh overflow-x-clip bg-[#070510] font-sans text-slate-100 antialiased selection:bg-purple-500/30 selection:text-white">
+    <div className="relative min-h-dvh overflow-x-clip bg-[#050D14] font-sans text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-white">
       <WelcomeModal />
 
       <style>{`
@@ -1400,8 +1333,8 @@ export default function Landing() {
       `}</style>
 
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[#070510]" />
-        <div className="absolute inset-0 bg-[radial-gradient(1000px_circle_at_50%_15%,rgba(139,92,246,0.22),transparent_60%),radial-gradient(800px_circle_at_80%_80%,rgba(99,102,241,0.12),transparent_65%)]" />
+        <div className="absolute inset-0 bg-[#050D14]" />
+        <div className="absolute inset-0 bg-[radial-gradient(1000px_circle_at_50%_15%,rgba(6,182,212,0.22),transparent_60%),radial-gradient(800px_circle_at_80%_80%,rgba(14,165,233,0.12),transparent_65%)]" />
         <div className="absolute inset-0 opacity-[0.25] [background-image:radial-gradient(rgba(255,255,255,0.15)_1px,transparent_1px)] [background-size:24px_24px]" />
       </div>
 
@@ -1416,7 +1349,6 @@ export default function Landing() {
           <HowItWorks />
           <InsightsSection />
           <FAQSection />
-          <FinalCTA />
         </main>
         <Footer />
       </div>

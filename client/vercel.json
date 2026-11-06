@@ -9,7 +9,7 @@
     }
   },
   "rewrites": [
-    { "source": "/api/:path*", "destination": "https://campus-coin-omega.vercel.app/api/:path*" },
+    { "source": "/api/:path*", "destination": "http://localhost:5000//api/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

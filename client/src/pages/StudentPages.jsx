@@ -1,56 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  AlertCircle,
-  AlertTriangle,
-  BarChart3,
-  Bell,
-  Bookmark,
-  BookOpen,
-  BrainCircuit,
-  Bus,
-  CalendarDays,
-  Check,
-  CircleAlert,
-  CircleCheck,
-  CircleDollarSign,
-  Download,
-  FileImage,
-  Film,
-  Home,
-  Inbox,
-  Lightbulb,
-  LoaderCircle,
-  Lock,
-  Megaphone,
-  MoreHorizontal,
-  Pencil,
-  Plus,
-  ReceiptText,
-  Repeat,
-  ScanLine,
-  Send,
-  Sparkles,
-  Tag,
-  Target,
-  Trash2,
-  TrendingDown,
-  TrendingUp,
-  Upload,
-  UserRound,
-  Utensils,
-  Wallet,
-  WalletCards,
+  AlertCircle, AlertTriangle, BarChart3, Bell, Bookmark, BookOpen, BrainCircuit, Bus,
+  CalendarDays, Check, CircleAlert, CircleCheck, CircleDollarSign, Download, FileImage,
+  Film, Home, Inbox, Lightbulb, LoaderCircle, Lock, Megaphone, MoreHorizontal, Pencil,
+  Plus, ReceiptText, Repeat, ScanLine, Send, Sparkles, Tag, Target, Trash2, TrendingDown,
+  TrendingUp, Upload, UserRound, Utensils, Wallet, WalletCards,
 } from 'lucide-react';
 import {
-  Bar,
-  BarChart,
-  Cell,
-  Pie,
-  PieChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
+  Bar, BarChart, Cell, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts';
 import api from '../services/api.js';
 import { useEntrance } from '../hooks/useEntrance.js';
@@ -109,7 +66,7 @@ const validateEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 function FinanceTooltip({ active, payload, label }) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="rounded-2xl border border-white/15 bg-slate-950/95 px-4 py-3 shadow-2xl shadow-black/60 backdrop-blur-xl">
+    <div className="rounded-2xl border border-white/15 bg-slate-950 px-4 py-3 shadow-2xl shadow-black/60">
       {label !== undefined && label !== '' ? (
         <p className="mb-2 text-[10.5px] font-bold uppercase tracking-[0.18em] text-cyan-300">
           {label}
@@ -130,29 +87,19 @@ function FinanceTooltip({ active, payload, label }) {
 }
 
 const CARD_BASE =
-  'relative rounded-2xl border shadow-xl backdrop-blur-sm transition-all duration-300 ease-out';
+  'relative isolate z-10 rounded-2xl border shadow-xl shadow-black/40 transition-all duration-300 ease-out';
 
 const CARD_TONES = {
-  default:
-    'border-white/[0.08] bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 shadow-slate-950/60 hover:border-white/[0.15] hover:shadow-slate-950/80',
-  cyan:
-    'border-cyan-400/20 bg-gradient-to-br from-[#07192b] via-[#050f1d] to-[#07192b] shadow-cyan-950/50 hover:border-cyan-400/40 hover:shadow-cyan-900/40',
-  blue:
-    'border-blue-400/20 bg-gradient-to-br from-[#08162c] via-[#050d1e] to-[#08162c] shadow-blue-950/50 hover:border-blue-400/40 hover:shadow-blue-900/40',
-  emerald:
-    'border-emerald-400/20 bg-gradient-to-br from-[#051a18] via-[#03100e] to-[#051a18] shadow-emerald-950/50 hover:border-emerald-400/40 hover:shadow-emerald-900/40',
-  amber:
-    'border-amber-400/20 bg-gradient-to-br from-[#1b1206] via-[#120b04] to-[#1b1206] shadow-amber-950/50 hover:border-amber-400/40 hover:shadow-amber-900/40',
-  rose:
-    'border-rose-400/20 bg-gradient-to-br from-[#1b0810] via-[#120509] to-[#1b0810] shadow-rose-950/50 hover:border-rose-400/40 hover:shadow-rose-900/40',
-  violet:
-    'border-violet-400/20 bg-gradient-to-br from-[#140a22] via-[#0c0517] to-[#140a22] shadow-violet-950/50 hover:border-violet-400/40 hover:shadow-violet-900/40',
-  indigo:
-    'border-indigo-400/20 bg-gradient-to-br from-[#0a0f22] via-[#060916] to-[#0a0f22] shadow-indigo-950/50 hover:border-indigo-400/40 hover:shadow-indigo-900/40',
-  fuchsia:
-    'border-fuchsia-400/20 bg-gradient-to-br from-[#1a0a20] via-[#110616] to-[#1a0a20] shadow-fuchsia-950/50 hover:border-fuchsia-400/40 hover:shadow-fuchsia-900/40',
-  teal:
-    'border-teal-400/20 bg-gradient-to-br from-[#04191c] via-[#031012] to-[#04191c] shadow-teal-950/50 hover:border-teal-400/40 hover:shadow-teal-900/40',
+  default: 'border-slate-800 bg-slate-900 hover:border-slate-700',
+  cyan: 'border-cyan-500/30 bg-[#081b2e] hover:border-cyan-500/50',
+  blue: 'border-blue-500/30 bg-[#081630] hover:border-blue-500/50',
+  emerald: 'border-emerald-500/30 bg-[#041d1a] hover:border-emerald-500/50',
+  amber: 'border-amber-500/30 bg-[#1f1507] hover:border-amber-500/50',
+  rose: 'border-rose-500/30 bg-[#1f0a12] hover:border-rose-500/50',
+  violet: 'border-violet-500/30 bg-[#180c28] hover:border-violet-500/50',
+  indigo: 'border-indigo-500/30 bg-[#0c1228] hover:border-indigo-500/50',
+  fuchsia: 'border-fuchsia-500/30 bg-[#1e0c25] hover:border-fuchsia-500/50',
+  teal: 'border-teal-500/30 bg-[#061e20] hover:border-teal-500/50',
 };
 
 const CARD_PAD = 'p-5 sm:p-6';
@@ -162,18 +109,20 @@ const EYEBROW = 'text-[10.5px] font-bold uppercase tracking-[0.28em] text-cyan-3
 
 function PageTitle({ eyebrow = 'Your money, clearly', title, description, children }) {
   return (
-    <header className="mb-8 flex flex-col gap-5 sm:mb-10 lg:flex-row lg:items-end lg:justify-between">
+    <header className="mb-6 flex flex-col gap-4 sm:mb-8 lg:flex-row lg:items-end lg:justify-between">
       <div className="min-w-0 max-w-2xl">
         {eyebrow ? <p className={EYEBROW}>{eyebrow}</p> : null}
-        <h1 className="mt-3 bg-gradient-to-r from-white via-cyan-100 to-slate-400 bg-clip-text text-[1.7rem] font-bold leading-tight tracking-[-0.025em] text-transparent sm:text-[2rem] lg:text-[2.15rem]">
+        <h1 className="mt-2.5 bg-gradient-to-r from-white via-cyan-100 to-slate-400 bg-clip-text text-[1.5rem] font-bold leading-tight tracking-[-0.025em] text-transparent sm:text-[1.85rem] lg:text-[2.1rem]">
           {title}
         </h1>
         {description ? (
-          <p className="mt-3 text-[13.5px] leading-relaxed text-slate-400">{description}</p>
+          <p className="mt-2.5 text-[13px] leading-relaxed text-slate-400 sm:text-[13.5px]">
+            {description}
+          </p>
         ) : null}
       </div>
       {children ? (
-        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">{children}</div>
+        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">{children}</div>
       ) : null}
     </header>
   );
@@ -186,16 +135,17 @@ function Card({
   as: Tag = 'article',
   tone = 'default',
   glow = false,
+  ...rest
 }) {
   const toneCls = CARD_TONES[tone] || CARD_TONES.default;
   return (
-    <Tag className={`${CARD_BASE} ${toneCls} ${padded ? CARD_PAD : ''} ${className}`}>
+    <Tag className={`${CARD_BASE} ${toneCls} ${padded ? CARD_PAD : ''} ${className}`} {...rest}>
       {glow ? (
-        <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
-          <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-white/[0.06] blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 -z-0 overflow-hidden rounded-2xl">
+          <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-white/[0.05] blur-3xl" />
         </div>
       ) : null}
-      {children}
+      <div className="relative z-10">{children}</div>
     </Tag>
   );
 }
@@ -213,25 +163,35 @@ function CardHead({ title, subtitle, action }) {
 }
 
 function Btn({ variant = 'primary', children, className = '', as: Tag = 'button', icon, ...rest }) {
-  const base = `inline-flex items-center rounded-full ${icon ? 'pr-4 pl-1' : 'px-4'} py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[12px] uppercase tracking-wider text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed`;
+  const base = `inline-flex items-center rounded-full ${
+    icon ? 'pr-4 pl-1' : 'px-4'
+  } py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[12px] uppercase tracking-wider text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed`;
   const variants = {
-    primary: { bg: 'bg-[#2b7cb6]', text: 'text-[#2b7cb6]' },
-    secondary: { bg: 'bg-[#5c6b7a]', text: 'text-[#5c6b7a]' },
-    ghost: { bg: 'bg-transparent border border-white/20 hover:bg-white/10 text-slate-300', text: 'text-slate-300' },
-    danger: { bg: 'bg-[#ef4444]', text: 'text-[#ef4444]' },
-    outlineDanger: { bg: 'bg-transparent border border-[#ef4444] hover:bg-[#ef4444]/10', text: 'text-[#ef4444]' },
-    success: { bg: 'bg-[#7ac142]', text: 'text-[#7ac142]' },
-    warning: { bg: 'bg-[#f5a623]', text: 'text-[#f5a623]' },
-    violet: { bg: 'bg-[#7a3b9c]', text: 'text-[#7a3b9c]' },
-    fuchsia: { bg: 'bg-[#e81263]', text: 'text-[#e81263]' },
-    teal: { bg: 'bg-[#00a884]', text: 'text-[#00a884]' },
+    primary: { bg: 'bg-[#2b7cb6] hover:bg-[#2569a0]', text: 'text-[#2b7cb6]' },
+    secondary: { bg: 'bg-[#5c6b7a] hover:bg-[#4d5967]', text: 'text-[#5c6b7a]' },
+    ghost: {
+      bg: 'bg-transparent border border-white/20 hover:bg-white/10 text-slate-300',
+      text: 'text-slate-300',
+    },
+    danger: { bg: 'bg-[#ef4444] hover:bg-[#dc2626]', text: 'text-[#ef4444]' },
+    outlineDanger: {
+      bg: 'bg-transparent border border-[#ef4444] hover:bg-[#ef4444]/10',
+      text: 'text-[#ef4444]',
+    },
+    success: { bg: 'bg-[#7ac142] hover:bg-[#6aae37]', text: 'text-[#7ac142]' },
+    warning: { bg: 'bg-[#f5a623] hover:bg-[#e0951c]', text: 'text-[#f5a623]' },
+    violet: { bg: 'bg-[#7a3b9c] hover:bg-[#69318a]', text: 'text-[#7a3b9c]' },
+    fuchsia: { bg: 'bg-[#e81263] hover:bg-[#cf0f57]', text: 'text-[#e81263]' },
+    teal: { bg: 'bg-[#00a884] hover:bg-[#009172]', text: 'text-[#00a884]' },
   };
   const v = variants[variant] || variants.primary;
 
   return (
     <Tag className={`${base} ${v.bg} ${className}`} {...rest}>
       {icon && (
-        <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white mr-3 ${v.text}`}>
+        <div
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white mr-3 ${v.text}`}
+        >
           {icon}
         </div>
       )}
@@ -242,7 +202,7 @@ function Btn({ variant = 'primary', children, className = '', as: Tag = 'button'
 
 function Field({ as = 'input', className = '', invalid, children, ...rest }) {
   const base =
-    'w-full rounded-xl border bg-slate-950/70 px-4 py-2.5 text-[13.5px] text-slate-100 placeholder-slate-500 outline-none transition-all duration-300 focus:bg-slate-950/90 focus:ring-4 disabled:opacity-50';
+    'w-full rounded-xl border bg-slate-900 px-4 py-2.5 text-[13.5px] text-slate-100 placeholder-slate-500 outline-none transition-all duration-300 focus:ring-4 disabled:opacity-50';
   const border = invalid
     ? 'border-rose-500/60 focus:border-rose-400 focus:ring-rose-500/20'
     : 'border-white/[0.1] focus:border-cyan-400/70 focus:ring-cyan-400/15';
@@ -288,32 +248,32 @@ function Metric({ label, value, detail, tone = 'cyan', icon, trend }) {
   const tones = {
     cyan: {
       card: 'cyan',
-      chip: 'text-cyan-100 border-cyan-300/50 bg-gradient-to-br from-cyan-400/30 to-blue-500/20 shadow-lg shadow-cyan-500/30',
+      chip: 'text-cyan-100 border-cyan-400/40 bg-cyan-500/20 shadow-cyan-500/20',
       accent: 'from-cyan-400 to-blue-500',
     },
     emerald: {
       card: 'emerald',
-      chip: 'text-emerald-100 border-emerald-300/50 bg-gradient-to-br from-emerald-400/30 to-teal-500/20 shadow-lg shadow-emerald-500/30',
+      chip: 'text-emerald-100 border-emerald-400/40 bg-emerald-500/20 shadow-emerald-500/20',
       accent: 'from-emerald-400 to-teal-500',
     },
     amber: {
       card: 'amber',
-      chip: 'text-amber-100 border-amber-300/50 bg-gradient-to-br from-amber-400/30 to-orange-500/20 shadow-lg shadow-amber-500/30',
+      chip: 'text-amber-100 border-amber-400/40 bg-amber-500/20 shadow-amber-500/20',
       accent: 'from-amber-400 to-orange-500',
     },
     violet: {
       card: 'violet',
-      chip: 'text-violet-100 border-violet-300/50 bg-gradient-to-br from-violet-400/30 to-purple-500/20 shadow-lg shadow-violet-500/30',
+      chip: 'text-violet-100 border-violet-400/40 bg-violet-500/20 shadow-violet-500/20',
       accent: 'from-violet-400 to-purple-500',
     },
     blue: {
       card: 'blue',
-      chip: 'text-blue-100 border-blue-300/50 bg-gradient-to-br from-blue-400/30 to-indigo-500/20 shadow-lg shadow-blue-500/30',
+      chip: 'text-blue-100 border-blue-400/40 bg-blue-500/20 shadow-blue-500/20',
       accent: 'from-blue-400 to-indigo-500',
     },
     rose: {
       card: 'rose',
-      chip: 'text-rose-100 border-rose-300/50 bg-gradient-to-br from-rose-400/30 to-pink-500/20 shadow-lg shadow-rose-500/30',
+      chip: 'text-rose-100 border-rose-400/40 bg-rose-500/20 shadow-rose-500/20',
       accent: 'from-rose-400 to-pink-500',
     },
   };
@@ -324,19 +284,21 @@ function Metric({ label, value, detail, tone = 'cyan', icon, trend }) {
     <Card
       tone={t.card}
       padded={false}
-      className="group relative overflow-hidden p-5 hover:-translate-y-1"
+      className="group overflow-hidden p-4 sm:p-5 hover:-translate-y-1"
     >
       <div
         className={`pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-gradient-to-br ${t.accent} opacity-20 blur-3xl transition-opacity duration-500 group-hover:opacity-40`}
       />
-      <div
-        className={`pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r ${t.accent} opacity-70`}
-      />
       <div className="relative flex items-start justify-between gap-2">
-        <div
-          className={`flex h-11 w-11 items-center justify-center rounded-xl border ${t.chip} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}
-        >
-          {icon}
+        <div className="flex flex-col items-start gap-2.5">
+          <div
+            className={`flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl border ${t.chip} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}
+          >
+            {icon}
+          </div>
+          <div
+            className={`h-[3px] w-12 rounded-full bg-gradient-to-r ${t.accent} opacity-90`}
+          />
         </div>
         {trend ? (
           <span
@@ -351,11 +313,17 @@ function Metric({ label, value, detail, tone = 'cyan', icon, trend }) {
           </span>
         ) : null}
       </div>
-      <p className="relative mt-4 text-[10.5px] font-bold uppercase tracking-[0.2em] text-white/60">
+      <p className="relative mt-3.5 text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.18em] text-white/60">
         {label}
       </p>
-      <p className="relative mt-1 text-[22px] font-bold tracking-tight text-white">{value}</p>
-      {detail ? <p className="relative mt-1.5 text-[11.5px] text-white/60">{detail}</p> : null}
+      <p className="relative mt-1 text-[18px] sm:text-[20px] lg:text-[22px] font-bold tracking-tight text-white break-words">
+        {value}
+      </p>
+      {detail ? (
+        <p className="relative mt-1.5 text-[11px] sm:text-[11.5px] text-white/60 break-words">
+          {detail}
+        </p>
+      ) : null}
     </Card>
   );
 }
@@ -363,11 +331,11 @@ function Metric({ label, value, detail, tone = 'cyan', icon, trend }) {
 function Empty({ icon, title, description, action, compact }) {
   return (
     <div
-      className={`flex flex-col items-center justify-center rounded-2xl border border-dashed border-white/[0.12] bg-gradient-to-br from-white/[0.03] to-transparent text-center ${
+      className={`flex flex-col items-center justify-center rounded-2xl border border-dashed border-white/[0.14] bg-slate-900 text-center ${
         compact ? 'px-4 py-6' : 'px-6 py-14'
       }`}
     >
-      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/[0.1] bg-gradient-to-br from-white/[0.08] to-white/[0.02] text-slate-300 shadow-lg shadow-black/30">
+      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/[0.1] bg-slate-800 text-slate-300 shadow-lg shadow-black/30">
         {icon || <Inbox size={18} />}
       </div>
       <p className="text-[13px] font-bold text-white">{title}</p>
@@ -384,7 +352,7 @@ function Empty({ icon, title, description, action, compact }) {
 function ErrorBox({ error }) {
   if (!error) return null;
   return (
-    <div className="mb-5 flex items-start gap-3 rounded-2xl border border-rose-500/40 bg-gradient-to-br from-rose-500/20 via-rose-500/10 to-rose-500/[0.02] px-4 py-3.5 shadow-lg shadow-rose-950/40 backdrop-blur">
+    <div className="mb-5 flex items-start gap-3 rounded-2xl border border-rose-500/40 bg-rose-950/80 px-4 py-3.5 shadow-lg shadow-rose-950/40">
       <AlertTriangle size={16} className="mt-0.5 shrink-0 text-rose-400" />
       <p className="text-[12.5px] leading-relaxed text-rose-100">{error}</p>
     </div>
@@ -394,7 +362,7 @@ function ErrorBox({ error }) {
 function SuccessBox({ children }) {
   if (!children) return null;
   return (
-    <div className="mb-5 flex items-start gap-3 rounded-2xl border border-emerald-500/40 bg-gradient-to-br from-emerald-500/20 via-emerald-500/10 to-emerald-500/[0.02] px-4 py-3.5 shadow-lg shadow-emerald-950/40 backdrop-blur">
+    <div className="mb-5 flex items-start gap-3 rounded-2xl border border-emerald-500/40 bg-emerald-950/80 px-4 py-3.5 shadow-lg shadow-emerald-950/40">
       <CircleCheck size={16} className="mt-0.5 shrink-0 text-emerald-400" />
       <div className="text-[12.5px] leading-relaxed text-emerald-100">{children}</div>
     </div>
@@ -433,14 +401,13 @@ function SkeletonRows({ rows = 5 }) {
 
 function DashboardBanner({ user, month, children }) {
   return (
-    <Card padded={false} tone="blue" className="relative overflow-hidden">
-      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-br from-cyan-400/40 to-blue-500/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-gradient-to-br from-indigo-500/30 to-violet-500/10 blur-3xl" />
-      <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,rgba(148,163,184,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.06)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+    <Card padded={false} tone="blue" className="overflow-hidden">
+      <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gradient-to-br from-cyan-400/30 to-blue-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-28 -left-16 h-72 w-72 rounded-full bg-gradient-to-br from-indigo-500/25 to-violet-500/10 blur-3xl" />
       <div className="relative flex flex-col gap-4 p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="min-w-0">
           <p className={EYEBROW}>Your money, clearly</p>
-          <h1 className="mt-1.5 text-[1.35rem] font-bold leading-tight tracking-[-0.025em] text-white sm:text-[1.6rem]">
+          <h1 className="mt-1.5 text-[1.25rem] font-bold leading-tight tracking-[-0.025em] text-white sm:text-[1.5rem] lg:text-[1.6rem]">
             Hello, {user?.name || 'Student'}
           </h1>
           <p className="mt-1.5 max-w-xl text-[12.5px] leading-relaxed text-white/70">
@@ -567,7 +534,7 @@ function BudgetBar({ name, spent, limit, warningPercentage, colorIndex = 0, onRe
 
   return (
     <div className="space-y-2">
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2.5">
           <span
             className="h-2.5 w-2.5 shrink-0 rounded-full ring-2 ring-white/10"
@@ -582,10 +549,10 @@ function BudgetBar({ name, spent, limit, warningPercentage, colorIndex = 0, onRe
           <span
             className={`rounded-full border px-2 py-0.5 text-[9.5px] font-bold uppercase tracking-wider ${
               over
-                ? 'border-rose-400/50 bg-rose-500/25 text-rose-200 shadow-lg shadow-rose-500/20'
+                ? 'border-rose-400/50 bg-rose-500/25 text-rose-200'
                 : warn
-                ? 'border-amber-400/50 bg-amber-500/25 text-amber-200 shadow-lg shadow-amber-500/20'
-                : 'border-emerald-400/50 bg-emerald-500/25 text-emerald-200 shadow-lg shadow-emerald-500/20'
+                ? 'border-amber-400/50 bg-amber-500/25 text-amber-200'
+                : 'border-emerald-400/50 bg-emerald-500/25 text-emerald-200'
             }`}
           >
             {over ? 'Over' : warn ? 'Warn' : 'OK'}
@@ -604,7 +571,7 @@ function BudgetBar({ name, spent, limit, warningPercentage, colorIndex = 0, onRe
           <button
             type="button"
             onClick={onRemove}
-            className="inline-flex items-center rounded-full pr-2.5 pl-1 py-0.5 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[10px] uppercase tracking-wider text-white cursor-pointer bg-[#ef4444]"
+            className="inline-flex items-center rounded-full pr-2.5 pl-1 py-0.5 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[10px] uppercase tracking-wider text-white cursor-pointer bg-[#ef4444] hover:bg-[#dc2626]"
           >
             <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white mr-1.5 text-[#ef4444]">
               <Trash2 size={10} />
@@ -623,136 +590,219 @@ function BudgetBar({ name, spent, limit, warningPercentage, colorIndex = 0, onRe
   );
 }
 
+function SectionHeader({ tone, icon, title, subtitle, count, countLabel }) {
+  const toneMap = {
+    amber: {
+      iconBox: 'border-amber-400/40 bg-amber-500/20 text-amber-100 shadow-amber-500/20',
+      badge: 'border-amber-400/50 bg-amber-500/20 text-amber-100',
+    },
+    cyan: {
+      iconBox: 'border-cyan-400/40 bg-cyan-500/20 text-cyan-100 shadow-cyan-500/20',
+      badge: 'border-cyan-400/50 bg-cyan-500/20 text-cyan-100',
+    },
+  };
+  const t = toneMap[tone] || toneMap.cyan;
+
+  return (
+    <div className="mb-4 flex flex-wrap items-center gap-3">
+      <span
+        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border shadow-lg ${t.iconBox}`}
+      >
+        {icon}
+      </span>
+      <div className="min-w-0 flex-1">
+        <h2 className="text-[15px] font-bold tracking-tight text-white sm:text-[16.5px]">
+          {title}
+        </h2>
+        {subtitle ? (
+          <p className="text-[11.5px] text-slate-400 sm:text-[12px]">{subtitle}</p>
+        ) : null}
+      </div>
+      {typeof count === 'number' ? (
+        <span
+          className={`shrink-0 rounded-full border px-3.5 py-1.5 text-[11px] font-bold ${t.badge}`}
+        >
+          {count} {countLabel}
+        </span>
+      ) : null}
+    </div>
+  );
+}
+
+function QuickAccessCard({ href, tone, icon, title, subtitle, badge, badgeTone }) {
+  const toneMap = {
+    violet: {
+      card: 'violet',
+      iconBox: 'border-violet-400/40 bg-violet-500/20 text-violet-100 shadow-violet-500/20',
+      accent: 'from-violet-400 to-purple-500',
+    },
+    cyan: {
+      card: 'cyan',
+      iconBox: 'border-cyan-400/40 bg-cyan-500/20 text-cyan-100 shadow-cyan-500/20',
+      accent: 'from-cyan-400 to-blue-500',
+    },
+    rose: {
+      card: 'rose',
+      iconBox: 'border-rose-400/40 bg-rose-500/20 text-rose-100 shadow-rose-500/20',
+      accent: 'from-rose-400 to-pink-500',
+    },
+  };
+  const t = toneMap[tone] || toneMap.cyan;
+
+  const badgeToneMap = {
+    violet: 'border-violet-400/50 bg-violet-500/20 text-violet-100',
+    rose: 'border-rose-400/50 bg-rose-500/20 text-rose-100',
+    cyan: 'border-cyan-400/50 bg-cyan-500/20 text-cyan-100',
+  };
+
+  return (
+    <a href={href} className="block">
+      <Card
+        tone={t.card}
+        padded={false}
+        className="group flex h-full cursor-pointer flex-col overflow-hidden p-5 hover:-translate-y-1 hover:shadow-2xl"
+      >
+        <div
+          className={`pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full bg-gradient-to-br ${t.accent} opacity-20 blur-3xl transition-opacity duration-500 group-hover:opacity-40`}
+        />
+        <div className="relative flex items-start justify-between gap-3">
+          <div className="flex flex-col items-start gap-2.5">
+            <span
+              className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border shadow-lg transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 ${t.iconBox}`}
+            >
+              {icon}
+            </span>
+            <div className={`h-[3px] w-12 rounded-full bg-gradient-to-r ${t.accent} opacity-90`} />
+          </div>
+          {badge ? (
+            <span
+              className={`shrink-0 rounded-full border px-3 py-1 text-[10.5px] font-bold uppercase tracking-wider ${
+                badgeToneMap[badgeTone] || badgeToneMap.cyan
+              }`}
+            >
+              {badge}
+            </span>
+          ) : null}
+        </div>
+        <p className="relative mt-3.5 text-[14px] font-bold tracking-tight text-white">{title}</p>
+        {subtitle ? (
+          <p className="relative mt-1.5 flex-1 text-[12px] leading-relaxed text-white/70">
+            {subtitle}
+          </p>
+        ) : null}
+        <div className="relative mt-4 flex items-center gap-1.5 text-[10.5px] font-bold uppercase tracking-[0.18em] text-white/60 transition-colors group-hover:text-white">
+          Open
+          <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+        </div>
+      </Card>
+    </a>
+  );
+}
+
 function AnnouncementList({ items }) {
   if (!items.length) return null;
-  const visible = items.slice(0, 3);
+  const visible = items.slice(0, 6);
+
   return (
-    <Card tone="amber" padded={false} className="overflow-hidden hover:-translate-y-1">
-      <div className="flex items-center gap-3 border-b border-amber-400/15 bg-gradient-to-r from-amber-500/10 to-transparent px-5 py-3">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-amber-300/50 bg-gradient-to-br from-amber-400/30 to-orange-500/20 text-amber-100 shadow-lg shadow-amber-500/30">
-          <Megaphone size={14} />
-        </div>
-        <div className="min-w-0 flex-1">
-          <p className="text-[13px] font-bold text-white">Announcements</p>
-          <p className="text-[10.5px] text-white/60">
-            {items.length} active {items.length === 1 ? 'notice' : 'notices'}
-          </p>
-        </div>
-      </div>
-      <ul className="divide-y divide-amber-400/10">
+    <section>
+      <SectionHeader
+        tone="amber"
+        icon={<Megaphone size={18} />}
+        title="Announcements"
+        subtitle="Official notices published by your campus admin"
+        count={items.length}
+        countLabel={items.length === 1 ? 'notice' : 'notices'}
+      />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {visible.map(a => (
-          <li
+          <Card
             key={a._id}
-            className="flex items-start gap-2.5 px-5 py-2.5 transition-colors hover:bg-white/[0.03]"
+            tone="amber"
+            className="group flex flex-col overflow-hidden hover:-translate-y-1"
           >
-            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-amber-300 to-orange-500 shadow shadow-amber-400/60" />
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-[12.5px] font-semibold text-white">
-                {a.title || 'Untitled announcement'}
-              </p>
-              {a.message || a.body ? (
-                <p className="mt-0.5 line-clamp-1 text-[11px] leading-relaxed text-white/60">
-                  {a.message || a.body}
+            <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-amber-500/20 blur-3xl transition-opacity duration-500 group-hover:bg-amber-500/30" />
+            <div className="relative flex items-start gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-400/40 bg-amber-500/20 text-amber-100 shadow-lg shadow-amber-500/20">
+                <Megaphone size={15} />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-[13.5px] font-bold leading-snug text-white">
+                  {a.title || 'Untitled announcement'}
                 </p>
-              ) : null}
+                {a.createdAt ? (
+                  <p className="mt-1 text-[10.5px] font-semibold uppercase tracking-wider text-amber-200/80">
+                    {dateLabel(a.createdAt)}
+                  </p>
+                ) : null}
+              </div>
             </div>
-          </li>
+            {a.message || a.body ? (
+              <p className="relative mt-3 whitespace-pre-wrap text-[12.5px] leading-relaxed text-white/80">
+                {a.message || a.body}
+              </p>
+            ) : null}
+          </Card>
         ))}
-      </ul>
-      {items.length > 3 ? (
-        <div className="border-t border-amber-400/10 px-5 py-2 text-center">
-          <p className="text-[10.5px] font-semibold text-amber-200/80">+{items.length - 3} more</p>
-        </div>
+      </div>
+      {items.length > visible.length ? (
+        <p className="mt-3 text-center text-[11.5px] font-semibold text-amber-200/80">
+          +{items.length - visible.length} more{' '}
+          {items.length - visible.length === 1 ? 'announcement' : 'announcements'}
+        </p>
       ) : null}
-    </Card>
+    </section>
   );
 }
 
 function TipsList({ tips }) {
   if (!tips.length) return null;
-  const visible = tips.slice(0, 3);
+  const visible = tips.slice(0, 6);
+
   return (
-    <Card tone="cyan" padded={false} className="overflow-hidden hover:-translate-y-1">
-      <div className="flex items-center gap-3 border-b border-cyan-400/15 bg-gradient-to-r from-cyan-500/10 to-transparent px-5 py-3">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-cyan-300/50 bg-gradient-to-br from-cyan-400/30 to-blue-500/20 text-cyan-100 shadow-lg shadow-cyan-500/30">
-          <Sparkles size={14} />
-        </div>
-        <div className="min-w-0 flex-1">
-          <p className="text-[13px] font-bold text-white">Smart saving tips</p>
-          <p className="text-[10.5px] text-white/60">Personalized for you</p>
-        </div>
-      </div>
-      <ul className="divide-y divide-cyan-400/10">
+    <section>
+      <SectionHeader
+        tone="cyan"
+        icon={<Sparkles size={18} />}
+        title="Smart saving tips"
+        subtitle="Personalized suggestions and campus-wide advice"
+        count={tips.length}
+        countLabel={tips.length === 1 ? 'tip' : 'tips'}
+      />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {visible.map(t => (
-          <li
+          <Card
             key={t._id}
-            className="flex items-start gap-2.5 px-5 py-2.5 transition-colors hover:bg-white/[0.03]"
+            tone="cyan"
+            className="group flex flex-col overflow-hidden hover:-translate-y-1"
           >
-            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-br from-cyan-300 to-blue-500 shadow shadow-cyan-400/60" />
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-[12.5px] font-semibold text-white">{t.title}</p>
-              {t.description || t.content ? (
-                <p className="mt-0.5 line-clamp-1 text-[11px] leading-relaxed text-white/60">
-                  {t.description || t.content}
-                </p>
+            <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-cyan-500/20 blur-3xl transition-opacity duration-500 group-hover:bg-cyan-500/30" />
+            <div className="relative flex items-start justify-between gap-3">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-cyan-400/40 bg-cyan-500/20 text-cyan-100 shadow-lg shadow-cyan-500/20">
+                <Lightbulb size={16} />
+              </span>
+              {t.potentialSaving ? (
+                <span className="shrink-0 rounded-full border border-emerald-400/50 bg-emerald-500/20 px-2.5 py-1 text-[10px] font-bold text-emerald-100 shadow-lg shadow-emerald-500/20">
+                  Save {money(t.potentialSaving)}
+                </span>
               ) : null}
             </div>
-            {t.potentialSaving ? (
-              <span className="shrink-0 rounded-full border border-emerald-400/50 bg-emerald-500/25 px-2 py-0.5 text-[9.5px] font-bold text-emerald-100 shadow-lg shadow-emerald-500/20">
-                {money(t.potentialSaving)}
-              </span>
-            ) : null}
-          </li>
-        ))}
-      </ul>
-      {tips.length > 3 ? (
-        <div className="border-t border-cyan-400/10 px-5 py-2 text-center">
-          <p className="text-[10.5px] font-semibold text-cyan-200/80">+{tips.length - 3} more</p>
-        </div>
-      ) : null}
-    </Card>
-  );
-}
-
-function AttentionList({ notifications }) {
-  if (!notifications.length) return null;
-  return (
-    <Card tone="rose" padded={false} className="overflow-hidden hover:-translate-y-1">
-      <div className="flex items-center gap-3 border-b border-rose-400/15 bg-gradient-to-r from-rose-500/10 to-transparent px-5 py-3">
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-rose-300/50 bg-gradient-to-br from-rose-400/30 to-pink-500/20 text-rose-100 shadow-lg shadow-rose-500/30">
-          <Bell size={14} />
-        </div>
-        <div className="min-w-0 flex-1">
-          <p className="text-[13px] font-bold text-white">Attention needed</p>
-          <p className="text-[10.5px] text-white/60">
-            {notifications.length} live {notifications.length === 1 ? 'notice' : 'notices'}
-          </p>
-        </div>
-      </div>
-      <ul className="divide-y divide-rose-400/10">
-        {notifications.slice(0, 3).map(n => (
-          <li
-            key={n._id}
-            className="flex items-start gap-2.5 px-5 py-2.5 transition-colors hover:bg-white/[0.03]"
-          >
-            <CircleAlert size={13} className="mt-0.5 shrink-0 text-amber-300" />
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-[12.5px] font-semibold text-white">{n.title}</p>
-              <p className="mt-0.5 line-clamp-1 text-[11px] leading-relaxed text-white/60">
-                {n.message}
+            <p className="relative mt-3 text-[13.5px] font-bold leading-snug text-white">
+              {t.title}
+            </p>
+            {t.description || t.content ? (
+              <p className="relative mt-1.5 whitespace-pre-wrap text-[12.5px] leading-relaxed text-white/80">
+                {t.description || t.content}
               </p>
-            </div>
-          </li>
+            ) : null}
+          </Card>
         ))}
-      </ul>
-      {notifications.length > 3 ? (
-        <div className="border-t border-rose-400/10 px-5 py-2 text-center">
-          <p className="text-[10.5px] font-semibold text-rose-200/80">
-            +{notifications.length - 3} more
-          </p>
-        </div>
+      </div>
+      {tips.length > visible.length ? (
+        <p className="mt-3 text-center text-[11.5px] font-semibold text-cyan-200/80">
+          +{tips.length - visible.length} more {tips.length - visible.length === 1 ? 'tip' : 'tips'}
+        </p>
       ) : null}
-    </Card>
+    </section>
   );
 }
 
@@ -813,8 +863,8 @@ export function Dashboard() {
 
   if (!view) {
     return (
-      <main className="relative mx-auto max-w-[1440px] px-4 py-6 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <main className="relative mx-auto max-w-[1440px] px-3 py-5 sm:px-6 lg:px-10">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
           {Array.from({ length: 4 }).map((_, i) => (
             <SkeletonCard key={i} />
           ))}
@@ -834,10 +884,12 @@ export function Dashboard() {
     }, {})
   );
 
+  const unreadCount = (notifications || []).filter(n => !n.isRead).length;
+
   return (
     <main
       ref={ref}
-      className="relative mx-auto max-w-[1440px] space-y-5 px-4 py-6 sm:px-6 sm:py-8 lg:px-10"
+      className="relative mx-auto max-w-[1440px] space-y-4 px-3 py-5 sm:space-y-5 sm:px-6 sm:py-8 lg:px-10"
     >
       <DashboardBanner user={user} month={view.month}>
         <Btn as="a" href="/ocr" variant="teal" icon={<ScanLine size={14} />}>
@@ -850,7 +902,7 @@ export function Dashboard() {
 
       <ErrorBox error={error} />
 
-      <section className="grid grid-cols-2 gap-4 xl:grid-cols-4">
+      <section className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
         <Metric
           tone="blue"
           label="Available this month"
@@ -890,11 +942,41 @@ export function Dashboard() {
         />
       </section>
 
+      <section className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+        <QuickAccessCard
+          href="/insights"
+          tone="violet"
+          icon={<BrainCircuit size={18} />}
+          title="AI spending insight"
+          subtitle="Generate a smart analysis of your month"
+          badge="AI"
+          badgeTone="violet"
+        />
+        <QuickAccessCard
+          href="/assistant"
+          tone="cyan"
+          icon={<Sparkles size={18} />}
+          title="Ask the assistant"
+          subtitle="Chat about your spending and budgets"
+          badge="Chat"
+          badgeTone="cyan"
+        />
+        <QuickAccessCard
+          href="/notifications"
+          tone="rose"
+          icon={<Bell size={18} />}
+          title="Notifications"
+          subtitle="Budget alerts, reminders and updates"
+          badge={unreadCount ? `${unreadCount} new` : 'All read'}
+          badgeTone="rose"
+        />
+      </section>
+
       <section>
         <Card tone="violet" glow>
           <CardHead title="Monthly cash flow" subtitle="Income and expenses by day" />
           {cashFlowChart.length ? (
-            <div className="h-[260px] w-full">
+            <div className="h-[220px] w-full sm:h-[260px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={cashFlowChart} barCategoryGap="12%" barGap={4}>
                   <XAxis dataKey="day" hide />
@@ -972,25 +1054,9 @@ export function Dashboard() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-        <AnnouncementList items={announcements} />
-        <AttentionList notifications={notifications} />
-        <TipsList tips={tips} />
+      <AnnouncementList items={announcements} />
 
-        {!announcements.length && !notifications.length && !tips.length ? (
-          <div className="lg:col-span-3">
-            <Card tone="violet">
-              <CardHead title="Stay in the loop" subtitle="Announcements & saving tips" />
-              <Empty
-                compact
-                icon={<Megaphone size={18} className="text-white/60" />}
-                title="Nothing here yet"
-                description="Campus announcements and personalized tips will appear here."
-              />
-            </Card>
-          </div>
-        ) : null}
-      </section>
+      <TipsList tips={tips} />
     </main>
   );
 }
@@ -1285,24 +1351,20 @@ export function Transactions() {
   return (
     <main
       ref={ref}
-      className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10"
+      className="mx-auto max-w-[1440px] space-y-5 px-3 py-5 sm:space-y-6 sm:px-6 sm:py-8 lg:px-10"
     >
       <PageTitle
         title="Transactions"
         description="A private, searchable ledger of the money you record."
       >
-      <label className="group inline-flex cursor-pointer items-center gap-2 rounded-xl border border-slate-700/60 bg-slate-800/80 px-3.5 py-2 text-xs font-semibold text-slate-200 shadow-sm backdrop-blur-sm transition-all duration-200 hover:border-slate-600 hover:bg-slate-800 hover:text-white active:scale-[0.98]">
-  <Upload size={16} className="text-amber-400 transition-transform duration-200 group-hover:-translate-y-0.5" />
-  
-  <span class="text-slate-200">Import CSV</span>
-
-  <input
-    type="file"
-    accept=".csv,text/csv"
-    className="hidden"
-    onChange={uploadCSV}
-  />
-</label>
+        <label className="group inline-flex cursor-pointer items-center gap-2 rounded-xl border border-slate-700 bg-slate-800 px-3.5 py-2 text-xs font-semibold text-slate-200 shadow-sm transition-all duration-200 hover:border-slate-600 hover:bg-slate-700 hover:text-white active:scale-[0.98]">
+          <Upload
+            size={16}
+            className="text-amber-400 transition-transform duration-200 group-hover:-translate-y-0.5"
+          />
+          <span className="text-slate-200">Import CSV</span>
+          <input type="file" accept=".csv,text/csv" className="hidden" onChange={uploadCSV} />
+        </label>
         <Btn as="a" href="/ocr" variant="teal" icon={<ScanLine size={15} />}>
           Scan receipt
         </Btn>
@@ -1314,11 +1376,16 @@ export function Transactions() {
       <ErrorBox error={error} />
       {csvResult ? (
         <SuccessBox>
-          <p>Imported {csvResult.imported} rows. {csvResult.errors?.length || 0} rows need correction.</p>
+          <p>
+            Imported {csvResult.imported} rows. {csvResult.errors?.length || 0} rows need
+            correction.
+          </p>
           {csvResult.errors?.length ? (
             <ul className="mt-2 list-disc space-y-1 pl-5 text-rose-100">
               {csvResult.errors.map(error => (
-                <li key={`${error.row}-${error.message}`}>Row {error.row}: {error.message}</li>
+                <li key={`${error.row}-${error.message}`}>
+                  Row {error.row}: {error.message}
+                </li>
               ))}
             </ul>
           ) : null}
@@ -1326,8 +1393,8 @@ export function Transactions() {
       ) : null}
 
       <Card tone="indigo" padded={false} className="overflow-hidden" glow>
-        <div className="flex flex-col gap-3 border-b border-white/[0.08] bg-gradient-to-r from-white/[0.03] to-transparent p-5 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-3 border-b border-white/[0.08] bg-white/[0.02] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+          <div className="flex flex-wrap items-center gap-3">
             <Field
               as="select"
               value={filter}
@@ -1393,7 +1460,7 @@ export function Transactions() {
                     return (
                       <tr
                         key={x._id}
-                        className="border-b border-white/[0.05] transition-all duration-300 last:border-0 hover:bg-gradient-to-r hover:from-white/[0.04] hover:to-transparent"
+                        className="border-b border-white/[0.05] transition-all duration-300 last:border-0 hover:bg-white/[0.03]"
                       >
                         <td className="px-5 py-4">
                           <div className="flex items-center gap-3">
@@ -1476,7 +1543,7 @@ export function Transactions() {
                 return (
                   <div
                     key={x._id}
-                    className="rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-4 transition-all duration-300 hover:border-white/[0.15]"
+                    className="rounded-2xl border border-white/[0.08] bg-slate-900 p-4 transition-all duration-300 hover:border-white/[0.15]"
                   >
                     <div className="flex items-start gap-3">
                       <div
@@ -1631,7 +1698,7 @@ export function Categories() {
   };
 
   return (
-    <main className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+    <main className="mx-auto max-w-[1440px] space-y-5 px-3 py-5 sm:space-y-6 sm:px-6 sm:py-8 lg:px-10">
       <PageTitle
         title="Categories"
         description="Default categories are shared safely; your personal ones remain yours."
@@ -1697,7 +1764,7 @@ export function Categories() {
                 return (
                   <div
                     key={x._id}
-                    className="group flex items-center gap-3 rounded-xl border border-white/[0.08] bg-gradient-to-r from-white/[0.04] to-white/[0.01] px-4 py-3 transition-all duration-300 hover:border-white/[0.18] hover:from-white/[0.08] hover:to-white/[0.02]"
+                    className="group flex items-center gap-3 rounded-xl border border-white/[0.08] bg-slate-900 px-4 py-3 transition-all duration-300 hover:border-white/[0.18]"
                   >
                     <div
                       className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white shadow-lg transition-transform duration-500 group-hover:scale-110"
@@ -1901,7 +1968,7 @@ export function Budgets() {
   };
 
   return (
-    <main className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+    <main className="mx-auto max-w-[1440px] space-y-5 px-3 py-5 sm:space-y-6 sm:px-6 sm:py-8 lg:px-10">
       <PageTitle
         eyebrow="Goals & guardrails"
         title="Budget goals"
@@ -2133,7 +2200,7 @@ export function Reports() {
   const totalExpense = data ? Number(data.summary.expense || 0) : 0;
 
   return (
-    <main className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+    <main className="mx-auto max-w-[1440px] space-y-5 px-3 py-5 sm:space-y-6 sm:px-6 sm:py-8 lg:px-10">
       <PageTitle
         eyebrow="Real records, useful perspective"
         title="Monthly reports"
@@ -2143,7 +2210,7 @@ export function Reports() {
           type="button"
           onClick={exportImage}
           disabled={!data}
-          className="inline-flex items-center rounded-full pr-4 pl-1 py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[12px] uppercase tracking-wider text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed bg-[#7a3b9c]"
+          className="inline-flex items-center rounded-full pr-4 pl-1 py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[12px] uppercase tracking-wider text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed bg-[#7a3b9c] hover:bg-[#69318a]"
         >
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white mr-3 text-[#7a3b9c]">
             <FileImage size={15} />
@@ -2154,7 +2221,7 @@ export function Reports() {
           type="button"
           onClick={exportPDF}
           disabled={!data}
-          className="inline-flex items-center rounded-full pr-4 pl-1 py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[12px] uppercase tracking-wider text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed bg-[#ef4444]"
+          className="inline-flex items-center rounded-full pr-4 pl-1 py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[12px] uppercase tracking-wider text-white cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed bg-[#ef4444] hover:bg-[#dc2626]"
         >
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white mr-3 text-[#ef4444]">
             <Download size={15} />
@@ -2219,14 +2286,14 @@ export function Reports() {
       </Card>
 
       {!data ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {Array.from({ length: 4 }).map((_, i) => (
             <SkeletonCard key={i} lines={2} />
           ))}
         </div>
       ) : (
         <section ref={reportRef} className="space-y-5 pb-16">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
             <Metric
               tone="blue"
               label="Monthly balance"
@@ -2365,7 +2432,7 @@ export function Reports() {
 
           <Card tone="violet" glow>
             <CardHead title="Daily activity" subtitle="Income and expense entries over time" />
-            <div className="h-[260px] w-full">
+            <div className="h-[220px] w-full sm:h-[260px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={dailyChart} barCategoryGap="32%">
                   <defs>
@@ -2453,7 +2520,7 @@ export function Insights() {
   };
 
   return (
-    <main className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+    <main className="mx-auto max-w-[1440px] space-y-5 px-3 py-5 sm:space-y-6 sm:px-6 sm:py-8 lg:px-10">
       <PageTitle
         eyebrow="Your data, intelligent context"
         title="AI spending insights"
@@ -2490,7 +2557,7 @@ export function Insights() {
             <Card key={i._id} tone="violet" glow className="hover:-translate-y-0.5">
               <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-violet-300/50 bg-gradient-to-br from-violet-400/30 to-purple-500/20 text-violet-100 shadow-lg shadow-violet-500/30">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-violet-400/40 bg-violet-500/20 text-violet-100 shadow-lg shadow-violet-500/20">
                     <Sparkles size={15} />
                   </div>
                   <div>
@@ -2504,7 +2571,7 @@ export function Insights() {
                     <p className="text-[11.5px] text-white/60">AI-assisted monthly summary</p>
                   </div>
                 </div>
-                <span className="rounded-full border border-violet-300/50 bg-violet-400/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-violet-100">
+                <span className="rounded-full border border-violet-400/50 bg-violet-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-violet-100">
                   AI
                 </span>
               </div>
@@ -2590,7 +2657,7 @@ export function Tips() {
 
   if (loading) {
     return (
-      <main className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+      <main className="mx-auto max-w-[1440px] space-y-5 px-3 py-5 sm:space-y-6 sm:px-6 sm:py-8 lg:px-10">
         <SkeletonCard lines={2} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 6 }).map((_, i) => (
@@ -2602,19 +2669,19 @@ export function Tips() {
   }
 
   return (
-    <main className="mx-auto max-w-[1440px] space-y-10 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
-      <Card padded={false} tone="blue" className="relative overflow-hidden p-8 sm:p-12">
-        <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-gradient-to-br from-cyan-400/40 to-transparent blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-28 -left-16 h-80 w-80 rounded-full bg-gradient-to-br from-indigo-500/40 to-transparent blur-3xl" />
-        <div className="pointer-events-none absolute inset-0 [background-image:linear-gradient(to_right,rgba(148,163,184,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.06)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
+    <main className="mx-auto max-w-[1440px] space-y-8 px-3 py-5 sm:space-y-10 sm:px-6 sm:py-8 lg:px-10">
+      <Card padded={false} tone="blue" className="overflow-hidden p-6 sm:p-10">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-gradient-to-br from-cyan-400/30 to-transparent blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-28 -left-16 h-80 w-80 rounded-full bg-gradient-to-br from-indigo-500/30 to-transparent blur-3xl" />
         <div className="relative mx-auto flex max-w-2xl flex-col items-center text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 shadow-2xl shadow-cyan-500/50">
-            <Lightbulb size={28} className="text-white" />
+          <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 shadow-2xl shadow-cyan-500/50">
+            <Lightbulb size={24} className="text-white sm:hidden" />
+            <Lightbulb size={28} className="text-white hidden sm:block" />
           </div>
-          <h1 className="mt-6 bg-gradient-to-r from-white via-cyan-100 to-slate-300 bg-clip-text text-[1.7rem] font-bold leading-tight tracking-tight text-transparent sm:text-[2rem]">
+          <h1 className="mt-5 bg-gradient-to-r from-white via-cyan-100 to-slate-300 bg-clip-text text-[1.5rem] font-bold leading-tight tracking-tight text-transparent sm:mt-6 sm:text-[2rem]">
             Smart Saving Tips
           </h1>
-          <p className="mt-3 text-[14px] leading-relaxed text-white/80">
+          <p className="mt-3 text-[13.5px] leading-relaxed text-white/80 sm:text-[14px]">
             Discover personalized recommendations and campus-wide advice to help you save more
             and spend smarter.
           </p>
@@ -2624,15 +2691,15 @@ export function Tips() {
       <ErrorBox error={error} />
 
       <section>
-        <div className="mb-6 flex items-center gap-3">
+        <div className="mb-5 flex flex-wrap items-center gap-3 sm:mb-6">
           <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-xl shadow-amber-500/40">
             <Megaphone size={18} />
           </span>
           <div className="min-w-0 flex-1">
-            <h2 className="text-[18px] font-bold tracking-tight text-white">
+            <h2 className="text-[16px] font-bold tracking-tight text-white sm:text-[18px]">
               From Campus Coin
             </h2>
-            <p className="text-[12.5px] text-slate-400">
+            <p className="text-[12px] text-slate-400 sm:text-[12.5px]">
               Official tips and tricks from the admin team
             </p>
           </div>
@@ -2649,7 +2716,7 @@ export function Tips() {
                 <Card
                   key={t._id}
                   tone="amber"
-                  className="group relative overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl"
+                  className="group overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:shadow-2xl"
                 >
                   <div
                     className="absolute inset-x-0 top-0 h-[3px] opacity-90 transition-opacity group-hover:opacity-100"
@@ -2699,15 +2766,15 @@ export function Tips() {
       </section>
 
       <section>
-        <div className="mb-6 flex items-center gap-3">
+        <div className="mb-5 flex flex-wrap items-center gap-3 sm:mb-6">
           <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-xl shadow-indigo-500/40">
             <Sparkles size={18} />
           </span>
           <div className="min-w-0 flex-1">
-            <h2 className="text-[18px] font-bold tracking-tight text-white">
+            <h2 className="text-[16px] font-bold tracking-tight text-white sm:text-[18px]">
               Personalized for you
             </h2>
-            <p className="text-[12.5px] text-slate-400">
+            <p className="text-[12px] text-slate-400 sm:text-[12.5px]">
               Smart suggestions based on your spending habits
             </p>
           </div>
@@ -2740,7 +2807,7 @@ export function Tips() {
                       type="button"
                       onClick={() => action(t._id, 'pin')}
                       aria-label="Bookmark tip"
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f5a623] text-white shadow-md hover:shadow-lg transition-all duration-300 active:scale-95"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f5a623] text-white shadow-md hover:shadow-lg transition-all duration-300 active:scale-95 hover:bg-[#e0951c]"
                     >
                       <Bookmark fill={t.isPinned ? 'currentColor' : 'none'} size={14} />
                     </button>
@@ -2750,7 +2817,7 @@ export function Tips() {
                     {t.description}
                   </p>
                   {t.potentialSaving !== undefined ? (
-                    <div className="mt-4 rounded-xl border border-emerald-400/40 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 px-4 py-3 shadow-lg shadow-emerald-950/40">
+                    <div className="mt-4 rounded-xl border border-emerald-400/40 bg-emerald-950/50 px-4 py-3 shadow-lg shadow-emerald-950/40">
                       <p className="text-[10.5px] font-bold uppercase tracking-wider text-emerald-200">
                         Potential saving
                       </p>
@@ -2763,7 +2830,7 @@ export function Tips() {
                     <button
                       type="button"
                       onClick={() => action(t._id, 'dismiss')}
-                      className="inline-flex w-full items-center justify-center rounded-full pr-3 pl-1 py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[11px] uppercase tracking-wider text-white cursor-pointer bg-[#ef4444]"
+                      className="inline-flex w-full items-center justify-center rounded-full pr-3 pl-1 py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[11px] uppercase tracking-wider text-white cursor-pointer bg-[#ef4444] hover:bg-[#dc2626]"
                     >
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white mr-2 text-[#ef4444]">
                         <Trash2 size={13} />
@@ -2876,7 +2943,7 @@ export function Assistant() {
   };
 
   return (
-    <main className="mx-auto flex max-w-[1440px] flex-col gap-4 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+    <main className="mx-auto flex max-w-[1440px] flex-col gap-4 px-3 py-5 sm:px-6 sm:py-8 lg:px-10">
       <PageTitle
         eyebrow="Private, educational guidance"
         title="Campus Coin assistant"
@@ -2895,7 +2962,7 @@ export function Assistant() {
       <ErrorBox error={error} />
 
       {aiStatus?.type === 'warning' ? (
-        <div className="flex items-start gap-3 rounded-2xl border border-amber-500/40 bg-gradient-to-br from-amber-500/20 via-amber-500/10 to-amber-500/[0.02] px-4 py-3.5 shadow-lg shadow-amber-950/40 backdrop-blur">
+        <div className="flex items-start gap-3 rounded-2xl border border-amber-500/40 bg-amber-950/80 px-4 py-3.5 shadow-lg shadow-amber-950/40">
           <AlertTriangle size={16} className="mt-0.5 shrink-0 text-amber-400" />
           <div className="text-[12.5px] leading-relaxed text-amber-100">
             <p className="font-bold">AI service unavailable</p>
@@ -2912,7 +2979,7 @@ export function Assistant() {
       <Card tone="cyan" padded={false} className="overflow-hidden" glow>
         <div
           ref={scrollRef}
-          className="max-h-[62vh] min-h-[440px] space-y-4 overflow-y-auto p-5 sm:p-6"
+          className="max-h-[62vh] min-h-[400px] space-y-4 overflow-y-auto p-4 sm:min-h-[440px] sm:p-6"
         >
           {messages.map((x, i) => (
             <div
@@ -2927,10 +2994,10 @@ export function Assistant() {
                 </div>
               ) : null}
               <div
-                className={`max-w-[82%] rounded-2xl px-4 py-3 text-[13.5px] leading-relaxed ${
+                className={`max-w-[85%] rounded-2xl px-4 py-3 text-[13px] leading-relaxed sm:text-[13.5px] ${
                   x.role === 'user'
                     ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-xl shadow-cyan-500/30'
-                    : 'border border-white/[0.1] bg-gradient-to-br from-white/[0.08] to-white/[0.03] text-white shadow-lg shadow-black/20'
+                    : 'border border-white/[0.1] bg-slate-900 text-white shadow-lg shadow-black/20'
                 }`}
               >
                 <p className="whitespace-pre-wrap">{x.content}</p>
@@ -2956,7 +3023,7 @@ export function Assistant() {
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 text-[#03111f] shadow-lg shadow-cyan-500/40">
                 <Sparkles size={15} />
               </div>
-              <div className="flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-white/[0.05] px-4 py-3 text-[13px] text-white/70">
+              <div className="flex items-center gap-2 rounded-2xl border border-white/[0.1] bg-slate-900 px-4 py-3 text-[13px] text-white/70">
                 <LoaderCircle size={14} className="animate-spin text-cyan-300" />
                 Thinking with your records…
               </div>
@@ -2967,7 +3034,7 @@ export function Assistant() {
         <form
           onSubmit={send}
           noValidate
-          className="flex flex-col gap-3 border-t border-white/[0.08] bg-gradient-to-r from-white/[0.02] to-transparent p-4 sm:flex-row sm:items-start sm:p-5"
+          className="flex flex-col gap-3 border-t border-white/[0.08] bg-white/[0.02] p-4 sm:flex-row sm:items-start sm:p-5"
         >
           <div className="flex-1">
             <Field
@@ -3077,7 +3144,7 @@ export function OCRScanner() {
   };
 
   return (
-    <main className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+    <main className="mx-auto max-w-[1440px] space-y-5 px-3 py-5 sm:space-y-6 sm:px-6 sm:py-8 lg:px-10">
       <PageTitle
         eyebrow="Review before anything is saved"
         title="Scan a receipt"
@@ -3097,9 +3164,10 @@ export function OCRScanner() {
             </div>
           </div>
 
-          <label className="group flex cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-white/[0.18] bg-gradient-to-br from-white/[0.04] to-white/[0.01] px-6 py-12 text-center transition-all duration-300 hover:border-cyan-400/70 hover:from-cyan-500/[0.08] hover:to-cyan-500/[0.02]">
-            <span className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/[0.12] bg-gradient-to-br from-white/[0.08] to-white/[0.02] text-cyan-300 shadow-lg shadow-cyan-950/40 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
-              <ScanLine size={26} />
+          <label className="group flex cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-white/[0.18] bg-slate-900 px-6 py-10 text-center transition-all duration-300 hover:border-cyan-400/70 sm:py-12">
+            <span className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl border border-white/[0.12] bg-slate-800 text-cyan-300 shadow-lg shadow-cyan-950/40 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+              <ScanLine size={24} className="sm:hidden" />
+              <ScanLine size={26} className="hidden sm:block" />
             </span>
             <div>
               <p className="text-[14px] font-bold text-white">
@@ -3134,7 +3202,7 @@ export function OCRScanner() {
               <p className="mb-3 mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-300">
                 Extracted text
               </p>
-              <div className="max-h-56 overflow-y-auto whitespace-pre-wrap rounded-xl border border-white/[0.1] bg-slate-950/80 p-4 font-mono text-[12px] leading-relaxed text-white/90 shadow-inner shadow-black/40">
+              <div className="max-h-56 overflow-y-auto whitespace-pre-wrap rounded-xl border border-white/[0.1] bg-slate-950 p-4 font-mono text-[12px] leading-relaxed text-white/90 shadow-inner shadow-black/40">
                 {result.extractedText}
               </div>
             </>
@@ -3243,7 +3311,7 @@ export function OCRScanner() {
               </div>
 
               {saved ? (
-                <div className="mt-4 flex items-start gap-3 rounded-xl border border-emerald-400/40 bg-gradient-to-br from-emerald-500/20 to-emerald-500/[0.03] px-4 py-3 shadow-lg shadow-emerald-950/40">
+                <div className="mt-4 flex items-start gap-3 rounded-xl border border-emerald-400/40 bg-emerald-950/70 px-4 py-3 shadow-lg shadow-emerald-950/40">
                   <CircleCheck size={16} className="mt-0.5 shrink-0 text-emerald-300" />
                   <p className="text-[12.5px] leading-relaxed text-emerald-100">
                     Saved. Your reviewed receipt entry is now in the ledger.
@@ -3324,7 +3392,7 @@ export function Profile() {
   };
 
   return (
-    <main className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+    <main className="mx-auto max-w-[1440px] space-y-5 px-3 py-5 sm:space-y-6 sm:px-6 sm:py-8 lg:px-10">
       <PageTitle
         eyebrow={isStudent ? 'Student baseline' : 'Account settings'}
         title="Profile & settings"
@@ -3449,7 +3517,7 @@ export function Notifications() {
   const unreadCount = items.filter(i => !i.isRead).length;
 
   return (
-    <main className="mx-auto max-w-[1440px] space-y-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-10">
+    <main className="mx-auto max-w-[1440px] space-y-5 px-3 py-5 sm:space-y-6 sm:px-6 sm:py-8 lg:px-10">
       <PageTitle
         title="Notifications"
         description="Budget thresholds, unusual entries, and insights appear here."
@@ -3470,7 +3538,7 @@ export function Notifications() {
             {items.map(i => (
               <div
                 key={i._id}
-                className={`group flex items-start gap-4 p-5 transition-all duration-300 hover:bg-white/[0.03] ${
+                className={`group flex flex-wrap items-start gap-4 p-5 transition-all duration-300 hover:bg-white/[0.03] ${
                   i.isRead ? 'opacity-60' : ''
                 }`}
               >
@@ -3478,7 +3546,7 @@ export function Notifications() {
                   className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border shadow-lg transition-transform duration-500 group-hover:scale-105 ${
                     i.isRead
                       ? 'border-white/[0.12] bg-white/[0.04] text-white/60'
-                      : 'border-amber-400/50 bg-gradient-to-br from-amber-500/30 to-orange-500/15 text-amber-200 shadow-amber-500/30'
+                      : 'border-amber-400/50 bg-amber-500/20 text-amber-200 shadow-amber-500/20'
                   }`}
                 >
                   <Bell size={16} />
@@ -3501,7 +3569,7 @@ export function Notifications() {
                   <button
                     type="button"
                     onClick={() => read(i)}
-                    className="inline-flex shrink-0 items-center rounded-full pr-2.5 pl-1 py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[10.5px] uppercase tracking-wider text-white cursor-pointer bg-[#2b7cb6]"
+                    className="inline-flex shrink-0 items-center rounded-full pr-2.5 pl-1 py-1 shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97] font-bold text-[10.5px] uppercase tracking-wider text-white cursor-pointer bg-[#2b7cb6] hover:bg-[#2569a0]"
                   >
                     <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white mr-2 text-[#2b7cb6]">
                       <Check size={11} />
