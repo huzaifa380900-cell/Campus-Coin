@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "6ab4b625d6413c7ed32c58e4"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "fileName": "images.png",
+  "ocrStatus": "completed",
+  "createdTransactionId": null,
+  "createdAt": {
+    "$date": "2026-09-24T05:33:25.892Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T05:33:32.454Z"
+  },
+  "__v": 0,
+  "detectedAmount": 2025011,
+  "detectedDate": {
+    "$date": "2026-03-17T19:00:00.000Z"
+  },
+  "detectedDescription": "FIRST COMMUNITY BANK",
+  "detectedType": "expense",
+  "extractedText": "FIRST COMMUNITY BANK\nBranch #0482\nDEPOSIT\n$1,215.42\nAccount: CHECKING siokxd821\nHolder: David Park\nDate: 03/18/2026\nTime: 10:52:41 PM\nTeller: Station 3\nRef #: DEP-20250115-08842\nDEPOSIT BREAKDOWN\nCash: $340.00\nBills: $320.00\nCoins: $20.00\nChecks (2): $875.42\nCheck 1: $500.00 #1042\nCheck 2: $375.42 #8821\nAvailable Now: $340.00\nPending (checks): $875.42\nHold Released: 01/17/2025\nPrior Balance: $3,482.19\nNew Balance: $4,697.61\n3300 Commerce Street\nDallas, TX 75226\nFDIC Insured\n"
+}]

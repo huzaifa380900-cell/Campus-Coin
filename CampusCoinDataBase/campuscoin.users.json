@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "name": "Muhammad Huzaifa",
+  "email": "haris380900@gmail.com",
+  "passwordHash": "$2b$12$G2Dypx3aE7GkG2/A4gYifOZjc9QSU9oCTzVhlcEx7PbKdLu0irvlW",
+  "authProvider": "google",
+  "role": "student",
+  "academicYear": "2024",
+  "monthlyAllowance": 3000,
+  "savingsGoal": 1000,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2026-09-24T04:49:52.424Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T03:05:34.964Z"
+  },
+  "__v": 0,
+  "lastLoginAt": {
+    "$date": "2026-09-28T03:05:34.962Z"
+  },
+  "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKqWN_Q62urdtdeeHlDlj3Kyo-BQczjZkykUXd4sKXCT3_-SqE=s96-c",
+  "googleId": "109956512987507871488"
+},
+{
+  "_id": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "name": "System Administrator",
+  "email": "admin@campuscoin.edu",
+  "passwordHash": "$2b$12$ut2T/C8hBf.3kP53uScWrO.7xL3UlzP8fOPstnoO8ySSJNzlnz1Tu",
+  "authProvider": "local",
+  "role": "admin",
+  "monthlyAllowance": 0,
+  "savingsGoal": 0,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2026-09-24T15:52:50.247Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:50:46.627Z"
+  },
+  "__v": 0,
+  "lastLoginAt": {
+    "$date": "2026-09-28T02:50:46.626Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "name": "Faisal mehmood",
+  "email": "faisalmehood15261@gmail.com",
+  "googleId": "113017544526583404101",
+  "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL733p3yM64KqDlqiA51l2qMmngfGm1mPyi7WofWjh-WVdDOVg7FQ=s96-c",
+  "authProvider": "google",
+  "role": "student",
+  "monthlyAllowance": 0,
+  "savingsGoal": 0,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2026-09-25T15:04:40.501Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T03:04:33.751Z"
+  },
+  "__v": 0,
+  "lastLoginAt": {
+    "$date": "2026-09-28T03:04:33.750Z"
+  }
+}]

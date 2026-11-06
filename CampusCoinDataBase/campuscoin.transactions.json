@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "6ab8a9aa873d23f4ff82cc75"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "categoryId": {
+    "$oid": "6ab66c4d44d1b369172f58e2"
+  },
+  "amount": 2000,
+  "type": "expense",
+  "description": "coffe",
+  "source": "Campus Cafe",
+  "date": {
+    "$date": "2026-09-27T00:00:00.000Z"
+  },
+  "inputMethod": "manual",
+  "isRecurring": false,
+  "recurringType": null,
+  "aiSuggestedCategory": null,
+  "duplicateStatus": "possible_duplicate",
+  "unusuallyLarge": false,
+  "notes": "Per month expense",
+  "createdAt": {
+    "$date": "2026-09-27T05:29:14.218Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:31:57.920Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b38f0c96d490e9e7c1a9"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "categoryId": {
+    "$oid": "6ab784ebbba7479a91b0a903"
+  },
+  "amount": 5000,
+  "type": "expense",
+  "description": "coffe",
+  "source": "Campus Cafe",
+  "date": {
+    "$date": "2026-09-27T00:00:00.000Z"
+  },
+  "inputMethod": "manual",
+  "isRecurring": false,
+  "recurringType": null,
+  "aiSuggestedCategory": null,
+  "duplicateStatus": "none",
+  "unusuallyLarge": false,
+  "notes": "",
+  "createdAt": {
+    "$date": "2026-09-27T06:11:27.931Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:11:27.931Z"
+  },
+  "__v": 0
+}]

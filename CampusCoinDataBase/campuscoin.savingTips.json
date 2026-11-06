@@ -1,0 +1,50 @@
+[{
+  "_id": {
+    "$oid": "6ab8dccef81bbab7e8d4ba33"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "title": "Trim your Academics spend",
+  "description": "Academics is your highest recorded expense this month. Set a small weekly limit and review it before your next purchase.",
+  "categoryId": {
+    "$oid": "6ab784ebbba7479a91b0a903"
+  },
+  "potentialSaving": 500,
+  "priority": 1,
+  "source": "rule_engine",
+  "isPinned": false,
+  "isDismissed": false,
+  "createdAt": {
+    "$date": "2026-09-27T09:07:26.718Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T09:07:26.718Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d53dd0f0cc93d48d4d69"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "title": "Trim your Drink spend",
+  "description": "Drink is your highest recorded expense this month. Set a small weekly limit and review it before your next purchase.",
+  "categoryId": {
+    "$oid": "6ab66c4d44d1b369172f58e2"
+  },
+  "potentialSaving": 200,
+  "priority": 1,
+  "source": "rule_engine",
+  "isPinned": true,
+  "isDismissed": false,
+  "createdAt": {
+    "$date": "2026-09-28T02:47:25.926Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:47:25.926Z"
+  },
+  "__v": 0
+}]

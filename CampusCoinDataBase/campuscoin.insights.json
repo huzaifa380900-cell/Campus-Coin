@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "6ab4d80190d417b2a8f8d7d6"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "month": "2026-09",
+  "summaryText": "Monthly Financial Overview (2026-09): Total Income: 0, Total Expenses: 500, Remaining Balance: -500.\n\nKey Observation: Food (500) was your highest expense this month.\n\nPractical Tip: Keep an eye on non-essential spending during mid-semester to maintain a healthy savings buffer.",
+  "tipText": "AI-generated educational guidance",
+  "aiModel": "gemini-2.5-flash",
+  "isBookmarked": true,
+  "flaggedCategories": [],
+  "generatedAt": {
+    "$date": "2026-09-24T07:57:53.186Z"
+  },
+  "createdAt": {
+    "$date": "2026-09-24T07:57:53.194Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T07:57:53.194Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab62cda2a55004115827523"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "month": "2026-09",
+  "summaryText": "Monthly Financial Overview (2026-09): Total Income: 10000, Total Expenses: 13000, Remaining Balance: -3000.\n\nKey Observation: Academics (12500) was your highest expense this month.\n\nPractical Tip: Keep an eye on non-essential spending during mid-semester to maintain a healthy savings buffer.",
+  "tipText": "AI-generated educational guidance",
+  "aiModel": "gemini-2.5-flash",
+  "isBookmarked": false,
+  "flaggedCategories": [],
+  "generatedAt": {
+    "$date": "2026-09-25T08:12:10.802Z"
+  },
+  "createdAt": {
+    "$date": "2026-09-25T08:12:10.804Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T08:12:10.804Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8e1701e6664ca0772e8b7"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "month": "2026-09",
+  "summaryText": "**Monthly Financial Summary (September 2026)**  \n\n| Item | Amount |\n|------|--------|\n| Income | $0 |\n| Total Expenses | $5,000 |\n| Net Balance | **‑$5,000** |\n| Main Expense Category | Academics: $5,000 (100 % of spending) |\n\n**What this means**  \n- With no income this month, all of your spending came from academic‑related costs, leaving a negative balance of $5,000.  \n- Your cash flow is currently unsustainable; you’ll need to bring in funds or cut costs to avoid deepening the deficit.\n\n**Practical Saving Tip**  \n**Explore low‑ or no‑cost academic resources:**  \n- Check if your school offers textbook rentals, digital copies, or library reserves that can replace purchases.  \n- Look for free online courses, open‑educational‑resource (OER) materials, or peer‑shared notes that cover the same content.  \n- Apply for any campus scholarships, grants, or emergency funds that target tuition‑related expenses.\n\nUsing these alternatives can reduce the academic outlay and help you move toward a balanced (or positive) monthly cash flow.",
+  "tipText": "AI-generated educational guidance",
+  "aiModel": "groq/openai/gpt-oss-120b",
+  "isBookmarked": false,
+  "flaggedCategories": [],
+  "generatedAt": {
+    "$date": "2026-09-27T09:27:12.448Z"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T09:27:12.451Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T09:27:12.451Z"
+  },
+  "__v": 0
+}]

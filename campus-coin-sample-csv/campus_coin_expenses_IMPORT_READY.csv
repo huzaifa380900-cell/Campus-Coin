@@ -1,0 +1,12 @@
+date,amount,type,category,description,source,notes
+2026-09-25,500,expense,Academics,Academic Expense,manual,Books and study material
+2026-09-26,250,expense,Food,Daily Drink,manual,Cold drink
+2026-09-27,1200,expense,Entertainment,Movie Night,manual,Movie and entertainment
+2026-09-28,2500,expense,Food,Groceries,manual,Monthly food items
+2026-09-28,15000,expense,Hostel/Rent,Hostel Rent,manual,Monthly hostel rent
+2026-09-28,800,expense,Miscellaneous,Misc Expense,manual,Personal expense
+2026-09-28,1100,expense,Subscriptions,Netflix,manual,Monthly subscription
+2026-09-28,500,expense,Transport,Bus Fare,manual,Local transport
+
+ADMIN_EMAIL=admin@campuscoin.edu
+ADMIN_PASSWORD=AdminCampusCoin2026!

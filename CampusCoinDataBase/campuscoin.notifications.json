@@ -1,0 +1,133 @@
+[{
+  "_id": {
+    "$oid": "6ab4d80190d417b2a8f8d7d8"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "title": "New monthly insight",
+  "message": "Your personalized spending insight is ready.",
+  "type": "insight",
+  "isRead": true,
+  "createdAt": {
+    "$date": "2026-09-24T07:57:53.404Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T17:05:36.033Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4e3c2dd707521362d41fc"
+  },
+  "userId": {
+    "$oid": "6ab4cbe8b6573945c88d7428"
+  },
+  "title": "Budget exceeded",
+  "message": "You exceeded 150% of this category's monthly budget.",
+  "type": "budget_exceeded",
+  "isRead": false,
+  "createdAt": {
+    "$date": "2026-09-24T08:48:02.046Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T08:48:02.046Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab62cae2a550041158274b5"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "title": "Budget exceeded",
+  "message": "You exceeded 250% of this category's monthly budget.",
+  "type": "budget_exceeded",
+  "isRead": false,
+  "createdAt": {
+    "$date": "2026-09-25T08:11:26.832Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T08:11:26.832Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab62cae2a550041158274b7"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "title": "Unusually large expense",
+  "message": "This expense is much larger than your usual spending.",
+  "type": "unusual_transaction",
+  "isRead": false,
+  "createdAt": {
+    "$date": "2026-09-25T08:11:26.889Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T08:11:26.889Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab62cda2a55004115827525"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "title": "New monthly insight",
+  "message": "Your personalized spending insight is ready.",
+  "type": "insight",
+  "isRead": true,
+  "createdAt": {
+    "$date": "2026-09-25T08:12:10.861Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T15:12:42.340Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8aa26873d23f4ff82cd07"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "title": "Budget warning",
+  "message": "You reached 83% of this category's monthly budget.",
+  "type": "budget_warning",
+  "isRead": false,
+  "createdAt": {
+    "$date": "2026-09-27T05:31:18.821Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:31:18.821Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8e1701e6664ca0772e8b9"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "title": "New monthly insight",
+  "message": "Your personalized spending insight is ready.",
+  "type": "insight",
+  "isRead": false,
+  "createdAt": {
+    "$date": "2026-09-27T09:27:12.521Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T09:27:12.521Z"
+  },
+  "__v": 0
+}]

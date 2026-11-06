@@ -1,0 +1,2934 @@
+[{
+  "_id": {
+    "$oid": "6ab4abf0f1c022b6600faf4f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T04:49:52.533Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T04:49:52.533Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4b11ad6413c7ed32c5830"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T05:11:54.765Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T05:11:54.765Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4b5c3d6413c7ed32c58da"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab4b5c3d6413c7ed32c58d7"
+  },
+  "createdAt": {
+    "$date": "2026-09-24T05:31:47.187Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T05:31:47.187Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4bc66d6413c7ed32c59ce"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T06:00:06.082Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T06:00:06.082Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4c315d549c8c3cb1ff9ef"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T06:28:37.114Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T06:28:37.114Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4cbe9b6573945c88d742a"
+  },
+  "userId": {
+    "$oid": "6ab4cbe8b6573945c88d7428"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T07:06:17.000Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T07:06:17.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4d104a7e66998d17cc84f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T07:28:04.030Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T07:28:04.030Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4d1eba7e66998d17cc86b"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T07:31:55.966Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T07:31:55.966Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4da6d90d417b2a8f8d7e2"
+  },
+  "userId": {
+    "$oid": "6ab4da6d90d417b2a8f8d7e0"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T08:08:13.903Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T08:08:13.903Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4dae790d417b2a8f8d816"
+  },
+  "userId": {
+    "$oid": "6ab4da6d90d417b2a8f8d7e0"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T08:10:15.432Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T08:10:15.432Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4e369dd707521362d419e"
+  },
+  "userId": {
+    "$oid": "6ab4cbe8b6573945c88d7428"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab4e368dd707521362d419c"
+  },
+  "createdAt": {
+    "$date": "2026-09-24T08:46:33.168Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T08:46:33.168Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4e3c2dd707521362d41fe"
+  },
+  "userId": {
+    "$oid": "6ab4cbe8b6573945c88d7428"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab4e3c1dd707521362d41f8"
+  },
+  "createdAt": {
+    "$date": "2026-09-24T08:48:02.253Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T08:48:02.253Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4e43a90d417b2a8f8d833"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T08:50:02.150Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T08:50:02.150Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4e43cdd707521362d4247"
+  },
+  "userId": {
+    "$oid": "6ab4cbe8b6573945c88d7428"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab4e368dd707521362d419c"
+  },
+  "createdAt": {
+    "$date": "2026-09-24T08:50:04.255Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T08:50:04.255Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4e43edd707521362d424b"
+  },
+  "userId": {
+    "$oid": "6ab4cbe8b6573945c88d7428"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab4e3c1dd707521362d41f8"
+  },
+  "createdAt": {
+    "$date": "2026-09-24T08:50:06.890Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T08:50:06.890Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4e45d90d417b2a8f8d84f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T08:50:37.151Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T08:50:37.151Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab4f7f2e68ae7bcc127063b"
+  },
+  "userId": {
+    "$oid": "6ab4de84e139b8ecfffa473e"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T10:14:10.147Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T10:14:10.147Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab536eac21c9c191c6aa117"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T14:42:50.957Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T14:42:50.957Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab539aaf40d3a1f225c5ab9"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T14:54:34.902Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T14:54:34.902Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab53c27f40d3a1f225c5b15"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T15:05:11.001Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T15:05:11.001Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab5450226a07e4551021ca5"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T15:42:58.921Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T15:42:58.921Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab547b77a0b4f92ebcd52b1"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-24T15:54:31.521Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-24T15:54:31.521Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab5cb97f84d14bb5270f0e5"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T01:17:11.975Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T01:17:11.975Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab5d0b4f84d14bb5270f188"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T01:39:00.899Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T01:39:00.899Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab5d107f84d14bb5270f1a4"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T01:40:23.379Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T01:40:23.379Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab5df37500c20879ef97ac5"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T02:40:55.906Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T02:40:55.906Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab5e771500c20879ef97cb0"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab5e771500c20879ef97cac"
+  },
+  "createdAt": {
+    "$date": "2026-09-25T03:16:01.486Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T03:16:01.486Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab5f383500c20879ef97d71"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab5f383500c20879ef97d6f"
+  },
+  "createdAt": {
+    "$date": "2026-09-25T04:07:31.106Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T04:07:31.106Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab5f395500c20879ef97d78"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "edited",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab5f383500c20879ef97d6f"
+  },
+  "createdAt": {
+    "$date": "2026-09-25T04:07:49.842Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T04:07:49.842Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab5f3a1500c20879ef97d7f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "edited",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab5f383500c20879ef97d6f"
+  },
+  "createdAt": {
+    "$date": "2026-09-25T04:08:01.907Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T04:08:01.907Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab6038bc2e4115ca9c6d837"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T05:15:55.301Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T05:15:55.301Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab60da0c2e4115ca9c6d8c4"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T05:58:56.636Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T05:58:56.636Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab61384c2e4115ca9c6da09"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T06:24:04.702Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T06:24:04.702Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab61499c2e4115ca9c6da33"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T06:28:41.692Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T06:28:41.692Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab6160dc2e4115ca9c6da8a"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T06:34:53.531Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T06:34:53.531Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab61920c2e4115ca9c6dac2"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T06:48:00.573Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T06:48:00.573Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab620d02a55004115827173"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T07:20:48.562Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T07:20:48.562Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab6237e2a55004115827199"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T07:32:14.612Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T07:32:14.612Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab624e42a550041158272c9"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T07:38:12.669Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T07:38:12.669Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab6259a2a55004115827322"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T07:41:14.557Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T07:41:14.557Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab626c22a55004115827386"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T07:46:10.931Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T07:46:10.931Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab62c732a5500411582744b"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T08:10:27.514Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T08:10:27.514Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab62cae2a550041158274b9"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab62cae2a550041158274b1"
+  },
+  "createdAt": {
+    "$date": "2026-09-25T08:11:26.956Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T08:11:26.956Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab62e792a5500411582757d"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T08:19:05.480Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T08:19:05.480Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab62eff2a550041158275b1"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T08:21:19.977Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T08:21:19.977Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab62f872a5500411582765d"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab62f862a55004115827659"
+  },
+  "createdAt": {
+    "$date": "2026-09-25T08:23:35.162Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T08:23:35.162Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab630382a550041158276b2"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T08:26:32.786Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T08:26:32.786Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab64a428274bd95f685e671"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T10:17:38.814Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T10:17:38.814Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab64aba8274bd95f685e6d2"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T10:19:38.266Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T10:19:38.266Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab64ae28274bd95f685e72f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab64ae28274bd95f685e72c"
+  },
+  "createdAt": {
+    "$date": "2026-09-25T10:20:18.567Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T10:20:18.567Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab64b0f8274bd95f685e738"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T10:21:03.059Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T10:21:03.059Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab64c728274bd95f685e74a"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T10:26:58.235Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T10:26:58.235Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab64cd58274bd95f685e78c"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab64ae28274bd95f685e72c"
+  },
+  "createdAt": {
+    "$date": "2026-09-25T10:28:37.761Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T10:28:37.761Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab651188274bd95f685e832"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T10:46:48.419Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T10:46:48.419Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab651f98274bd95f685e852"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T10:50:33.855Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T10:50:33.855Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab654d38274bd95f685e8c2"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T11:02:43.181Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T11:02:43.181Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab657638274bd95f685e910"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T11:13:39.562Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T11:13:39.562Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab6680b44d1b369172f5864"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T12:24:43.963Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T12:24:43.963Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab6685644d1b369172f589a"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T12:25:58.807Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T12:25:58.807Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab66aef44d1b369172f58b5"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T12:37:03.943Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T12:37:03.943Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab66c6a44d1b369172f58e8"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T12:43:22.165Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T12:43:22.165Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab66e0844d1b369172f598e"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T12:50:16.460Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T12:50:16.460Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab670d744d1b369172f5b30"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T13:02:15.011Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T13:02:15.011Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab68ce1a681df93ecb1c2e9"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T15:01:53.410Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T15:01:53.410Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab68d88a681df93ecb1c306"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T15:04:40.635Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T15:04:40.635Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab69c4987675f5235f963c4"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T16:07:37.206Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T16:07:37.206Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab6a7df87675f5235f9662c"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T16:57:03.475Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T16:57:03.475Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab6a92a87675f5235f966ba"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T17:02:34.598Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T17:02:34.598Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab6abf087675f5235f9673f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-25T17:14:24.900Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-25T17:14:24.900Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab758ffe17fbacc1eeaacea"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T05:32:47.316Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T05:32:47.316Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab75f530970fc2722cdc4e3"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T05:59:47.108Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T05:59:47.108Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab76484791441c5442b4d8a"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T06:21:56.036Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T06:21:56.036Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab76530791441c5442b4d9d"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T06:24:48.744Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T06:24:48.744Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7699f791441c5442b4ec5"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T06:43:43.970Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T06:43:43.970Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab76b7b791441c5442b4f39"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T06:51:39.986Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T06:51:39.986Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab76c2fffe4940ef35544a5"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T06:54:39.594Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T06:54:39.594Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab77bae06fb42b821df7ca0"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T08:00:46.235Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T08:00:46.235Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab792208f9b1f6dcf54c831"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T09:36:32.487Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T09:36:32.487Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7929b8f9b1f6dcf54c852"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T09:38:35.716Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T09:38:35.716Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab794e38f9b1f6dcf54c8f1"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T09:48:19.371Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T09:48:19.371Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab795908f9b1f6dcf54c910"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T09:51:12.035Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T09:51:12.035Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab79d70425e5fda70397c33"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T10:24:48.411Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T10:24:48.411Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7a5aa0de37adae42e6a38"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T10:59:54.476Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T10:59:54.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7a777712b1cb87632eac9"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T11:07:35.160Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T11:07:35.160Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7aaed712b1cb87632eae9"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T11:22:21.965Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T11:22:21.965Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7ac48b9ccda64b764879a"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T11:28:08.169Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T11:28:08.169Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7aea0406f398448b361c5"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T11:38:08.467Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T11:38:08.467Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7b2ed0bae9f7ae61a93bf"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T11:56:29.093Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T11:56:29.093Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7b64d65ce780ce2de75a5"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T12:10:53.367Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T12:10:53.367Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7bb1965ce780ce2de7663"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab62cae2a550041158274b1"
+  },
+  "createdAt": {
+    "$date": "2026-09-26T12:31:21.128Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T12:31:21.128Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7c3b403a57c5ab0d1a90a"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T13:08:04.393Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T13:08:04.393Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7c61f03a57c5ab0d1a9a8"
+  },
+  "userId": {
+    "$oid": "6ab7c61f03a57c5ab0d1a9a6"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T13:18:23.400Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T13:18:23.400Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7c66203a57c5ab0d1a9b1"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T13:19:30.700Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T13:19:30.700Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7c7cd617cc3012db9d10a"
+  },
+  "userId": {
+    "$oid": "6ab7c61f03a57c5ab0d1a9a6"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T13:25:33.514Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T13:25:33.514Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7c9ba617cc3012db9d138"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T13:33:46.804Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T13:33:46.804Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7d2e2617cc3012db9d163"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T14:12:50.197Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T14:12:50.197Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7d7d4617cc3012db9d307"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T14:33:56.398Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T14:33:56.398Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7da61617cc3012db9d382"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T14:44:49.538Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T14:44:49.538Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7dc89617cc3012db9d3cb"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T14:54:01.407Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T14:54:01.407Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7de72617cc3012db9d431"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T15:02:10.404Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T15:02:10.404Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7e027617cc3012db9d46b"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T15:09:27.981Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T15:09:27.981Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab7e1b2617cc3012db9d4bb"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-26T15:16:02.125Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-26T15:16:02.125Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8995d873d23f4ff82c74a"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T04:19:41.708Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T04:19:41.708Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8a117873d23f4ff82c9a0"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T04:52:39.968Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T04:52:39.968Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8a40b873d23f4ff82ca39"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T05:05:15.487Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:05:15.487Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8a465873d23f4ff82cad5"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T05:06:45.224Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:06:45.224Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8a63b873d23f4ff82cb53"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T05:14:35.715Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:14:35.715Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8a86c873d23f4ff82cba5"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T05:23:56.817Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:23:56.817Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8a979873d23f4ff82cc49"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T05:28:25.034Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:28:25.034Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8a9aa873d23f4ff82cc78"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab8a9aa873d23f4ff82cc75"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T05:29:14.345Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:29:14.345Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8aa26873d23f4ff82cd09"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "edited",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab8a9aa873d23f4ff82cc75"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T05:31:18.896Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:31:18.896Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8aa3a873d23f4ff82cd3f"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "edited",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab8a9aa873d23f4ff82cc75"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T05:31:38.295Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:31:38.295Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8aa4e873d23f4ff82cd76"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "edited",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab8a9aa873d23f4ff82cc75"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T05:31:58.083Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:31:58.083Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8af47873d23f4ff82cef0"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T05:53:11.430Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T05:53:11.430Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b3540c96d490e9e7c18b"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab5e771500c20879ef97cac"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T06:10:28.690Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:10:28.690Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b35a0c96d490e9e7c18f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab5f383500c20879ef97d6f"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T06:10:34.574Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:10:34.574Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b3600c96d490e9e7c193"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab62f862a55004115827659"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T06:10:40.156Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:10:40.156Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b3640c96d490e9e7c197"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab7d659617cc3012db9d2a4"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T06:10:44.661Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:10:44.661Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b36b0c96d490e9e7c19b"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab7d659617cc3012db9d2a5"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T06:10:51.105Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:10:51.105Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b36f0c96d490e9e7c19f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab4b5c3d6413c7ed32c58d7"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T06:10:55.783Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:10:55.783Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b3730c96d490e9e7c1a3"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "deleted",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab7d659617cc3012db9d2a6"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T06:10:59.568Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:10:59.568Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b3900c96d490e9e7c1ac"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "created",
+  "entityType": "transaction",
+  "entityId": {
+    "$oid": "6ab8b38f0c96d490e9e7c1a9"
+  },
+  "createdAt": {
+    "$date": "2026-09-27T06:11:28.043Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:11:28.043Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b5010c96d490e9e7c1cf"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T06:17:37.640Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:17:37.640Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b71a0c96d490e9e7c20b"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T06:26:34.988Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:26:34.988Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8ee571e6664ca0772ec48"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T10:22:15.750Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:22:15.750Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f4db57668d82024ad95c"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T10:50:03.246Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:50:03.246Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f78176b64cdc99231de0"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T11:01:21.656Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T11:01:21.656Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f9cf76b64cdc99231e9d"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T11:11:11.635Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T11:11:11.635Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8fa4f76b64cdc99231ef8"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T11:13:19.208Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T11:13:19.208Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab91d8949f72ed87d23ad71"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T13:43:37.616Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T13:43:37.616Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab931cdb828f2753e140ee1"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T15:10:05.679Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T15:10:05.679Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab939dbe729b7ede3c037f3"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T15:44:27.843Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T15:44:27.843Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab942c5f4c18291b04a5a06"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T16:22:29.914Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T16:22:29.914Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab944a10731423fac1750b9"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T16:30:25.297Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T16:30:25.297Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab945370731423fac1750be"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T16:32:55.728Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T16:32:55.728Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab945f59e3d84ca21181191"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T16:36:05.002Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T16:36:05.002Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9466b9e3d84ca21181196"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T16:38:03.076Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T16:38:03.076Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9467f647f10cab67782df"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T16:38:23.803Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T16:38:23.803Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab94680647f10cab67782e3"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T16:38:24.891Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T16:38:24.891Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9468c647f10cab67782e7"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T16:38:36.279Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T16:38:36.279Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab94a0917a3102e123fb95f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T16:53:29.467Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T16:53:29.467Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab94e090367bddd818678f5"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T17:10:33.372Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T17:10:33.372Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab94ea5183c68d2b7a7e294"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T17:13:09.494Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T17:13:09.494Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab958e2a1c8ca60856780f4"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T17:56:50.528Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T17:56:50.528Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab95906a1c8ca60856780f8"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T17:57:26.877Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T17:57:26.877Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab959aea1c8ca608567810a"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:00:14.440Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:00:14.440Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab95a85419e11b2323fb28c"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:03:49.432Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:03:49.432Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab95a99419e11b2323fb29d"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:04:09.559Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:04:09.559Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab95b677edb2b22241b5fd6"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:07:35.699Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:07:35.699Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab95f0a29c9e0cd406d025f"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:23:06.510Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:23:06.510Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab96150dd2351db2687e16e"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:32:48.269Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:32:48.269Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab961e1e3bab193a292e0b3"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:35:13.894Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:35:13.894Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab96207c15ba09f6e8b9576"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:35:51.709Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:35:51.709Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab962cc3d500aa5a2ce93c6"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:39:08.368Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:39:08.368Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab962e83d500aa5a2ce93d9"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:39:36.221Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:39:36.221Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab963b42505339eaa0388d6"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:43:00.129Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:43:00.129Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab963cfc15ba09f6e8b9581"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:43:27.640Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:43:27.640Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab96507e00c969fb428bed2"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:48:39.427Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:48:39.427Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9652617c274ed3c60530b"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:49:10.866Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:49:10.866Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab966a135f81cb27828c924"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-27T18:55:29.538Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T18:55:29.538Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d1f27f4775abc060aca6"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-28T02:33:22.324Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:33:22.324Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d2336dc3444f9a67a8ec"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-28T02:34:27.945Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:34:27.945Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d4e8fbf308bd7517df1d"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-28T02:46:00.161Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:46:00.161Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d53c5619ff967c96a517"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-28T02:47:24.456Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:47:24.456Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d58c5619ff967c96a53b"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-28T02:48:44.641Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:48:44.641Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d6065619ff967c96a557"
+  },
+  "userId": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-28T02:50:46.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:50:46.828Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d9410cedcb44b9b2d200"
+  },
+  "userId": {
+    "$oid": "6ab68d88a681df93ecb1c303"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-28T03:04:33.953Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T03:04:33.953Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d97fe9409224d464346a"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "action": "login",
+  "entityType": "session",
+  "createdAt": {
+    "$date": "2026-09-28T03:05:35.156Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T03:05:35.156Z"
+  },
+  "__v": 0
+}]

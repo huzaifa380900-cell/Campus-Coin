@@ -1,0 +1,340 @@
+[{
+  "_id": {
+    "$oid": "6ab8b7490c96d490e9e7c25f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "hi",
+  "createdAt": {
+    "$date": "2026-09-27T06:27:21.985Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:27:21.985Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b7490c96d490e9e7c260"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "Hello! I'm Campus Coin, your educational student-finance assistant. How can I help you with your September 2026 personal records today?",
+  "createdAt": {
+    "$date": "2026-09-27T06:27:21.986Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:27:21.986Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b7530c96d490e9e7c264"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "Hello! I am Campus Coin, your educational student-finance assistant. I am here to help you look over your personal records for September 2026 (which show an income of 0, academic expenses of 5,000, and a balance of -5,000). \n\nPlease note that I do not provide certified financial advice. How can I assist you with your records today?",
+  "createdAt": {
+    "$date": "2026-09-27T06:27:31.299Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:27:31.299Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8b7530c96d490e9e7c263"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "hi",
+  "createdAt": {
+    "$date": "2026-09-27T06:27:31.299Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:27:31.299Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8bb40d018f08e6a028ad8"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "give me tips",
+  "createdAt": {
+    "$date": "2026-09-27T06:44:16.589Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:44:16.589Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8bb40d018f08e6a028ad9"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "Hello, I am Campus Coin, your educational student-finance assistant. Please note that this is educational information and not certified financial advice.\n\nBased strictly on your records for September 2026, here are tips derived from your current numbers:\n\n1. **Address the Negative Balance:** Your total income is 0 and your expenses are 5,000, leaving a balance of -5,000. To prevent the balance from remaining negative, you need income to cover the 5,000 difference.\n2. **Review Academic Spending:** 100% of your expenses (5,000) are in the \"Academics\" category. Since this is your only expense category, managing your budget depends entirely on reviewing and addressing this academic cost.",
+  "createdAt": {
+    "$date": "2026-09-27T06:44:16.589Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T06:44:16.589Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8e0b0f403daea0b901b77"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "Based on your 2026-09 records: Your total income is PKR 0, total expenses are PKR 5000, leaving a current balance of PKR -5000. Top spending categories: Academics (5000).",
+  "createdAt": {
+    "$date": "2026-09-27T09:24:00.366Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T09:24:00.366Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8e0b0f403daea0b901b76"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "Hi",
+  "createdAt": {
+    "$date": "2026-09-27T09:24:00.365Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T09:24:00.365Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8e1391e6664ca0772e8ac"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "Hy mujy saving tips do",
+  "createdAt": {
+    "$date": "2026-09-27T09:26:17.024Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T09:26:17.024Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8e1391e6664ca0772e8ad"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "**Campus Coin – Saving Tips (based on your current record)**  \n\n**Your snapshot**  \n- **Income:** $0  \n- **Total expenses:** $5,000 (all in the “Academics” category)  \n- **Current balance:** –$5,000  \n\nBecause your entire outflow is academic‑related and you have no income at the moment, the most effective way to improve your balance is to **both increase cash flow and lower academic costs**. Below are practical, non‑professional‑advice ideas you can explore right away.\n\n---\n\n### 1. Boost Your Income (Even Small Amounts Help)\n\n| Idea | How it works | Typical student‑friendly payoff |\n|------|--------------|---------------------------------|\n| **On‑campus work‑study or part‑time jobs** | Apply for any campus positions (library aide, lab assistant, tutoring) that may be available to students with financial need. | $8–$15 /hr; flexible hours that fit class schedules. |\n| **Freelance micro‑tasks** | Offer quick services (proofreading, graphic design, data entry) on platforms that accept students. | $5–$20 per task; you can work a few hours a week. |\n| **Campus scholarships & grants** | Search the university’s scholarship portal for awards tied to academic merit, need, or specific programs. | Ranges from $500 to several thousand dollars per term. |\n| **Sell unused textbooks or supplies** | List books you no longer need on campus bulletin boards or online marketplaces. | Recoup 30‑70 % of original cost. |\n\n*Even earning $200–$300 a month would start to offset the $5,000 academic expense and move your balance toward zero.*\n\n---\n\n### 2. Reduce Academic Expenses\n\n| Area | Low‑cost alternatives |\n|------|-----------------------|\n| **Textbooks** | • Use the library’s copy or request an inter‑library loan.<br>• Look for legally free e‑books or open‑access resources.<br>• Rent textbooks instead of buying new. |\n| **Course materials** | • Check if older editions are acceptable (often much cheaper).<br>• Share materials with classmates to split costs. |\n| **Software** | • Use free trial versions or student‑license versions (many companies offer free access for enrolled students). |\n| **Tutoring** | • Join study groups or peer‑tutoring programs that are free or low‑cost. |\n| **Printing** | • Print double‑sided, use campus printing credits, or switch to digital note‑taking when possible. |\n\n---\n\n### 3. Simple Budget‑Tracking Steps\n\n1. **List every academic cost** (textbooks, fees, supplies).  \n2. **Mark which items have a cheaper alternative** (e.g., library copy vs. purchase).  \n3. **Set a weekly “income‑plus‑savings” goal** – even $10 saved from a cheaper textbook option adds up.  \n4. **Review your balance monthly** – note any income earned and any expense reduced; update the $‑5,000 figure accordingly.\n\n---\n\n### 4. Emergency & Short‑Term Funding Options\n\n- **Student emergency funds** – many schools have a small cash‑grant pool for students facing immediate financial shortfalls.  \n- **Family or friends** – a short‑term loan (with clear repayment terms) can bridge the gap while you secure income.  \n- **Crowdfunding** – a modest campaign explaining your academic needs can attract small donations from your network.\n\n---\n\n### 5. Long‑Term Perspective\n\n- **Plan for the next semester**: Identify which courses will require the biggest purchases and start looking for free resources **now**.  \n- **Build a tiny “savings buffer”**: Once you have any income, aim to set aside at least $5–$10 each pay period. Over a few months this becomes a cushion for unexpected academic costs.\n\n---\n\n**Bottom line:** With $0 income and $5,000 in academic expenses, the quickest way to improve your –$5,000 balance is to (1) generate even modest income through campus or freelance work, and (2) cut academic spending by using library resources, rentals, and shared materials. Track each change, and you’ll see the balance move in",
+  "createdAt": {
+    "$date": "2026-09-27T09:26:17.024Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T09:26:17.024Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f50157668d82024ad9d8"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "There are no announcements included in your provided records.",
+  "createdAt": {
+    "$date": "2026-09-27T10:50:41.130Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:50:41.130Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f50157668d82024ad9d7"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "new announcements",
+  "createdAt": {
+    "$date": "2026-09-27T10:50:41.130Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:50:41.130Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f52657668d82024ad9df"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "Hello! I am Campus Coin, your educational student-finance assistant. Please note that I do not provide certified financial advice, only educational guidance based on your records.\n\nHere is an overview of your records for September 2026 (2026-09):\n\n* **Income:** 0  \n* **Expenses:** 5,000 (Category: Academics: 5,000)  \n* **Balance:** -5,000  \n\n### Educational Guidance\n* **Spending Breakdown:** Your entire expense total of 5,000 is concentrated in a single category: **Academics**.\n* **Cash Flow & Balance:** Because your income for this period is 0 and your academic expenses are 5,000, your ending balance is -5,000. \n* **Key Takeaway:** Reviewing these figures shows that your current deficit is entirely driven by academic costs during a period with zero recorded income.",
+  "createdAt": {
+    "$date": "2026-09-27T10:51:18.055Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:51:18.055Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f52657668d82024ad9de"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "Educational guidance",
+  "createdAt": {
+    "$date": "2026-09-27T10:51:18.055Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:51:18.055Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f62be4b2b6a767be3628"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "Educational guidance",
+  "createdAt": {
+    "$date": "2026-09-27T10:55:39.767Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:55:39.767Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f62be4b2b6a767be3629"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "Hello! I’m Campus Coin, your educational student-finance assistant. Please note that I provide educational guidance only, not certified financial advice. \n\nHere is an educational overview based strictly on your personal records for September 2026 (2026-09):\n\n* **Income:** 0\n* **Expenses:** 5,000\n* **Expense Breakdown:** Academics: 5,000 (100% of your expenses)\n* **Balance:** -5,000\n\n### Key Observations:\n1. **Net Deficit:** Your balance is currently at -5,000 because your recorded expenses (5,000) exceed your recorded income (0). \n2. **Single Expense Category:** All 5,000 of your spending for this period is allocated entirely to Academics. \n\nUnderstanding these figures shows that your current negative balance is solely driven by academic expenses in the absence of recorded income for this period.",
+  "createdAt": {
+    "$date": "2026-09-27T10:55:39.768Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:55:39.768Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f66276b64cdc99231d4e"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "income",
+  "createdAt": {
+    "$date": "2026-09-27T10:56:34.323Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:56:34.323Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab8f66276b64cdc99231d4f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "Your recorded income for September 2026 is **$0**.",
+  "createdAt": {
+    "$date": "2026-09-27T10:56:34.324Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-27T10:56:34.324Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d5a95619ff967c96a54f"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "user",
+  "content": "2026 expenses",
+  "createdAt": {
+    "$date": "2026-09-28T02:49:13.966Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:49:13.966Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ab9d5a95619ff967c96a550"
+  },
+  "userId": {
+    "$oid": "6ab4abf0f1c022b6600faf4d"
+  },
+  "role": "assistant",
+  "content": "Based on your records for September 2026 (2026-09), your total expenses were 5,000. \n\n**Expense Breakdown:**\n* **Academics:** 5,000\n\n*(Note: The provided records only include data for September 2026.)*",
+  "createdAt": {
+    "$date": "2026-09-28T02:49:13.966Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-28T02:49:13.966Z"
+  },
+  "__v": 0
+}]

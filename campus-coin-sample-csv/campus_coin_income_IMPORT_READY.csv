@@ -1,0 +1,6 @@
+date,amount,type,category,description,source,notes
+2026-09-25,10000,income,Allowance,Monthly Allowance,manual,Monthly student allowance
+2026-09-26,5000,income,Gift,Family Gift,manual,Family gift
+2026-09-27,8000,income,Other Income,Freelance Work,manual,Freelance payment
+2026-09-28,12000,income,Part-time Job,Part-time Salary,manual,Part-time job income
+2026-09-28,15000,income,Scholarship,Scholarship,manual,Student scholarship

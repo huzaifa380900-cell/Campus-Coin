@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "6ab784ebbba7479a91b0a907"
+  },
+  "title": "Review your subscriptions",
+  "__v": 0,
+  "categoryId": {
+    "$oid": "6ab4abeff1c022b6600faf49"
+  },
+  "content": "Check your recurring subscriptions. Cancel services you do not use and compare student discounts before renewing.",
+  "createdAt": {
+    "$date": "2026-09-26T08:40:10.934Z"
+  },
+  "createdBy": {
+    "$oid": "6ab54752161f30a74945b7fb"
+  },
+  "isActive": true,
+  "maximumSavingsImpact": 0,
+  "minimumSavingsImpact": 0,
+  "updatedAt": {
+    "$date": "2026-09-26T08:40:10.934Z"
+  }
+}]
